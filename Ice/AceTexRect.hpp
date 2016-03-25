@@ -6,9 +6,6 @@
 class AceTexRect {
 
 public:
-    GLuint vid;
-
-public:
 
     AceTexRect() {
         glGenBuffers(1, &vid);
@@ -40,6 +37,9 @@ public:
         glDisableVertexAttribArray(0);
         glDisableVertexAttribArray(1);
     }
+
+private:
+	GLuint vid;
 
     void setVertexData(int left, int bottom, int w, int h) {
         int right = left + w;

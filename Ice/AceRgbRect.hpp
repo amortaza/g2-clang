@@ -20,7 +20,7 @@ public:
 
         setVertexData(left, bottom, w, h, r, g, b);
 
-        common(prog, Projection);
+        commonDraw(prog, Projection);
     }
 
     void draw(AceProgram* prog, int left, int bottom, int w, int h, glm::mat4* Projection, float* r4, float *g4, float *b4) {
@@ -28,14 +28,14 @@ public:
 
         setVertexData(left, bottom, w, h, r4, g4, b4);
 
-        common(prog, Projection);
+        commonDraw(prog, Projection);
     }
 
 private:
 
 	GLuint vid;
 
-	void common(AceProgram* prog, glm::mat4* Projection) {
+	void commonDraw(AceProgram* prog, glm::mat4* Projection) {
 		glUniformMatrix4fv(prog->uProjection, 1, GL_FALSE, glm::value_ptr((*Projection)));
 
 		glBindBuffer(GL_ARRAY_BUFFER, vid);
@@ -57,10 +57,10 @@ private:
         int top = bottom + h;        
 
         const float vertexData[] = {
-            left, bottom,    // 4*2 = 8
+            left, bottom,    // 2 ints * 4 bytes per int = 8 bytes
             left, top,      
             right, top,     
-            right, bottom,   // 8*4 = 32
+            right, bottom,   // 8 bytes per row * 4 rows = 32 bytes
 
             r, g, b, 1.f,
             r, g, b, 1.f,

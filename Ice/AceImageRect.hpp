@@ -6,68 +6,28 @@
 class AceImageRect {
 
 public:
-    GLuint vid;
-    AceProgram* prog;
-    AceTexture* texture;
 
-public:
+    AceImageRect(const char* filename, int textureWidth, int textureHeight, AceProgram* ace_prog) {
+        this->ace_prog = ace_prog;
 
-    AceImageRect(const char* filename, int textureWidth, int textureHeight, AceProgram* prog) {
-        this->prog = prog;
+        ace_tex_rect = new AceTexRect();
 
-        texture = new AceTexture(textureWidth, textureHeight);
-        texture->load(filename);
-
-        glGenBuffers(1, &vid);
+		ace_texture = new AceTexture(textureWidth, textureHeight);
+		ace_texture->load(filename);
     }
 
     ~AceImageRect() {
-        delete texture;
-
-        glDeleteBuffers(1, &vid);
+		delete ace_tex_rect;
+        delete ace_texture;
     }
 
     void draw(int left, int bottom, int w, int h, glm::mat4* Projection) {
-        prog->activate();
-
-        texture->activate();
-
-        setVertexData(left, bottom, w, h);
-
-        glUniformMatrix4fv(prog->uProjection, 1, GL_FALSE, glm::value_ptr((*Projection)));
-
-        glBindBuffer(GL_ARRAY_BUFFER, vid);
-
-        glEnableVertexAttribArray(0);
-        glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, 0);
-
-        glEnableVertexAttribArray(1);
-        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)64);
-
-        glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
-
-        glDisableVertexAttribArray(0);
-        glDisableVertexAttribArray(1);
+		ace_tex_rect->draw(ace_prog, ace_texture, left, bottom, w, h, Projection);
     }
 
-    void setVertexData(int left, int bottom, int w, int h) {
-        int right = left + w;
-        int top = bottom + h;
+private:
 
-        const float vertexData[] = {
-            left, bottom, 0.0f, 1.0f, // 4*4 = 16
-            left, top, 0.0f, 1.0f,
-            right, top, 0.0f, 1.0f,
-            right, bottom, 0.0f, 1.0f, // 16*4 = 64
-
-            0.0f, 1.0f,
-            0.0f, 0.0f,
-            1.0f, 0.0f,
-            1.0f, 1.0f
-        };
-
-        glBindBuffer(GL_ARRAY_BUFFER, vid);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
-    }
+	AceProgram* ace_prog;
+	AceTexture* ace_texture;
+	AceTexRect* ace_tex_rect;
 };

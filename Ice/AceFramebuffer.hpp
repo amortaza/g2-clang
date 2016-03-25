@@ -25,13 +25,13 @@ public:
         glDeleteFramebuffers(1, &framebufferId);
     }
 
-    void glBegin() {
+    void begin() {
         glBindFramebuffer(GL_FRAMEBUFFER, framebufferId);
 
         glViewport(0, 0, texture->w, texture->h);
     }
 
-    void glEnd() {
+    void end() {
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
     }
 
