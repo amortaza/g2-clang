@@ -1,0 +1,17 @@
+#version 330
+
+layout (location = 0) in vec4 vertexPosition;
+layout (location = 1) in vec2 vertexTexCoord;
+
+out vec2 vsTexCoord;
+
+uniform mat4 uProjection;
+
+void main()
+{
+   gl_Position = uProjection * vertexPosition;
+
+   vsTexCoord = vertexTexCoord;
+}
+
+
