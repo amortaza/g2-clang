@@ -3,9 +3,11 @@
 namespace Xel {
 
     void Init();
-
-    void Close();
+    
+	void Swap();
 
     void Loop(void(*TickCallback)());
+
+	void Close();
 }
 

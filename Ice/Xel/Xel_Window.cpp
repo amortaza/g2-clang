@@ -34,10 +34,6 @@ namespace Xel {
             WinOs::Window::SetTitle(title);
         }
 
-        void SwapBuffers() {
-            WinOs::Window::SwapBuffers();
-        }
-
         void SetCallbacks(
                 void (*OnResize)(int w, int h),
                 void (*OnAfterGLCreated)(),

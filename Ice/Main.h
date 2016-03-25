@@ -2,7 +2,7 @@
 
 void Draw();
 
-void Init();
+void Init_OnGL();
 void UnInit();
 
 void OnMouseMove(int x, int y);

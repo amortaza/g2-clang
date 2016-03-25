@@ -1,5 +1,8 @@
 #pragma once
 
+#include "AceRgbRect.hpp"
+#include "AceProgram.hpp"
+
 namespace g2 {
 	void init();
 	void uninit();
@@ -48,5 +51,9 @@ namespace g2 {
         extern float quadBottom;
         extern float quadWidth;
         extern float quadHeight;
+
+		//
+		extern AceRgbRect* ace_rgb_rect;
+		extern AceProgram* ace_rgb_prog;
     }
 }

@@ -1,18 +1,8 @@
 #include "stdafx.h"
 
-//#include <map>
-
-#include "AceProgram.hpp"
-#include "AceRgbRect.hpp"
-
 #include "g2.h"
 
-extern AceProgram* ProgRgb;
-extern AceRgbRect* RectRgb;
-
 using namespace g2::Internal;
-
-//std::map<GLuint, int*> dimByTid;
 
 void g2::ortho(int width, int height) {
     WinOrtho = glm::ortho(0.f, (float)width, 0.f, (float)height);
@@ -48,7 +38,7 @@ void g2::rect(int left, int bottom, int width, int height) {
         quadHeight = height;
     }
     else {
-		RectRgb->draw(ProgRgb, left, bottom, width, height, &WinOrtho, red, green, blue);
+		ace_rgb_rect->draw(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue);
     }
 }
 
@@ -59,14 +49,10 @@ void g2::beginQuad() {
 
 void g2::end() {
     if (beginType == 1) {
-		RectRgb->draw(ProgRgb, quadLeft, quadBottom, quadWidth, quadHeight, &WinOrtho, quadRed, quadGreen, quadBlue);
+		ace_rgb_rect->draw(ace_rgb_prog, quadLeft, quadBottom, quadWidth, quadHeight, &WinOrtho, quadRed, quadGreen, quadBlue);
     }
 
     beginType = 0;
-}
-
-void g2::uninit() {
-    //clear dimByTid
 }
 
 GLuint g2::createTexture() {
@@ -112,6 +98,14 @@ void g2::init() {
 	glDisable(GL_DEPTH_TEST);
 	glDisable(GL_LIGHTING);
 	glDisable(GL_CULL_FACE);
+
+	ace_rgb_prog = new AceProgram("c:/_c/ice/shader/col_rect.vertex.txt", "c:/_c/ice/shader/col_rect.fragment.txt");
+	ace_rgb_rect = new AceRgbRect();
+}
+
+void g2::uninit() {
+	delete ace_rgb_rect;
+	delete ace_rgb_prog;
 }
 
 namespace g2 {
@@ -139,6 +133,10 @@ namespace g2 {
         float quadBottom;
         float quadWidth;
         float quadHeight;
+
+		//
+		AceRgbRect* ace_rgb_rect;
+		AceProgram* ace_rgb_prog;
     }
 }
 

@@ -4,11 +4,7 @@
 void OnTick() {
     Draw();
 
-    Xel::Window::SwapBuffers();
-}
-
-void OnGL() {
-    Init();
+    Xel::Swap();
 }
 
 int main(int argc, char** argv) {
@@ -16,7 +12,7 @@ int main(int argc, char** argv) {
 
     Xel::Init();
 
-    Xel::Window::SetCallbacks(OnResize, OnGL, UnInit);
+    Xel::Window::SetCallbacks(OnResize, Init_OnGL, UnInit);
 
     Xel::Mouse::SetCallbacks(
         OnMouseMove,

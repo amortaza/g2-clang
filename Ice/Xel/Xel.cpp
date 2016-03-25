@@ -11,6 +11,10 @@ namespace Xel {
         WinOs::Window::CreateMainWindow(_WndProc);
     }
 
+	void Swap() {
+		WinOs::Window::SwapBuffers();
+	}
+
     void Close() {
         WinOs::Window::Close();
     }
@@ -20,16 +24,16 @@ namespace Xel {
 
         while (true) {
             while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE) == TRUE) {
-                if (msg.message == WM_QUIT)
-                    return;
+                if (msg.message == WM_QUIT) 
+					return;
 
                 TranslateMessage(&msg);
                 DispatchMessage(&msg);
             }
 
             // Resize must have been called once
-            if (Window::Internal::g_ResizeCount > 0)
-                TickCallback();
+            if (Window::Internal::g_ResizeCount > 0) 
+				TickCallback();
         }
     }
 }

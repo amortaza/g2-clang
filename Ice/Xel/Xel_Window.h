@@ -12,8 +12,6 @@ namespace Xel {
 
         void SetTitle(char *title);
 
-        void SwapBuffers();
-
         void SetCallbacks(
                 void (*OnResize)(int w, int h),
                 void (*OnAfterGLCreated)(),
