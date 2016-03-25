@@ -65,9 +65,9 @@ void g2::end() {
     beginType = 0;
 }
 
-//void g2::uninit() {
+void g2::uninit() {
     //clear dimByTid
-//}
+}
 
 GLuint g2::createTexture() {
     GLuint tid;
@@ -99,6 +99,19 @@ int textureWidth, textureHeight;
 void g2::size(int width, int height) {
     textureWidth = width;
     textureHeight = height;
+}
+
+void g2::init() {
+	glClearColor(0.0f, 0.0f, 1.0f, 0.5f);
+
+	glActiveTexture(GL_TEXTURE0);
+	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+	glDisable(GL_DEPTH_TEST);
+	glDisable(GL_LIGHTING);
+	glDisable(GL_CULL_FACE);
 }
 
 namespace g2 {

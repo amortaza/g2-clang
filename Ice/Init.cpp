@@ -6,6 +6,8 @@
 #include "AceTexRect.hpp"
 #include "AceScreen.hpp"
 
+#include "g2.h"
+
 AceProgram* ProgTex;
 AceProgram* ProgRgb;
 AceProgram* ProgScreen;
@@ -20,16 +22,7 @@ AceScreen* Screen;
 AceTexture* testTexture;
 
 void Init() {
-    glClearColor(0.0f, 1.0f, 0.0f, 0.5f);
-
-    glActiveTexture(GL_TEXTURE0);
-    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
-    glDisable(GL_DEPTH_TEST);
-    glDisable(GL_LIGHTING);
-    glDisable(GL_CULL_FACE);
+	g2::init();
 
     ProgTex = new AceProgram("c:/_c/ice/shader/tex_rect.vertex.txt", "c:/_c/ice/shader/tex_rect.fragment.txt");
     ProgRgb = new AceProgram("c:/_c/ice/shader/col_rect.vertex.txt", "c:/_c/ice/shader/col_rect.fragment.txt");
@@ -58,4 +51,6 @@ void UnInit() {
     delete ProgTex;
     delete ProgRgb;
     delete ProgScreen;
+
+	g2::uninit();
 }

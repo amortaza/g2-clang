@@ -1,6 +1,9 @@
 #pragma once
 
 namespace g2 {
+	void init();
+	void uninit();
+
     void ortho(int width, int height);
 
     void viewport(int width, int height);
