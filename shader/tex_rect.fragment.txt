@@ -1,0 +1,12 @@
+#version 330
+
+in vec2 vsTexCoord;
+
+out vec4 outFragColor;
+
+uniform sampler2D uSampler;
+
+void main()
+{
+    outFragColor = texture2D(uSampler, vsTexCoord.st);
+}

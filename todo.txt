@@ -1,0 +1,18 @@
+Backlog
+-------------------------------------
+8 - g2
+
+Done
+-------------------------------------
+7 - ??
+6 - render to texture
+5- clean up
+4 - use screen coords
+3 - color triangle
+2 - make shaders nice
+1 - draw triangle
+0 - import WinOs/Xel
+
+
+
+

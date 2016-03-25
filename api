@@ -1,0 +1,33 @@
+g2Ortho(width, height);
+
+g2Viewport(width ,height);
+g2Clear();
+
+g2Rgb(red, green, blue);
+						g2Rgba(red, green, blue, alpha);
+
+						g2Texture(tid);
+						g2TextureOff();
+
+g2Rect(left, top, width, height);
+
+g2BeginQuad();
+							g2Texture(...);
+	g2Rgb(...);
+	g2Vertex(x, y);
+g2End();
+
+						tid = g2CreateTexture();
+
+						g2BeginTexture(tid);
+							g2Size(width, height);
+							g2Load(filename);
+						g2End();
+
+						g2Target(tid);
+							gSize(width, height);
+
+							// draw commands
+
+						g2End();
+
