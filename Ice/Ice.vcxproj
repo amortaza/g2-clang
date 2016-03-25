@@ -85,7 +85,7 @@
     <ClInclude Include="..\lib\Soil\stbi_DDS_aug.h" />
     <ClInclude Include="..\lib\Soil\stbi_DDS_aug_c.h" />
     <ClInclude Include="..\lib\Soil\stb_image_aug.h" />
-    <ClInclude Include="AceColRect.hpp" />
+    <ClInclude Include="AceRgbRect.hpp" />
     <ClInclude Include="AceFramebuffer.hpp" />
     <ClInclude Include="AceProgram.hpp" />
     <ClInclude Include="AceImageRect.hpp" />

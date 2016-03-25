@@ -3,12 +3,12 @@
 //#include <map>
 
 #include "AceProgram.hpp"
-#include "AceColRect.hpp"
+#include "AceRgbRect.hpp"
 
 #include "g2.h"
 
 extern AceProgram* ProgCol;
-extern AceColRect* RectCol;
+extern AceRgbRect* RectCol;
 
 using namespace g2::Internal;
 

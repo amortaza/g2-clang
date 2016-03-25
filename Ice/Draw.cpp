@@ -2,7 +2,7 @@
 
 #include "AceProgram.hpp"
 #include "AceImageRect.hpp"
-#include "AceColRect.hpp"
+#include "AceRgbRect.hpp"
 #include "AceTexRect.hpp"
 #include "AceFramebuffer.hpp"
 #include "AceScreen.hpp"
@@ -13,7 +13,7 @@ extern AceProgram* ProgCol;
 extern AceProgram* ProgTex;
 extern AceProgram* ProgScreen;
 
-extern AceColRect*   RectCol;
+extern AceRgbRect*   RectCol;
 extern AceTexRect*   RectTex;
 extern AceImageRect* RectImg;
 
@@ -47,18 +47,18 @@ void Draw() {
     }
     g2::end();
 
-    //RectCol->draw(ProgCol, 2, 2, winW - 4, winH - 4, &WinOrtho);
+    //RectCol->draw(ProgCol, 2, 2, winW - 4, winH - 4, &WinOrtho, 128, 128, 128);
 
-    //imgRect->draw(210, 310, 300, 300, &Projection);
+    /*imgRect->draw(210, 310, 300, 300, &Projection);
 
-    //Screen->framebuffer->glBegin();
-    //{
-    //    RectCol->draw(ProgCol, 2, 2, winW - 4, winH - 4, &WinOrtho);
-    //    RectCol->draw(ProgCol, 150, 250, 128, 128, &WinOrtho);
-    //    //texRect->draw(texProg, gTexture, -10, 250, 128, 128, &p2);
-    //    RectImg->draw(10, 10, 128, 128, &WinOrtho);
-    //}
-    //Screen->framebuffer->glEnd();
+    Screen->framebuffer->glBegin();
+    {
+        RectCol->draw(ProgCol, 2, 2, winW - 4, winH - 4, &WinOrtho);
+        RectCol->draw(ProgCol, 150, 250, 128, 128, &WinOrtho);
+        texRect->draw(texProg, gTexture, -10, 250, 128, 128, &p2);
+        RectImg->draw(10, 10, 128, 128, &WinOrtho);
+    }
+    Screen->framebuffer->glEnd();
 
-    //Screen->render();
+    Screen->render();*/
 }

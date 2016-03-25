@@ -2,7 +2,7 @@
 
 #include "AceProgram.hpp"
 #include "AceImageRect.hpp"
-#include "AceColRect.hpp"
+#include "AceRgbRect.hpp"
 #include "AceTexRect.hpp"
 #include "AceScreen.hpp"
 
@@ -10,7 +10,7 @@ AceProgram* ProgTex;
 AceProgram* ProgCol;
 AceProgram* ProgScreen;
 
-AceColRect*   RectCol;
+AceRgbRect*   RectCol;
 AceTexRect*   RectTex;
 AceImageRect* RectImg;
 
@@ -36,7 +36,7 @@ void Init() {
     ProgScreen = new AceProgram("c:/_c/ice/shader/screen.vertex.txt", "c:/_c/ice/shader/screen.fragment.txt");
 
     RectImg = new AceImageRect("c:/_c/ice/a.jpg", 1280, 940, ProgTex);
-    RectCol = new AceColRect();
+    RectCol = new AceRgbRect();
     RectTex = new AceTexRect();
 
     Screen = new AceScreen(RectTex, ProgScreen);

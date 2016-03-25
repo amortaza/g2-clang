@@ -2,37 +2,18 @@
 
 #include "AceProgram.hpp"
 
-class AceColRect {
-
-public:
-    GLuint vid;
+class AceRgbRect {
 
 public:
 
-    AceColRect() {
+    AceRgbRect() {
         glGenBuffers(1, &vid);
     }
 
-    ~AceColRect() {
+    ~AceRgbRect() {
         glDeleteBuffers(1, &vid);
     }
 
-    void common(AceProgram* prog, glm::mat4* Projection) {
-        glUniformMatrix4fv(prog->uProjection, 1, GL_FALSE, glm::value_ptr((*Projection)));
-
-        glBindBuffer(GL_ARRAY_BUFFER, vid);
-
-        glEnableVertexAttribArray(0);
-        glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
-
-        glEnableVertexAttribArray(1);
-        glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 0, (void*)32);
-
-        glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
-
-        glDisableVertexAttribArray(0);
-        glDisableVertexAttribArray(1);
-    }
 
     void draw(AceProgram* prog, int left, int bottom, int w, int h, glm::mat4* Projection, float r, float g, float b) {
         prog->activate();
@@ -42,16 +23,36 @@ public:
         common(prog, Projection);
     }
 
-    void draw(AceProgram* prog, int left, int bottom, int w, int h, glm::mat4* Projection, float* r, float *g, float *b) {
+    void draw(AceProgram* prog, int left, int bottom, int w, int h, glm::mat4* Projection, float* r4, float *g4, float *b4) {
         prog->activate();
 
-        setVertexData(left, bottom, w, h, r, g, b);
+        setVertexData(left, bottom, w, h, r4, g4, b4);
 
         common(prog, Projection);
     }
 
 private:
-    void setVertexData(int left, int bottom, int w, int h, float r, float g, float b) {
+
+	GLuint vid;
+
+	void common(AceProgram* prog, glm::mat4* Projection) {
+		glUniformMatrix4fv(prog->uProjection, 1, GL_FALSE, glm::value_ptr((*Projection)));
+
+		glBindBuffer(GL_ARRAY_BUFFER, vid);
+
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
+
+		glEnableVertexAttribArray(1);
+		glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 0, (void*)32);
+
+		glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+
+		glDisableVertexAttribArray(0);
+		glDisableVertexAttribArray(1);
+	}
+	
+	void setVertexData(int left, int bottom, int w, int h, float r, float g, float b) {
         int right = left + w;
         int top = bottom + h;        
 
@@ -72,7 +73,7 @@ private:
         glBindBuffer(GL_ARRAY_BUFFER, 0);
     }
 
-    void setVertexData(int left, int bottom, int w, int h, float* r, float* g, float* b) {
+    void setVertexData(int left, int bottom, int w, int h, float* r4, float* g4, float* b4) {
         int right = left + w;
         int top = bottom + h;
 
@@ -82,10 +83,10 @@ private:
             right, top,     
             right, bottom,   // 8*4 = 32
 
-            r[0], g[0], b[0], 1.f,
-            r[1], g[1], b[1], 1.f,
-            r[2], g[2], b[2], 1.f,
-            r[3], g[3], b[3], 1.f
+            r4[0], g4[0], b4[0], 1.f,
+            r4[1], g4[1], b4[1], 1.f,
+            r4[2], g4[2], b4[2], 1.f,
+            r4[3], g4[3], b4[3], 1.f
         };
 
         glBindBuffer(GL_ARRAY_BUFFER, vid);
