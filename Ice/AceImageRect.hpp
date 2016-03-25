@@ -1,9 +1,14 @@
 #pragma once
 
-#include "AceProgram.hpp"
-#include "AceTexture.hpp"
+#include "AceTexRect.hpp"
 
 class AceImageRect {
+
+private:
+
+	AceProgram* ace_prog;
+	AceTexture* ace_texture;
+	AceTexRect* ace_tex_rect;
 
 public:
 
@@ -25,9 +30,4 @@ public:
 		ace_tex_rect->draw(ace_prog, ace_texture, left, bottom, w, h, Projection);
     }
 
-private:
-
-	AceProgram* ace_prog;
-	AceTexture* ace_texture;
-	AceTexRect* ace_tex_rect;
 };

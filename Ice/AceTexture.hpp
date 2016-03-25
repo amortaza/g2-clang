@@ -3,10 +3,10 @@
 class AceTexture {
 
 public:
-    GLuint tid;
-    unsigned char* imageData = 0;
-    int w, h;
+	int w, h;
+	GLuint tid;
 
+public:
     AceTexture() {
         glGenTextures(1, &tid);
 
@@ -53,4 +53,8 @@ public:
     void activate() {
         glBindTexture(GL_TEXTURE_2D, tid);
     }
+
+private:
+	unsigned char* imageData = 0;
+	
 };
