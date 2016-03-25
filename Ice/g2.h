@@ -17,16 +17,9 @@ namespace g2 {
 
     void rect(int left, int bottom, int width, int height);
 
-    void beginQuad();
+    void quad();
 
     void end();
-
-    GLuint createTexture();
-    void freeTexture(GLuint tid);
-
-    void beginTexture(GLuint tid);
-    void size(int width, int height);
-    void load(const char* filename);
 
     namespace Internal {
         extern float red;
@@ -36,9 +29,6 @@ namespace g2 {
         extern glm::mat4 WinOrtho;
 
         extern int beginType;
-
-        // texture
-        extern GLuint textureId;
 
         // quad
         extern int quadIndex;

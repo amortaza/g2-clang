@@ -106,6 +106,9 @@
     <ClInclude Include="AceRgbRect.hpp">
       <Filter>Ace</Filter>
     </ClInclude>
+    <ClInclude Include="g2_texture.h">
+      <Filter>g2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -157,6 +160,9 @@
       <Filter>_\soil</Filter>
     </ClCompile>
     <ClCompile Include="g2.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2_texture.cpp">
       <Filter>g2</Filter>
     </ClCompile>
   </ItemGroup>

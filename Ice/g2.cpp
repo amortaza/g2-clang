@@ -42,7 +42,7 @@ void g2::rect(int left, int bottom, int width, int height) {
     }
 }
 
-void g2::beginQuad() {
+void g2::quad() {
     beginType = 1;
     quadIndex = 0;
 }
@@ -53,38 +53,6 @@ void g2::end() {
     }
 
     beginType = 0;
-}
-
-GLuint g2::createTexture() {
-    GLuint tid;
-
-    glGenTextures(1, &tid);
-
-    return tid;
-}
-
-void g2::freeTexture(GLuint tid) {
-    glDeleteTextures(1, &tid);
-}
-
-void g2::beginTexture(GLuint tid) {
-    beginType = 2;
-
-    textureId = tid;
-
-    glBindTexture(GL_TEXTURE_2D, tid);
-
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-}
-
-int textureWidth, textureHeight;
-
-void g2::size(int width, int height) {
-    textureWidth = width;
-    textureHeight = height;
 }
 
 void g2::init() {
@@ -109,8 +77,10 @@ void g2::uninit() {
 }
 
 namespace g2 {
-    namespace Internal {
-        float red;
+
+	namespace Internal {
+    
+		float red;
         float green;
         float blue;
 
@@ -119,8 +89,6 @@ namespace g2 {
         // 0: none, 1: quad, 2: texture
         int beginType;
 
-        // texture
-        GLuint textureId;
 
         // quad
         int quadIndex;
