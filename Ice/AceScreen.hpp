@@ -6,12 +6,12 @@
 class AceScreen {
 
 public:
-    AceFramebuffer* framebuffer;
     int winW, winH;
 
 private:
     AceTexRect* ace_tex_rect;
     AceProgram* ace_screen_prog;
+	AceFramebuffer* framebuffer;
 
 public:
 
@@ -28,17 +28,23 @@ public:
     }
 
     void resize(int w, int h) {
-        if (w == winW && h == winH)
-            return;
+        if (w == winW && h == winH) return;
 
-        if (framebuffer)
-            delete framebuffer;
+        if (framebuffer) delete framebuffer;
 
         winW = w;
         winH = h;
 
         framebuffer = new AceFramebuffer(winW, winH);
     }
+
+	void begin() {
+		framebuffer->begin();
+	}
+
+	void end() {
+		framebuffer->end();
+	}
 
     void render() {
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
