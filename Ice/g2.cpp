@@ -7,8 +7,8 @@
 
 #include "g2.h"
 
-extern AceProgram* ProgCol;
-extern AceRgbRect* RectCol;
+extern AceProgram* ProgRgb;
+extern AceRgbRect* RectRgb;
 
 using namespace g2::Internal;
 
@@ -48,7 +48,7 @@ void g2::rect(int left, int bottom, int width, int height) {
         quadHeight = height;
     }
     else {
-        RectCol->draw(ProgCol, left, bottom, width, height, &WinOrtho, red, green, blue);
+		RectRgb->draw(ProgRgb, left, bottom, width, height, &WinOrtho, red, green, blue);
     }
 }
 
@@ -59,7 +59,7 @@ void g2::beginQuad() {
 
 void g2::end() {
     if (beginType == 1) {
-        RectCol->draw(ProgCol, quadLeft, quadBottom, quadWidth, quadHeight, &WinOrtho, quadRed, quadGreen, quadBlue);
+		RectRgb->draw(ProgRgb, quadLeft, quadBottom, quadWidth, quadHeight, &WinOrtho, quadRed, quadGreen, quadBlue);
     }
 
     beginType = 0;

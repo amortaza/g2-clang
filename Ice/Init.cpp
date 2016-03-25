@@ -7,10 +7,10 @@
 #include "AceScreen.hpp"
 
 AceProgram* ProgTex;
-AceProgram* ProgCol;
+AceProgram* ProgRgb;
 AceProgram* ProgScreen;
 
-AceRgbRect*   RectCol;
+AceRgbRect*   RectRgb;
 AceTexRect*   RectTex;
 AceImageRect* RectImg;
 
@@ -32,11 +32,11 @@ void Init() {
     glDisable(GL_CULL_FACE);
 
     ProgTex = new AceProgram("c:/_c/ice/shader/tex_rect.vertex.txt", "c:/_c/ice/shader/tex_rect.fragment.txt");
-    ProgCol = new AceProgram("c:/_c/ice/shader/col_rect.vertex.txt", "c:/_c/ice/shader/col_rect.fragment.txt");
+    ProgRgb = new AceProgram("c:/_c/ice/shader/col_rect.vertex.txt", "c:/_c/ice/shader/col_rect.fragment.txt");
     ProgScreen = new AceProgram("c:/_c/ice/shader/screen.vertex.txt", "c:/_c/ice/shader/screen.fragment.txt");
 
     RectImg = new AceImageRect("c:/_c/ice/a.jpg", 1280, 940, ProgTex);
-    RectCol = new AceRgbRect();
+	RectRgb = new AceRgbRect();
     RectTex = new AceTexRect();
 
     Screen = new AceScreen(RectTex, ProgScreen);
@@ -52,10 +52,10 @@ void UnInit() {
     delete Screen;
 
     delete RectImg;
-    delete RectCol;
+    delete RectRgb;
     delete RectTex;
 
     delete ProgTex;
-    delete ProgCol;
+    delete ProgRgb;
     delete ProgScreen;
 }

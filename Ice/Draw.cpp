@@ -13,7 +13,7 @@ extern AceProgram* ProgCol;
 extern AceProgram* ProgTex;
 extern AceProgram* ProgScreen;
 
-extern AceRgbRect*   RectCol;
+extern AceRgbRect*   RectRgb;
 extern AceTexRect*   RectTex;
 extern AceImageRect* RectImg;
 
