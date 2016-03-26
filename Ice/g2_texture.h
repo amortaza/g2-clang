@@ -4,14 +4,14 @@
 namespace g2 {
 
 	struct TextureRef {
-		GLuint id
+		GLuint id;
 	};
 
 	TextureRef* createTexture();
+
 	void freeTexture(TextureRef*);
 
 	void beginTexture(TextureRef*);
 	
 	void load(const char* filename);
-
 }

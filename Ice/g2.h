@@ -3,6 +3,8 @@
 #include "AceRgbRect.hpp"
 #include "AceProgram.hpp"
 
+#include "g2_texture.h"
+
 namespace g2 {
 	void init();
 	void uninit();

@@ -8,12 +8,6 @@
     <Filter Include="_">
       <UniqueIdentifier>{f6422c28-0b0d-4046-a90f-e55a359343a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="WinOs">
-      <UniqueIdentifier>{3e6a30b4-7ff6-4be7-9d0c-4a88d90e7063}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Xel">
-      <UniqueIdentifier>{c3a1b69b-37b2-4b30-884f-c374094a021a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Shaders">
       <UniqueIdentifier>{d009f52c-0f83-476c-803a-7d657574a05e}</UniqueIdentifier>
     </Filter>
@@ -26,6 +20,9 @@
     <Filter Include="g2">
       <UniqueIdentifier>{d7be9dc2-1a38-4f91-b40f-e01e51f260a5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="_\xel">
+      <UniqueIdentifier>{0b7cd132-449a-4349-8307-1e570a08d175}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -33,30 +30,6 @@
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>_</Filter>
-    </ClInclude>
-    <ClInclude Include="WinOs\WinOs.h">
-      <Filter>WinOs</Filter>
-    </ClInclude>
-    <ClInclude Include="Xel\Xel.h">
-      <Filter>Xel</Filter>
-    </ClInclude>
-    <ClInclude Include="Xel\Xel_Common.h">
-      <Filter>Xel</Filter>
-    </ClInclude>
-    <ClInclude Include="Xel\Xel_Keyboard.h">
-      <Filter>Xel</Filter>
-    </ClInclude>
-    <ClInclude Include="Xel\Xel_Keyboard_Def.h">
-      <Filter>Xel</Filter>
-    </ClInclude>
-    <ClInclude Include="Xel\Xel_Mouse.h">
-      <Filter>Xel</Filter>
-    </ClInclude>
-    <ClInclude Include="Xel\Xel_Window.h">
-      <Filter>Xel</Filter>
-    </ClInclude>
-    <ClInclude Include="Xel\Xel_WndProc.h">
-      <Filter>Xel</Filter>
     </ClInclude>
     <ClInclude Include="Main.h">
       <Filter>Source Files</Filter>
@@ -117,27 +90,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WinOs\WinOs_GL.cpp">
-      <Filter>WinOs</Filter>
-    </ClCompile>
-    <ClCompile Include="WinOs\WinOs_Window.cpp">
-      <Filter>WinOs</Filter>
-    </ClCompile>
-    <ClCompile Include="Xel\Xel.cpp">
-      <Filter>Xel</Filter>
-    </ClCompile>
-    <ClCompile Include="Xel\Xel_Keyboard.cpp">
-      <Filter>Xel</Filter>
-    </ClCompile>
-    <ClCompile Include="Xel\Xel_Mouse.cpp">
-      <Filter>Xel</Filter>
-    </ClCompile>
-    <ClCompile Include="Xel\Xel_Window.cpp">
-      <Filter>Xel</Filter>
-    </ClCompile>
-    <ClCompile Include="Xel\Xel_WndProc.cpp">
-      <Filter>Xel</Filter>
-    </ClCompile>
     <ClCompile Include="Callbacks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -164,6 +116,27 @@
     </ClCompile>
     <ClCompile Include="g2_texture.cpp">
       <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel.cpp">
+      <Filter>_\xel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel_Keyboard.cpp">
+      <Filter>_\xel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel_Mouse.cpp">
+      <Filter>_\xel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel_Window.cpp">
+      <Filter>_\xel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel_WndProc.cpp">
+      <Filter>_\xel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\xel\Solution\Solution\WinOs\WinOs_GL.cpp">
+      <Filter>_\xel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\xel\Solution\Solution\WinOs\WinOs_Window.cpp">
+      <Filter>_\xel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
