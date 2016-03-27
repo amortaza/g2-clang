@@ -67,7 +67,7 @@ void g2::init() {
 	glDisable(GL_LIGHTING);
 	glDisable(GL_CULL_FACE);
 
-	ace_rgb_prog = new AceProgram("c:/_c/ice/shader/col_rect.vertex.txt", "c:/_c/ice/shader/col_rect.fragment.txt");
+	ace_rgb_prog = new AceProgram("c:/_c/g2/shader/col_rect.vertex.txt", "c:/_c/ice/shader/col_rect.fragment.txt");
 	ace_rgb_rect = new AceRgbRect();
 }
 
@@ -79,7 +79,7 @@ void g2::uninit() {
 namespace g2 {
 
 	namespace Internal {
-    
+
 		float red;
         float green;
         float blue;
@@ -92,7 +92,7 @@ namespace g2 {
 
         // quad
         int quadIndex;
-    
+
         float quadRed[4];
         float quadGreen[4];
         float quadBlue[4];

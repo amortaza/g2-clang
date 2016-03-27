@@ -43,24 +43,6 @@
     <ClInclude Include="AceTexture.hpp">
       <Filter>Ace</Filter>
     </ClInclude>
-    <ClInclude Include="..\lib\Soil\image_DXT.h">
-      <Filter>_\soil</Filter>
-    </ClInclude>
-    <ClInclude Include="..\lib\Soil\image_helper.h">
-      <Filter>_\soil</Filter>
-    </ClInclude>
-    <ClInclude Include="..\lib\Soil\SOIL.h">
-      <Filter>_\soil</Filter>
-    </ClInclude>
-    <ClInclude Include="..\lib\Soil\stb_image_aug.h">
-      <Filter>_\soil</Filter>
-    </ClInclude>
-    <ClInclude Include="..\lib\Soil\stbi_DDS_aug.h">
-      <Filter>_\soil</Filter>
-    </ClInclude>
-    <ClInclude Include="..\lib\Soil\stbi_DDS_aug_c.h">
-      <Filter>_\soil</Filter>
-    </ClInclude>
     <ClInclude Include="AceScreen.hpp">
       <Filter>Ace</Filter>
     </ClInclude>
@@ -82,6 +64,24 @@
     <ClInclude Include="g2_texture.h">
       <Filter>g2</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\c_lib\lib\Soil\image_DXT.h">
+      <Filter>_\soil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_lib\lib\Soil\image_helper.h">
+      <Filter>_\soil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_lib\lib\Soil\SOIL.h">
+      <Filter>_\soil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_lib\lib\Soil\stb_image_aug.h">
+      <Filter>_\soil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_lib\lib\Soil\stbi_DDS_aug.h">
+      <Filter>_\soil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_lib\lib\Soil\stbi_DDS_aug_c.h">
+      <Filter>_\soil</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -99,26 +99,11 @@
     <ClCompile Include="Draw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\lib\Soil\image_DXT.cpp">
-      <Filter>_\soil</Filter>
-    </ClCompile>
-    <ClCompile Include="..\lib\Soil\image_helper.cpp">
-      <Filter>_\soil</Filter>
-    </ClCompile>
-    <ClCompile Include="..\lib\Soil\SOIL.cpp">
-      <Filter>_\soil</Filter>
-    </ClCompile>
-    <ClCompile Include="..\lib\Soil\stb_image_aug.cpp">
-      <Filter>_\soil</Filter>
-    </ClCompile>
     <ClCompile Include="g2.cpp">
       <Filter>g2</Filter>
     </ClCompile>
     <ClCompile Include="g2_texture.cpp">
       <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel.cpp">
-      <Filter>_\xel</Filter>
     </ClCompile>
     <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel_Keyboard.cpp">
       <Filter>_\xel</Filter>
@@ -137,6 +122,21 @@
     </ClCompile>
     <ClCompile Include="..\..\xel\Solution\Solution\WinOs\WinOs_Window.cpp">
       <Filter>_\xel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel.cpp">
+      <Filter>_\xel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\c_lib\lib\Soil\image_DXT.cpp">
+      <Filter>_\soil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\c_lib\lib\Soil\image_helper.cpp">
+      <Filter>_\soil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\c_lib\lib\Soil\SOIL.cpp">
+      <Filter>_\soil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\c_lib\lib\Soil\stb_image_aug.cpp">
+      <Filter>_\soil</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

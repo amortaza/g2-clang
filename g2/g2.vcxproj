@@ -13,7 +13,8 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B75AF7DE-D166-4223-95C7-12B6BD0D59B7}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Ice</RootNamespace>
+    <RootNamespace>g2</RootNamespace>
+    <ProjectName>g2</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -41,8 +42,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>c:\_c\ice\lib;c:\_c\ice\ice;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <LibraryPath>c:\_c\ice\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+    <IncludePath>c:\_c\c_lib\lib;c:\_c\g2\g2;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>c:\_c\c_lib\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -80,12 +81,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\lib\Soil\image_DXT.h" />
-    <ClInclude Include="..\lib\Soil\image_helper.h" />
-    <ClInclude Include="..\lib\Soil\SOIL.h" />
-    <ClInclude Include="..\lib\Soil\stbi_DDS_aug.h" />
-    <ClInclude Include="..\lib\Soil\stbi_DDS_aug_c.h" />
-    <ClInclude Include="..\lib\Soil\stb_image_aug.h" />
+    <ClInclude Include="..\..\c_lib\lib\Soil\image_DXT.h" />
+    <ClInclude Include="..\..\c_lib\lib\Soil\image_helper.h" />
+    <ClInclude Include="..\..\c_lib\lib\Soil\SOIL.h" />
+    <ClInclude Include="..\..\c_lib\lib\Soil\stbi_DDS_aug.h" />
+    <ClInclude Include="..\..\c_lib\lib\Soil\stbi_DDS_aug_c.h" />
+    <ClInclude Include="..\..\c_lib\lib\Soil\stb_image_aug.h" />
     <ClInclude Include="AceRgbRect.hpp" />
     <ClInclude Include="AceFramebuffer.hpp" />
     <ClInclude Include="AceProgram.hpp" />
@@ -101,6 +102,10 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\c_lib\lib\Soil\image_DXT.cpp" />
+    <ClCompile Include="..\..\c_lib\lib\Soil\image_helper.cpp" />
+    <ClCompile Include="..\..\c_lib\lib\Soil\SOIL.cpp" />
+    <ClCompile Include="..\..\c_lib\lib\Soil\stb_image_aug.cpp" />
     <ClCompile Include="..\..\xel\Solution\Solution\WinOs\WinOs_GL.cpp" />
     <ClCompile Include="..\..\xel\Solution\Solution\WinOs\WinOs_Window.cpp" />
     <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel.cpp" />
@@ -108,10 +113,6 @@
     <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel_Mouse.cpp" />
     <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel_Window.cpp" />
     <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel_WndProc.cpp" />
-    <ClCompile Include="..\lib\Soil\image_DXT.cpp" />
-    <ClCompile Include="..\lib\Soil\image_helper.cpp" />
-    <ClCompile Include="..\lib\Soil\SOIL.cpp" />
-    <ClCompile Include="..\lib\Soil\stb_image_aug.cpp" />
     <ClCompile Include="Callbacks.cpp" />
     <ClCompile Include="Draw.cpp" />
     <ClCompile Include="g2.cpp" />
