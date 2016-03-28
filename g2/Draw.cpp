@@ -22,9 +22,8 @@ void Draw() {
 
 	g2::texture(ref);
 	g2::rect(200, 200, 400, 300);
-	g2::texture(0);
+	g2::endTexture();
 
 	g2::rgb(0, 200, 0);
 	g2::rect(20, 450, 400, 300);
-
 }

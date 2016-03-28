@@ -11,8 +11,6 @@ extern TextureRef* current_texture_ref;
 void g2::beginTexture(TextureRef* ref) {
 	current_texture_ref = ref;
 	ref->ace_texture->activate();
-
-	stack.pushTexture();
 }
 
 TextureRef* g2::createTexture() {
@@ -35,7 +33,18 @@ void g2::load(const char* filename) {
 }
 
 void g2::texture(TextureRef* ref) {
-	current_texture_ref = ref;
+	if (ref == 0) 
+		endTexture();
+	else {
+		current_texture_ref = ref;
 
-	if ( ref != 0 ) ref->ace_texture->activate();
+		ref->ace_texture->activate();
+	}
+}
+
+void g2::endTexture() {
+	if (current_texture_ref != 0) 
+		current_texture_ref->ace_texture->deactivate();
+
+	current_texture_ref = 0;
 }

@@ -79,9 +79,6 @@
     <ClInclude Include="g2_core.h">
       <Filter>g2</Filter>
     </ClInclude>
-    <ClInclude Include="g2_stack.h">
-      <Filter>g2</Filter>
-    </ClInclude>
     <ClInclude Include="g2_externals.h">
       <Filter>g2</Filter>
     </ClInclude>

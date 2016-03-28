@@ -4,8 +4,6 @@
 #include "AceTextureRect.hpp"
 #include "AceProgram.hpp"
 
-#include "g2_stack.h"
-
 namespace g2 {
 
 	namespace Internal {
@@ -16,25 +14,10 @@ namespace g2 {
 
 		extern glm::mat4 WinOrtho;
 
-		// 0:none, 1:quad, 2:texture
-		extern Stack stack;
-
-		// quad
-		extern int quadIndex;
-
-		extern float quadRed[4];
-		extern float quadGreen[4];
-		extern float quadBlue[4];
-
-		extern float quadLeft;
-		extern float quadBottom;
-		extern float quadWidth;
-		extern float quadHeight;
-
-		//
-		extern AceRgbRect* ace_rgb_rect;
-		extern AceTextureRect* ace_texture_rect;
 		extern AceProgram* ace_rgb_prog;
 		extern AceProgram* ace_texture_prog;
+
+		extern AceRgbRect* ace_rgb_rect;
+		extern AceTextureRect* ace_texture_rect;
 	}
 }

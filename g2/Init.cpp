@@ -11,7 +11,7 @@ void Init_OnGL() {
 	{
 		g2::load("c:\\_c\\g2\\a.jpg");
 	}
-	g2::end();
+	g2::endTexture();
 
 }
 

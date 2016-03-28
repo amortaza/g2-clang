@@ -16,5 +16,4 @@ namespace g2 {
 	void rgb(unsigned char red, unsigned char green, unsigned char blue);
 
 	void rect(int left, int bottom, int width, int height);
-	void end();
 }

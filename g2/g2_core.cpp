@@ -19,11 +19,6 @@ void g2::clear() {
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void g2::end() {
-	current_texture_ref = 0;
-	stack.pop();
-}
-
 void g2::init() {
 	glClearColor(0.0f, 0.0f, 1.0f, 0.5f);
 

@@ -6,7 +6,6 @@
 #include "AceTexture.hpp"
 
 #include "g2_texture.h"
-#include "g2_stack.h"
 
 namespace g2 {
 
@@ -18,13 +17,11 @@ namespace g2 {
 
 		glm::mat4 WinOrtho;
 
-		Stack stack;
+		AceProgram* ace_rgb_prog;
+		AceProgram* ace_texture_prog;
 
-		//
 		AceRgbRect* ace_rgb_rect;
 		AceTextureRect* ace_texture_rect;
-		AceProgram* ace_rgb_prog;		
-		AceProgram* ace_texture_prog;
 	}
 }
 
