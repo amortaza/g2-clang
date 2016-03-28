@@ -88,6 +88,9 @@
     <ClInclude Include="AceTextureRect.hpp">
       <Filter>Ace</Filter>
     </ClInclude>
+    <ClInclude Include="g2_canvas.h">
+      <Filter>g2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -148,6 +151,9 @@
       <Filter>g2</Filter>
     </ClCompile>
     <ClCompile Include="g2_internal.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2_canvas.cpp">
       <Filter>g2</Filter>
     </ClCompile>
   </ItemGroup>

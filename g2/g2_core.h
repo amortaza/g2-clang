@@ -14,6 +14,7 @@ namespace g2 {
 	void clear();
 
 	void rgb(unsigned char red, unsigned char green, unsigned char blue);
+	void rectRgb(int left, int bottom, int width, int height);
 
-	void rect(int left, int bottom, int width, int height);
+	void rectTexture(int left, int bottom, int width, int height);
 }

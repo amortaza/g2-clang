@@ -5,7 +5,8 @@
 using namespace g2;
 using namespace g2::Internal;
 
-TextureRef* current_texture_ref = 0;
+CanvasRef* current_canvas = 0;
+AceTexture* current_ace_texture = 0;
 
 void g2::ortho(int width, int height) {
     WinOrtho = glm::ortho(0.f, (float)width, 0.f, (float)height);
@@ -43,7 +44,7 @@ void g2::uninit() {
 	delete ace_rgb_rect;
 	delete ace_rgb_prog;
 
-	// no need to free current_texture_ref, it is done by client
+	// no need to free current_ace_texture
 }
 
 

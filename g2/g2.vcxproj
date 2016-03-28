@@ -96,6 +96,7 @@
     <ClInclude Include="AceTexture.hpp" />
     <ClInclude Include="AceTextureRect.hpp" />
     <ClInclude Include="g2.h" />
+    <ClInclude Include="g2_canvas.h" />
     <ClInclude Include="g2_core.h" />
     <ClInclude Include="g2_externals.h" />
     <ClInclude Include="g2_texture.h" />
@@ -117,6 +118,7 @@
     <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel_WndProc.cpp" />
     <ClCompile Include="Callbacks.cpp" />
     <ClCompile Include="Draw.cpp" />
+    <ClCompile Include="g2_canvas.cpp" />
     <ClCompile Include="g2_core.cpp" />
     <ClCompile Include="g2_internal.cpp" />
     <ClCompile Include="g2_rect.cpp" />

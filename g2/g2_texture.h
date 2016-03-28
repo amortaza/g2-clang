@@ -1,11 +1,11 @@
 #pragma once
 
 #include "AceTexture.hpp"
+#include "g2_canvas.h"
 
 namespace g2 {
 	class TextureRef {
 	public:
-		GLuint id;
 		AceTexture* ace_texture;
 
 		~TextureRef() {
@@ -13,14 +13,9 @@ namespace g2 {
 		}
 	};
 
-	TextureRef* createTexture();
-	void beginTexture(TextureRef*);
-	void endTexture();
-
-	void freeTexture(TextureRef*);
-
-	void load(const char* filename);
+	TextureRef* loadTexture(const char* filename);
 
 	void texture(TextureRef*);
+	void texture(CanvasRef*);
 }
 
