@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include <stack>
 
 #include "g2.h"
 
@@ -8,12 +9,44 @@ using namespace g2::Internal;
 CanvasRef* current_canvas = 0;
 AceTexture* current_ace_texture = 0;
 
-void g2::ortho(int width, int height) {
-    WinOrtho = glm::ortho(0.f, (float)width, 0.f, (float)height);
+int viewportWidth, viewportHeight;
+
+std::stack<glm::mat4> orthoStack;
+std::stack<int> viewportStack2;
+
+void g2::ortho(int left, int bottom, int width, int height) {
+    WinOrtho = glm::ortho((float)left, (float)width, (float)bottom, (float)height);
+}
+
+void g2::pushOrtho() {
+	orthoStack.push(WinOrtho);
+}
+
+void g2::popOrtho() {
+	WinOrtho = orthoStack.top();
+	orthoStack.pop();
 }
 
 void g2::viewport(int width, int height) {
+	viewportWidth = width;
+	viewportHeight = height;
+
     glViewport(0, 0, width, height);
+}
+
+void g2::pushViewport() {
+	viewportStack2.push(viewportWidth);
+	viewportStack2.push(viewportHeight);
+}
+
+void g2::popViewport() {
+	int h = viewportStack2.top();
+	viewportStack2.pop();
+
+	int w = viewportStack2.top();
+	viewportStack2.pop();
+
+	viewport(w, h);
 }
 
 void g2::clear() {

@@ -2,6 +2,7 @@
 
 #include "AceFramebuffer.hpp"
 #include "g2_canvas.h"
+#include "g2_core.h"
 
 using namespace g2;
 
@@ -18,6 +19,9 @@ void g2::beginCanvas(CanvasRef* canvas) {
 	current_canvas = canvas;
 	current_ace_texture = canvas->ace_frame_buffer->texture;
 
+	pushOrtho();
+	pushViewport();
+
 	current_canvas->ace_frame_buffer->begin();
 }
 
@@ -25,4 +29,7 @@ void g2::endCanvas() {
 	current_canvas->ace_frame_buffer->end();
 	current_canvas = 0;
 	current_ace_texture = 0;
+
+	popOrtho();
+	popViewport();
 }

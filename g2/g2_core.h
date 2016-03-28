@@ -7,9 +7,13 @@ namespace g2 {
 	void init();
 	void uninit();
 
-	void ortho(int width, int height);
+	void ortho(int left, int bottom, int width, int height);
+	void pushOrtho();
+	void popOrtho();
 
 	void viewport(int width, int height);
+	void pushViewport();
+	void popViewport();
 
 	void clear();
 
