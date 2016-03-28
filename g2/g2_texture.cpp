@@ -6,7 +6,7 @@
 using namespace g2;
 using namespace g2::Internal;
 
-extern AceTexture* current_ace_texture;
+AceTexture* current_ace_texture = 0;
 
 TextureRef* g2::loadTexture(const char* filename) {
 	TextureRef* ref = new TextureRef();

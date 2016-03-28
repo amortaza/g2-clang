@@ -11,7 +11,7 @@ void Init_OnGL() {
 	ref = g2::loadTexture("c:\\_c\\g2\\a.jpg");
 	can = g2::createCanvas(400, 400);
 
-	g2::beginCanvas(can);
+	g2::paintCanvas(can);
 	{
 		g2::ortho(0, 0, 800, 800);
 		g2::rgb(200, 000, 200);

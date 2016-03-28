@@ -43,9 +43,6 @@
     <ClInclude Include="AceTexture.hpp">
       <Filter>Ace</Filter>
     </ClInclude>
-    <ClInclude Include="AceScreen.hpp">
-      <Filter>Ace</Filter>
-    </ClInclude>
     <ClInclude Include="AceFramebuffer.hpp">
       <Filter>Ace</Filter>
     </ClInclude>

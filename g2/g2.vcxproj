@@ -91,7 +91,6 @@
     <ClInclude Include="AceFramebuffer.hpp" />
     <ClInclude Include="AceProgram.hpp" />
     <ClInclude Include="AceImageRect.hpp" />
-    <ClInclude Include="AceScreen.hpp" />
     <ClInclude Include="AceShader.hpp" />
     <ClInclude Include="AceTexture.hpp" />
     <ClInclude Include="AceTextureRect.hpp" />

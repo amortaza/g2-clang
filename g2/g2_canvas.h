@@ -18,6 +18,6 @@ namespace g2 {
 
 	CanvasRef* createCanvas(int w, int h);
 
-	void beginCanvas(CanvasRef*);
+	void paintCanvas(CanvasRef*);
 	void endCanvas();
 }

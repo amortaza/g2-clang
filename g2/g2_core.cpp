@@ -1,13 +1,9 @@
 #include "stdafx.h"
-#include <stack>
 
 #include "g2.h"
 
 using namespace g2;
 using namespace g2::Internal;
-
-CanvasRef* current_canvas = 0;
-AceTexture* current_ace_texture = 0;
 
 int viewportWidth, viewportHeight;
 

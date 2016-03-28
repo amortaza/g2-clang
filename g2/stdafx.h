@@ -19,6 +19,8 @@
 #include <windowsx.h>
 #include <windef.h>
 
+#include <stack>
+
 #define GLEW_STATIC 
 #include "GL/glew.h"
 
