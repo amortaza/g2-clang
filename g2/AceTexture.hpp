@@ -54,6 +54,10 @@ public:
         glBindTexture(GL_TEXTURE_2D, tid);
     }
 
+	void deactivate() {
+		glBindTexture(GL_TEXTURE_2D, 0);
+	}
+
 private:
 	unsigned char* imageData = 0;
 	

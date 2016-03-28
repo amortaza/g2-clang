@@ -2,6 +2,8 @@
 
 #include "g2.h"
 
+extern g2::TextureRef* ref;
+
 void Draw() {
     int winW = Xel::Window::width;
     int winH = Xel::Window::height;
@@ -15,16 +17,14 @@ void Draw() {
     g2::rgb(0, 100, 0);
     g2::rect(2, 2, winW - 4, winH - 4);
 	
-    g2::quad();
-    {
-        g2::rgb(200, 0, 0);
-        g2::rgb(0, 0, 0);
-        g2::rgb(0, 0, 0);
-        g2::rgb(0, 0, 255);
-        g2::rect(20, 50, 400, 300);
-    }
-    g2::end();
+    g2::rgb(200, 0, 0);
+    g2::rect(20, 50, 400, 300);
 
-	g2::TextureRef* ref = g2::createTexture();
-	g2::end();
+	g2::texture(ref);
+	g2::rect(200, 200, 400, 300);
+	g2::texture(0);
+
+	g2::rgb(0, 200, 0);
+	g2::rect(20, 450, 400, 300);
+
 }

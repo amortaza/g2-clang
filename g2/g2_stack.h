@@ -15,16 +15,8 @@ namespace g2 {
 			return length() == 0;
 		}
 
-		bool isQuad() {
-			return peek() == 1;
-		}
-
 		bool isTexture() {
 			return peek() == 2;
-		}
-
-		void pushQuad() {
-			push(1);
 		}
 
 		void pushTexture() {

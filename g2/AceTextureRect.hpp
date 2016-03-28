@@ -3,15 +3,15 @@
 #include "AceProgram.hpp"
 #include "AceTexture.hpp"
 
-class AceTexRect {
+class AceTextureRect {
 
 public:
 
-    AceTexRect() {
+	AceTextureRect() {
         glGenBuffers(1, &vid);
     }
 
-    ~AceTexRect() {
+    ~AceTextureRect() {
         glDeleteBuffers(1, &vid);
     }
 

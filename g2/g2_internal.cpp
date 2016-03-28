@@ -1,9 +1,11 @@
 #include "stdafx.h"
 
 #include "AceRgbRect.hpp"
+#include "AceTextureRect.hpp"
 #include "AceProgram.hpp"
 #include "AceTexture.hpp"
 
+#include "g2_texture.h"
 #include "g2_stack.h"
 
 namespace g2 {
@@ -18,21 +20,11 @@ namespace g2 {
 
 		Stack stack;
 
-		// quad
-		int quadIndex;
-
-		float quadRed[4];
-		float quadGreen[4];
-		float quadBlue[4];
-
-		float quadLeft;
-		float quadBottom;
-		float quadWidth;
-		float quadHeight;
-
 		//
 		AceRgbRect* ace_rgb_rect;
+		AceTextureRect* ace_texture_rect;
 		AceProgram* ace_rgb_prog;		
+		AceProgram* ace_texture_prog;
 	}
 }
 

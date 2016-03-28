@@ -14,5 +14,7 @@ namespace g2 {
 	void freeTexture(TextureRef*);
 
 	void load(const char* filename);
+
+	void texture(TextureRef*);
 }
 

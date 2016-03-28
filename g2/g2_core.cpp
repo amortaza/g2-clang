@@ -5,7 +5,7 @@
 using namespace g2;
 using namespace g2::Internal;
 
-TextureRef* current_texture_ref;
+TextureRef* current_texture_ref = 0;
 
 void g2::ortho(int width, int height) {
     WinOrtho = glm::ortho(0.f, (float)width, 0.f, (float)height);
@@ -20,11 +20,7 @@ void g2::clear() {
 }
 
 void g2::end() {
-
-    if (stack.isQuad()) {
-		ace_rgb_rect->draw(ace_rgb_prog, quadLeft, quadBottom, quadWidth, quadHeight, &WinOrtho, quadRed, quadGreen, quadBlue);
-    }
-
+	current_texture_ref = 0;
 	stack.pop();
 }
 
@@ -41,10 +37,14 @@ void g2::init() {
 	glDisable(GL_CULL_FACE);
 
 	ace_rgb_prog = new AceProgram("c:/_c/g2/shader/col_rect.vertex.txt", "c:/_c/g2/shader/col_rect.fragment.txt");
+	ace_texture_prog = new AceProgram("c:/_c/g2/shader/tex_rect.vertex.txt", "c:/_c/g2/shader/tex_rect.fragment.txt");
 	ace_rgb_rect = new AceRgbRect();
+	ace_texture_rect = new AceTextureRect();
 }
 
 void g2::uninit() {
+	delete ace_texture_prog;
+	delete ace_texture_rect;
 	delete ace_rgb_rect;
 	delete ace_rgb_prog;
 

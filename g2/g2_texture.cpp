@@ -19,19 +19,23 @@ TextureRef* g2::createTexture() {
 	TextureRef* ref = new TextureRef();
 
 	ref->ace_texture = new AceTexture();
-	ref->ace_texture->activate();
 
-	current_texture_ref = ref;
+	beginTexture(ref);
 
 	return ref;
 }
 
 void g2::freeTexture(TextureRef* ref) {
 	delete ref->ace_texture;
-
 	delete ref;
 }
 
 void g2::load(const char* filename) {
+	current_texture_ref->ace_texture->load(filename);
+}
 
+void g2::texture(TextureRef* ref) {
+	current_texture_ref = ref;
+
+	if ( ref != 0 ) ref->ace_texture->activate();
 }

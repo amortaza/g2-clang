@@ -52,9 +52,6 @@
     <ClInclude Include="AceImageRect.hpp">
       <Filter>Ace</Filter>
     </ClInclude>
-    <ClInclude Include="AceTexRect.hpp">
-      <Filter>Ace</Filter>
-    </ClInclude>
     <ClInclude Include="g2.h">
       <Filter>g2</Filter>
     </ClInclude>
@@ -90,6 +87,9 @@
     </ClInclude>
     <ClInclude Include="g2_texture.h">
       <Filter>g2</Filter>
+    </ClInclude>
+    <ClInclude Include="AceTextureRect.hpp">
+      <Filter>Ace</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

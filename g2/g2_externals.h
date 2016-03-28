@@ -1,6 +1,7 @@
 #pragma once
 
 #include "AceRgbRect.hpp"
+#include "AceTextureRect.hpp"
 #include "AceProgram.hpp"
 
 #include "g2_stack.h"
@@ -32,6 +33,8 @@ namespace g2 {
 
 		//
 		extern AceRgbRect* ace_rgb_rect;
+		extern AceTextureRect* ace_texture_rect;
 		extern AceProgram* ace_rgb_prog;
+		extern AceProgram* ace_texture_prog;
 	}
 }
