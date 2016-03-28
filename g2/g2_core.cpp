@@ -2,7 +2,10 @@
 
 #include "g2.h"
 
+using namespace g2;
 using namespace g2::Internal;
+
+TextureRef* current_texture_ref;
 
 void g2::ortho(int width, int height) {
     WinOrtho = glm::ortho(0.f, (float)width, 0.f, (float)height);
@@ -16,43 +19,13 @@ void g2::clear() {
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void g2::rgb(unsigned char _red, unsigned char _green, unsigned char _blue) {
-    red = _red / 255.f;
-    green = _green / 255.f;
-    blue = _blue / 255.f;
-
-    if (beginType == 1) {
-        quadRed[quadIndex] = red;
-        quadGreen[quadIndex] = green;
-        quadBlue[quadIndex] = blue;
-
-        ++quadIndex;
-    }
-}
-
-void g2::rect(int left, int bottom, int width, int height) {
-    if (beginType == 1) {
-        quadLeft = left;
-        quadBottom = bottom;
-        quadWidth = width;
-        quadHeight = height;
-    }
-    else {
-		ace_rgb_rect->draw(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue);
-    }
-}
-
-void g2::quad() {
-    beginType = 1;
-    quadIndex = 0;
-}
-
 void g2::end() {
-    if (beginType == 1) {
+
+    if (stack.isQuad()) {
 		ace_rgb_rect->draw(ace_rgb_prog, quadLeft, quadBottom, quadWidth, quadHeight, &WinOrtho, quadRed, quadGreen, quadBlue);
     }
 
-    beginType = 0;
+	stack.pop();
 }
 
 void g2::init() {
@@ -67,44 +40,16 @@ void g2::init() {
 	glDisable(GL_LIGHTING);
 	glDisable(GL_CULL_FACE);
 
-	ace_rgb_prog = new AceProgram("c:/_c/g2/shader/col_rect.vertex.txt", "c:/_c/ice/shader/col_rect.fragment.txt");
+	ace_rgb_prog = new AceProgram("c:/_c/g2/shader/col_rect.vertex.txt", "c:/_c/g2/shader/col_rect.fragment.txt");
 	ace_rgb_rect = new AceRgbRect();
 }
 
 void g2::uninit() {
 	delete ace_rgb_rect;
 	delete ace_rgb_prog;
+
+	// no need to free current_texture_ref, it is done by client
 }
 
-namespace g2 {
 
-	namespace Internal {
-
-		float red;
-        float green;
-        float blue;
-
-        glm::mat4 WinOrtho;
-
-        // 0: none, 1: quad, 2: texture
-        int beginType;
-
-
-        // quad
-        int quadIndex;
-
-        float quadRed[4];
-        float quadGreen[4];
-        float quadBlue[4];
-
-        float quadLeft;
-        float quadBottom;
-        float quadWidth;
-        float quadHeight;
-
-		//
-		AceRgbRect* ace_rgb_rect;
-		AceProgram* ace_rgb_prog;
-    }
-}
 

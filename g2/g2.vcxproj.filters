@@ -61,9 +61,6 @@
     <ClInclude Include="AceRgbRect.hpp">
       <Filter>Ace</Filter>
     </ClInclude>
-    <ClInclude Include="g2_texture.h">
-      <Filter>g2</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\c_lib\lib\Soil\image_DXT.h">
       <Filter>_\soil</Filter>
     </ClInclude>
@@ -82,6 +79,18 @@
     <ClInclude Include="..\..\c_lib\lib\Soil\stbi_DDS_aug_c.h">
       <Filter>_\soil</Filter>
     </ClInclude>
+    <ClInclude Include="g2_core.h">
+      <Filter>g2</Filter>
+    </ClInclude>
+    <ClInclude Include="g2_stack.h">
+      <Filter>g2</Filter>
+    </ClInclude>
+    <ClInclude Include="g2_externals.h">
+      <Filter>g2</Filter>
+    </ClInclude>
+    <ClInclude Include="g2_texture.h">
+      <Filter>g2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -98,9 +107,6 @@
     </ClCompile>
     <ClCompile Include="Draw.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="g2.cpp">
-      <Filter>g2</Filter>
     </ClCompile>
     <ClCompile Include="g2_texture.cpp">
       <Filter>g2</Filter>
@@ -137,6 +143,15 @@
     </ClCompile>
     <ClCompile Include="..\..\c_lib\lib\Soil\stb_image_aug.cpp">
       <Filter>_\soil</Filter>
+    </ClCompile>
+    <ClCompile Include="g2_core.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2_rect.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2_internal.cpp">
+      <Filter>g2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
