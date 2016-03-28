@@ -4,6 +4,7 @@
 
 extern g2::TextureRef* ref;
 extern g2::CanvasRef* can;
+extern g2::CanvasRef* can2;
 
 void Draw() {
     int winW = Xel::Window::width;
@@ -39,4 +40,7 @@ void Draw() {
 
 	g2::texture(can);
 	g2::rectTexture(400, 150, 400, 400);
+
+	//g2::texture(can2);
+	//g2::rectTexture(500, 450, 400, 400);
 }

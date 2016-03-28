@@ -19,7 +19,8 @@ CanvasRef* g2::createCanvas(int w, int h) {
 }
 
 void g2::paintCanvas(CanvasRef* canvas) {	
-	if (current_canvas != 0) canvasStack.push(current_canvas);
+	if (current_canvas != 0) 
+		canvasStack.push(current_canvas);
 
 	current_canvas = canvas;
 
@@ -27,6 +28,10 @@ void g2::paintCanvas(CanvasRef* canvas) {
 	pushViewport();
 
 	current_canvas->ace_frame_buffer->begin();
+
+	AceTexture* texture = canvas->ace_frame_buffer->texture;
+	viewport(texture->w, texture->h);
+	ortho(0, 0, texture->w, texture->h);
 }
 
 void g2::endCanvas() {
@@ -35,6 +40,8 @@ void g2::endCanvas() {
 	if (canvasStack.size() > 0) {
 		current_canvas = canvasStack.top();
 		canvasStack.pop();
+
+		current_canvas->ace_frame_buffer->begin();
 	}
 	else
 		current_canvas = 0;
