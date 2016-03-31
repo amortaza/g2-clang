@@ -42,7 +42,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>c:\_c\c_lib\lib;c:\_c\g2\g2;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>c:\_c\c_lib\lib\freetype-2.6.3;c:\_c\c_lib\lib;c:\_c\g2\g2;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <LibraryPath>c:\_c\c_lib\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -60,7 +60,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freetype263d.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -94,6 +94,7 @@
     <ClInclude Include="AceShader.hpp" />
     <ClInclude Include="AceTexture.hpp" />
     <ClInclude Include="AceTextureRect.hpp" />
+    <ClInclude Include="free_font.h" />
     <ClInclude Include="g2.h" />
     <ClInclude Include="g2_canvas.h" />
     <ClInclude Include="g2_core.h" />
@@ -117,6 +118,7 @@
     <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel_WndProc.cpp" />
     <ClCompile Include="Callbacks.cpp" />
     <ClCompile Include="Draw.cpp" />
+    <ClCompile Include="free_font.cpp" />
     <ClCompile Include="g2_canvas.cpp" />
     <ClCompile Include="g2_core.cpp" />
     <ClCompile Include="g2_internal.cpp" />
@@ -124,6 +126,7 @@
     <ClCompile Include="g2_texture.cpp" />
     <ClCompile Include="Init.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Samples.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -134,8 +137,10 @@
     <Text Include="..\shader\col_rect.vertex.txt" />
     <Text Include="..\shader\screen.fragment.txt" />
     <Text Include="..\shader\screen.vertex.txt" />
-    <Text Include="..\shader\tex_rect.fragment.txt" />
-    <Text Include="..\shader\tex_rect.vertex.txt" />
+    <Text Include="..\shader\atlas_rect.fragment.txt" />
+    <Text Include="..\shader\atlas_rect.vertex.txt" />
+    <Text Include="..\shader\texture_rect.fragment.txt" />
+    <Text Include="..\shader\texture_rect.vertex.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

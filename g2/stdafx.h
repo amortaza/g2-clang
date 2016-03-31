@@ -21,6 +21,9 @@
 
 #include <stack>
 
+#include <ft2build.h>
+#include FT_FREETYPE_H
+
 #define GLEW_STATIC 
 #include "GL/glew.h"
 

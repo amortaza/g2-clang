@@ -8,12 +8,24 @@ using namespace g2::Internal;
 
 AceTexture* current_ace_texture = 0;
 
-TextureRef* g2::loadTexture(const char* filename) {
+TextureRef* g2::loadTextureRgb(char* filename) {
 	TextureRef* ref = new TextureRef();
 
 	ref->ace_texture = new AceTexture();
 	
-	ref->ace_texture->load(filename);
+	ref->ace_texture->loadRgb(filename);
+
+	texture(ref);
+
+	return ref;
+}
+
+TextureRef* g2::loadTextureAlpha(unsigned char* buffer, int width, int height) {
+	TextureRef* ref = new TextureRef();
+
+	ref->ace_texture = new AceTexture();
+
+	ref->ace_texture->loadAlpha(buffer, width, height);
 
 	texture(ref);
 
@@ -21,10 +33,12 @@ TextureRef* g2::loadTexture(const char* filename) {
 }
 
 void g2::texture(CanvasRef* canvas) {
+	// no need to activate texture since it will be activated when drawing occurs
 	current_ace_texture = canvas->ace_frame_buffer->texture;
 }
 
 void g2::texture(TextureRef* ref) {
+	// no need to activate texture since it will be activated when drawing occurs
 	current_ace_texture = ref->ace_texture;
 }
 

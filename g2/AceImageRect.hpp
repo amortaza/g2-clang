@@ -18,7 +18,7 @@ public:
 		ace_texture_rect = new AceTextureRect();
 
 		ace_texture = new AceTexture(textureWidth, textureHeight);
-		ace_texture->load(filename);
+		ace_texture->loadRgb(filename);
     }
 
     ~AceImageRect() {

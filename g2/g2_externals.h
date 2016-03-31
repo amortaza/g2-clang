@@ -16,6 +16,7 @@ namespace g2 {
 
 		extern AceProgram* ace_rgb_prog;
 		extern AceProgram* ace_texture_prog;
+		extern AceProgram* ace_atlas_prog;
 
 		extern AceRgbRect* ace_rgb_rect;
 		extern AceTextureRect* ace_texture_rect;

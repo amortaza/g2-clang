@@ -13,7 +13,8 @@ namespace g2 {
 		}
 	};
 
-	TextureRef* loadTexture(const char* filename);
+	TextureRef* loadTextureRgb(char* filename);
+	TextureRef* loadTextureAlpha(unsigned char* buffer, int width, int height);
 
 	void texture(TextureRef*);
 	void texture(CanvasRef*);

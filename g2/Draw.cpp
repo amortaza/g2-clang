@@ -3,10 +3,13 @@
 #include "g2.h"
 
 extern g2::TextureRef* ref;
-extern g2::CanvasRef* can;
-extern g2::CanvasRef* can2;
+extern g2::TextureRef* atlasRef;
 
 void Draw() {
+	// Enable blending
+	//glEnable(GL_BLEND);
+	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
     int winW = Xel::Window::width;
     int winH = Xel::Window::height;
 
@@ -24,23 +27,15 @@ void Draw() {
 	g2::texture(ref);
 	g2::rectTexture(200, 200, 400, 300);
 	
-	g2::rgb(0, 200, 0);
-	g2::rectRgb(20, 450, 400, 300);
 
-	
-	
-	g2::rgb(0, 200, 0);
-	g2::rectRgb(190, 190, 400 + 20, 400 + 20);
-	
-	g2::texture(ref);
-	g2::rectTexture(200, 200, 400, 400);
-	
-	g2::rgb(200, 0, 0);
-	g2::rectRgb(390, 140, 420, 420);
+	g2::Internal::ace_texture_rect->draw(
+		g2::Internal::ace_atlas_prog, 
+		atlasRef->ace_texture, 
+		20, 450, 1075, 24, &g2::Internal::WinOrtho);
 
-	g2::texture(can);
-	g2::rectTexture(400, 150, 400, 400);
+	atlasRef->ace_texture->deactivate();
 
-	//g2::texture(can2);
-	//g2::rectTexture(500, 450, 400, 400);
+
+	//g2::texture(atlasRef);
+	//g2::rectTexture(20, 450, 500, 100);	
 }

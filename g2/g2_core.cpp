@@ -62,16 +62,21 @@ void g2::init() {
 	glDisable(GL_CULL_FACE);
 
 	ace_rgb_prog = new AceProgram("c:/_c/g2/shader/col_rect.vertex.txt", "c:/_c/g2/shader/col_rect.fragment.txt");
-	ace_texture_prog = new AceProgram("c:/_c/g2/shader/tex_rect.vertex.txt", "c:/_c/g2/shader/tex_rect.fragment.txt");
+	ace_texture_prog = new AceProgram("c:/_c/g2/shader/texture_rect.vertex.txt", "c:/_c/g2/shader/texture_rect.fragment.txt");
+	ace_atlas_prog = new AceProgram("c:/_c/g2/shader/atlas_rect.vertex.txt", "c:/_c/g2/shader/atlas_rect.fragment.txt");
+
 	ace_rgb_rect = new AceRgbRect();
 	ace_texture_rect = new AceTextureRect();
 }
 
 void g2::uninit() {
+
+	delete ace_atlas_prog;
 	delete ace_texture_prog;
-	delete ace_texture_rect;
-	delete ace_rgb_rect;
 	delete ace_rgb_prog;
+
+	delete ace_rgb_rect;
+	delete ace_texture_rect;
 
 	// no need to free current_ace_texture
 }

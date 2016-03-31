@@ -23,6 +23,9 @@
     <Filter Include="_\xel">
       <UniqueIdentifier>{0b7cd132-449a-4349-8307-1e570a08d175}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FreeFont">
+      <UniqueIdentifier>{adc2ec27-3615-4c18-8a2f-8f03800fad65}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -87,6 +90,9 @@
     </ClInclude>
     <ClInclude Include="g2_canvas.h">
       <Filter>g2</Filter>
+    </ClInclude>
+    <ClInclude Include="free_font.h">
+      <Filter>FreeFont</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +159,12 @@
     <ClCompile Include="g2_canvas.cpp">
       <Filter>g2</Filter>
     </ClCompile>
+    <ClCompile Include="free_font.cpp">
+      <Filter>FreeFont</Filter>
+    </ClCompile>
+    <ClCompile Include="Samples.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\shader\col_rect.fragment.txt">
@@ -167,10 +179,16 @@
     <Text Include="..\shader\screen.vertex.txt">
       <Filter>Shaders</Filter>
     </Text>
-    <Text Include="..\shader\tex_rect.fragment.txt">
+    <Text Include="..\shader\atlas_rect.fragment.txt">
       <Filter>Shaders</Filter>
     </Text>
-    <Text Include="..\shader\tex_rect.vertex.txt">
+    <Text Include="..\shader\atlas_rect.vertex.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="..\shader\texture_rect.fragment.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="..\shader\texture_rect.vertex.txt">
       <Filter>Shaders</Filter>
     </Text>
   </ItemGroup>

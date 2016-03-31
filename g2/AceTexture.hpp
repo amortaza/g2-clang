@@ -42,7 +42,7 @@ public:
         glDeleteTextures(1, &tid);
     }
 
-    void load(const char* filename) {
+    void loadRgb(const char* filename) {
         imageData = SOIL_load_image(filename, &w, &h, 0, SOIL_LOAD_RGB);
 
         glBindTexture(GL_TEXTURE_2D, tid);
@@ -50,7 +50,17 @@ public:
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGB, GL_UNSIGNED_BYTE, imageData);
     }
 
-    void activate() {
+	void loadAlpha(unsigned char* buffer, int w, int h) {		
+
+		glBindTexture(GL_TEXTURE_2D, tid);
+
+		this->w = w;
+		this->h = h;
+
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_ALPHA, w, h, 0, GL_ALPHA, GL_UNSIGNED_BYTE, buffer);
+	}
+	
+	void activate() {
         glBindTexture(GL_TEXTURE_2D, tid);
     }
 

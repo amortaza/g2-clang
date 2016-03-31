@@ -2,39 +2,30 @@
 
 #include "g2.h"
 
+#include "free_font.h"
+
 g2::TextureRef* ref;
-g2::CanvasRef* can;
+g2::TextureRef* atlasRef;
 
-g2::CanvasRef* can2;
-
+Atlas *atlas;
+// 1075 x 24
 void Init_OnGL() {
+	glPixelStorei(GL_UNPACK_ALIGNMENT,1);
+	atlas = new Atlas("C:\\_c\\c_lib\\lib\\arial.ttf");
+	atlas->load(26);
+	//atlas->toFile("c:\\temp\\atlas.data");
+	printf("atlas width %i, height%i\n", atlas->atlasWidth, atlas->atlasHeight);
+
 	g2::init();
 
-	ref = g2::loadTexture("c:\\_c\\g2\\a.jpg");
-	can = g2::createCanvas(400, 400);
-	can2 = g2::createCanvas(200, 200);
-
-
-	g2::paintCanvas(can); {	
-		g2::paintCanvas(can2); {
-			g2::rgb(200, 200, 20);
-			g2::rectRgb(10, 10, 100, 100);
-		}
-		g2::endCanvas();
-
-		g2::rgb(200, 000, 200);
-		g2::rectRgb(0, 0, 300, 300);
-
-		g2::texture(can2);
-		g2::rectTexture(10, 45, 200, 200);
-	}
-	g2::endCanvas();
+	ref = g2::loadTextureRgb("c:\\_c\\g2\\a.jpg");
+	atlasRef = g2::loadTextureAlpha(atlas->buffer, atlas->atlasWidth, atlas->atlasHeight);
 }
 
 void UnInit() {
 	delete ref;
-	delete can;
-	delete can2;
+	delete atlasRef;
+	delete atlas;
 
 	g2::uninit();
 }
