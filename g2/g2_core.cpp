@@ -1,10 +1,15 @@
 #include "stdafx.h"
 
+#include <map>
+
 #include "free_font.h"
 #include "g2.h"
 
 using namespace g2;
 using namespace g2::Internal;
+
+extern std::map<std::string, Atlas*> atlasMap;
+extern std::map<std::string, TextureRef*> atlasRefMap;
 
 int viewportWidth, viewportHeight;
 
@@ -73,15 +78,32 @@ void g2::init() {
 	ace_rgb_rect = new AceRgbRect();
 	ace_texture_rect = new AceTextureRect();
 
-	// font atlas
-	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-	current_atlas = new Atlas("C:\\_c\\c_lib\\lib\\arial.ttf");
-	current_atlas->load(32);
+	font("arial", 24);
+}
 
-	current_atlas_ref = g2::loadTextureAlpha(current_atlas->buffer, current_atlas->atlasWidth, current_atlas->atlasHeight);
+void g2::Internal::freeMaps() {
+	typedef std::map<std::string, Atlas*>::iterator it1;
+	typedef std::map<std::string, TextureRef*>::iterator it2;
+
+	for (it1 it = atlasMap.begin(); it != atlasMap.end(); it++) {
+		Atlas* atlas = it->second;
+
+		delete atlas;
+	}
+
+	atlasMap.clear();
+
+	for (it2 it = atlasRefMap.begin(); it != atlasRefMap.end(); it++) {
+		TextureRef* ref = it->second;
+
+		delete ref;
+	}
+
+	atlasRefMap.clear();
 }
 
 void g2::uninit() {
+	freeMaps();
 
 	delete ace_atlas_prog;
 	delete ace_texture_prog;
@@ -90,8 +112,8 @@ void g2::uninit() {
 	delete ace_rgb_rect;
 	delete ace_texture_rect;
 
-	delete current_atlas;
-	delete current_atlas_ref;
+	// no need to free current_atlas;
+	// no need to free current_atlas_ref;
 
 	// no need to free current_ace_texture
 }

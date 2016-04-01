@@ -1,5 +1,7 @@
 #include "stdafx.h"
 
+#include <map>
+
 #include "AceRgbRect.hpp"
 #include "AceTextureRect.hpp"
 #include "AceProgram.hpp"
@@ -26,8 +28,11 @@ namespace g2 {
 		AceRgbRect* ace_rgb_rect;
 		AceTextureRect* ace_texture_rect;
 
-		Atlas *current_atlas;
-		TextureRef* current_atlas_ref;
+		Atlas *current_atlas = 0;
+		TextureRef* current_atlas_ref = 0;
+
+		std::map<std::string, Atlas*> atlasMap;
+		std::map<std::string, TextureRef*> atlasRefMap;
 	}
 }
 

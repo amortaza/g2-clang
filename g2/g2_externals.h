@@ -1,5 +1,7 @@
 #pragma once
 
+#include <map>
+
 #include "AceRgbRect.hpp"
 #include "AceTextureRect.hpp"
 #include "AceProgram.hpp"
@@ -25,5 +27,8 @@ namespace g2 {
 
 		extern Atlas *current_atlas;
 		extern TextureRef* current_atlas_ref;
+
+		extern std::map<std::string, Atlas*> atlasMap;
+		extern std::map<std::string, TextureRef*> atlasRefMap;
 	}
 }

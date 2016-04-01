@@ -21,4 +21,8 @@ namespace g2 {
 	void rectRgb(int left, int bottom, int width, int height);
 
 	void rectTexture(int left, int bottom, int width, int height);
+
+	namespace Internal {
+		void freeMaps();
+	}
 }

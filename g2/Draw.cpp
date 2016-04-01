@@ -18,13 +18,17 @@ void Draw() {
     g2::rgb(0, 100, 0);
     g2::rectRgb(2, 2, winW - 4, winH - 4);
 	
-    g2::rgb(200, 0, 0);
+    g2::rgb(200, 100, 0);
     g2::rectRgb(20, 50, 400, 300);
 
 	g2::texture(ref);
-	g2::rectTexture(100, 100, 400, 300);
+	g2::rectTexture(100, 100, 800, 600);
 
-	g2::text(120,200,"Welcome to the Circus, filled with funny Clowns!");
+	g2::font("arial", 24);
+	g2::text(120,200,"Welcome to the Circus, filled with funny small Clowns!");
+
+	g2::font("arial", 10);
+	g2::text(220, 300, "Welcome to the Circus, filled with funny big Clowns!");
 
 	//g2::texture(atlasRef);
 	//g2::rectTexture(20, 450, 500, 100);	
