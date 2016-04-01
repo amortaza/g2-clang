@@ -240,5 +240,35 @@ public:
 			}
 		}
 	}
+
+	void core2(char* str, int x, int y, Atlas* atlas, int* coords) {
+		int len = strlen(str);
+
+		int index = 0;
+
+		int penX = x, penY;
+
+		for (int i = 0; i < len; i++) {
+			char c = str[i];
+
+			if (c == ' ') {
+				penX += atlas->charAdvance[c];
+				index += 2;
+				continue;
+			}
+
+			penY = y + atlas->charBitmapTop[c];
+
+			int nudgeX = atlas->charBitmapLeft[c];
+
+			int a = penX + nudgeX, b = penY;
+			coords[index++] = a;
+			coords[index++] = b;
+
+			if (i < len - 1) {
+				penX += atlas->getKerning(c, str[i + 1]) + atlas->charAdvance[c];
+			}
+		}
+	}
 };
 
