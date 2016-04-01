@@ -1,5 +1,6 @@
 #include "stdafx.h"
 
+#include "free_font.h"
 #include "g2.h"
 
 using namespace g2;
@@ -61,12 +62,23 @@ void g2::init() {
 	glDisable(GL_LIGHTING);
 	glDisable(GL_CULL_FACE);
 
+	// blending is required to be able to render text
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 	ace_rgb_prog = new AceProgram("c:/_c/g2/shader/col_rect.vertex.txt", "c:/_c/g2/shader/col_rect.fragment.txt");
 	ace_texture_prog = new AceProgram("c:/_c/g2/shader/texture_rect.vertex.txt", "c:/_c/g2/shader/texture_rect.fragment.txt");
 	ace_atlas_prog = new AceProgram("c:/_c/g2/shader/atlas_rect.vertex.txt", "c:/_c/g2/shader/atlas_rect.fragment.txt");
 
 	ace_rgb_rect = new AceRgbRect();
 	ace_texture_rect = new AceTextureRect();
+
+	// font atlas
+	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+	current_atlas = new Atlas("C:\\_c\\c_lib\\lib\\arial.ttf");
+	current_atlas->load(32);
+
+	current_atlas_ref = g2::loadTextureAlpha(current_atlas->buffer, current_atlas->atlasWidth, current_atlas->atlasHeight);
 }
 
 void g2::uninit() {
@@ -77,6 +89,9 @@ void g2::uninit() {
 
 	delete ace_rgb_rect;
 	delete ace_texture_rect;
+
+	delete current_atlas;
+	delete current_atlas_ref;
 
 	// no need to free current_ace_texture
 }

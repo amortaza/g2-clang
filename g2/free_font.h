@@ -211,6 +211,7 @@ private:
 
 class CoreDraw {
 public:
+	// for when rendering to buffer
 	void core(char* str, int x, int y, Atlas* atlas, int* coords) {
 		int len = strlen(str);
 
@@ -241,6 +242,7 @@ public:
 		}
 	}
 
+	// for when rendering to texture
 	void core2(char* str, int x, int y, Atlas* atlas, int* coords) {
 		int len = strlen(str);
 
@@ -257,7 +259,7 @@ public:
 				continue;
 			}
 
-			penY = y + atlas->charBitmapTop[c];
+			penY = y + atlas->charBitmapTop[c] - atlas->atlasHeight;
 
 			int nudgeX = atlas->charBitmapLeft[c];
 

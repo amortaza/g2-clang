@@ -4,6 +4,8 @@
 #include "AceTextureRect.hpp"
 #include "AceProgram.hpp"
 
+#include "free_font.h"
+
 namespace g2 {
 
 	namespace Internal {
@@ -20,5 +22,8 @@ namespace g2 {
 
 		extern AceRgbRect* ace_rgb_rect;
 		extern AceTextureRect* ace_texture_rect;
+
+		extern Atlas *current_atlas;
+		extern TextureRef* current_atlas_ref;
 	}
 }

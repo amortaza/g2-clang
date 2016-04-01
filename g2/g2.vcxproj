@@ -99,6 +99,7 @@
     <ClInclude Include="g2_canvas.h" />
     <ClInclude Include="g2_core.h" />
     <ClInclude Include="g2_externals.h" />
+    <ClInclude Include="g2_text.h" />
     <ClInclude Include="g2_texture.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="stdafx.h" />
@@ -123,10 +124,10 @@
     <ClCompile Include="g2_core.cpp" />
     <ClCompile Include="g2_internal.cpp" />
     <ClCompile Include="g2_rect.cpp" />
+    <ClCompile Include="g2_text.cpp" />
     <ClCompile Include="g2_texture.cpp" />
     <ClCompile Include="Init.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Samples.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

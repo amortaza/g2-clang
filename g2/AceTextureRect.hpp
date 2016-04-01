@@ -22,23 +22,10 @@ public:
 
         setVertexData(left, bottom, w, h);
 
-        glUniformMatrix4fv(prog->uProjection, 1, GL_FALSE, glm::value_ptr((*Projection)));
-
-        glBindBuffer(GL_ARRAY_BUFFER, vid);
-
-        glEnableVertexAttribArray(0);
-        glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, 0);
-
-        glEnableVertexAttribArray(1);
-        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)64);
-
-        glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
-
-        glDisableVertexAttribArray(0);
-        glDisableVertexAttribArray(1);
+		common(prog, Projection);
     }
 
-	void drawAtlasSub(	AceProgram* prog, 
+	void drawAtlasChar(	AceProgram* prog, 
 					    AceTexture* texture, 
 		                int charX, int charW, int charH, int atlasWidth, 
 					    int left, int bottom, 
@@ -50,6 +37,13 @@ public:
 
 		setVertexData2(left, bottom, charX, charW, charH, atlasWidth);
 
+		common(prog, Projection);
+	}
+
+private:
+	GLuint vid;
+
+	void common(AceProgram* prog, glm::mat4* Projection) {
 		glUniformMatrix4fv(prog->uProjection, 1, GL_FALSE, glm::value_ptr((*Projection)));
 
 		glBindBuffer(GL_ARRAY_BUFFER, vid);
@@ -65,9 +59,6 @@ public:
 		glDisableVertexAttribArray(0);
 		glDisableVertexAttribArray(1);
 	}
-
-private:
-	GLuint vid;
 
 	void setVertexData2(int left, int bottom, int charX, int charW, int charH, int atlasWidth) {
 		int right = left + charW;

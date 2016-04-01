@@ -94,6 +94,9 @@
     <ClInclude Include="free_font.h">
       <Filter>FreeFont</Filter>
     </ClInclude>
+    <ClInclude Include="g2_text.h">
+      <Filter>g2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -162,8 +165,8 @@
     <ClCompile Include="free_font.cpp">
       <Filter>FreeFont</Filter>
     </ClCompile>
-    <ClCompile Include="Samples.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="g2_text.cpp">
+      <Filter>g2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
