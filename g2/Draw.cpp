@@ -15,10 +15,18 @@ void Draw() {
 
     g2::clear();    
     
-    g2::rgb(0, 50, 50);
-    g2::rectRgb(2, 2, winW - 4, winH - 4);
+    //g2::rgb(0, 50, 50);
+    //g2::rectRgb(2, 2, winW - 4, winH - 4);
 	
-    g2::rgb(200, 100, 0);
+	g2::opacity(.1299f);
+	g2::rgb(255, 0, 0);
+	g2::rectRgb(20, 200, 320, 240);
+	
+	g2::opacity(.129925f);
+	g2::rgb(0, 255, 0);
+	g2::rectRgb(260, 250, 320, 240);
+
+	/*g2::rgb(200, 100, 0);
 	g2::rgb2(200, 100, 200);
     g2::rectRgbHorizontalGradient(20, 200, 600, 500);
 
@@ -36,7 +44,7 @@ void Draw() {
 	g2::text_flow(" The");
 
 	g2::font_color(255, 0, 255);
-	g2::text_flow(" Circus!");
+	g2::text_flow(" Circus!");*/
 
 	//g2::font("arial", 10);
 	//g2::text(220, 300, "Welcome to the Circus, filled with funny big Clowns!");

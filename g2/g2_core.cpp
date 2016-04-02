@@ -16,6 +16,10 @@ int viewportWidth, viewportHeight;
 std::stack<glm::mat4> orthoStack;
 std::stack<int> viewportStack2;
 
+void g2::opacity(float alpha) {
+	current_alpha = alpha;
+}
+
 void g2::ortho(int left, int bottom, int width, int height) {
     WinOrtho = glm::ortho((float)left, (float)width, (float)bottom, (float)height);
 }

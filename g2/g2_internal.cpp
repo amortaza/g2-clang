@@ -38,6 +38,8 @@ namespace g2 {
 
 		int last_font_x = 0, last_font_y = 0;
 		char last_font_c;
+
+		float current_alpha = 1.f;
 	}
 }
 
