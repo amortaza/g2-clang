@@ -25,6 +25,7 @@ namespace g2 {
 	void rectTexture(int left, int bottom, int width, int height);
 
 	void opacity(float alpha);
+	void opacity2(float alpha);
 
 	namespace Internal {
 		void freeMaps();

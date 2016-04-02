@@ -36,7 +36,23 @@ void g2::rect(int flags, int left, int bottom, int width, int height) {
 	}
 	else {
 		if (flags & FLAG_RGB_SOLID) {
-			ace_rgb_rect->draw(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, current_alpha);
+			if (flags & FLAG_ALPHA_HORIZ_GRADIENT) {
+				// left, top, right, bottom
+				float alphas[] = {current_alpha, current_alpha, alpha2, alpha2 };
+				ace_rgb_rect->draw(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, alphas);
+			}
+			else if (flags & FLAG_ALPHA_VERT_GRADIENT) {
+				// left, top, right, bottom
+				float alphas[] = { alpha2, current_alpha, current_alpha, alpha2 };
+				ace_rgb_rect->draw(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, alphas);
+			}
+			else {
+				// left, top, right, bottom
+				float alphas[] = { current_alpha, current_alpha, current_alpha, current_alpha };
+
+				// no transparency
+				ace_rgb_rect->draw(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, alphas);
+			}
 		}
 		else if (flags & FLAG_RGB_HORIZ_GRADIENT) {
 			ace_rgb_rect->drawHorizontalGradient(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, red2, green2, blue2);

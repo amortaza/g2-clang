@@ -46,6 +46,7 @@ namespace g2 {
 		extern char last_font_c;
 
 		extern float current_alpha;
+		extern float alpha2;
 
 		extern std::stack<glm::mat4> orthoStack;
 		extern std::stack<int> viewportStack2;
