@@ -30,11 +30,13 @@ void Draw() {
 	g2::rgb2(200, 100, 200);
     g2::rect(g2::FLAG_RGB_HORIZ_GRADIENT, 20, 200, 320, 240);
 	g2::rect(g2::FLAG_RGB_VERT_GRADIENT, 340, 200, 320, 240);
-
-	/*g2::opacity(.1f);
+	/*
+	g2::opacity(.99f);
+	g2::opacity2(.31f);
 	g2::texture(ref);
 	g2::rectTexture(300, 100, 400, 300);
-	
+	*/
+	/*
 	g2::opacity(.41f);
 	g2::texture(ref);
 	g2::rectTexture(400, 200, 400, 300);*/
