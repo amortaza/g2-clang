@@ -48,6 +48,19 @@ void g2::font(char* name, int height) {
 	atlasRefMap[key] = current_atlas_ref;
 }
 
+// letter height = font_height() + coords[ oddIndex ]
+int g2::font_height() {
+	return current_atlas->atlasHeight;
+}
+
+int* g2::font_metric(char* str) {
+	CoreDraw core;
+	int * coords;
+	coords = new int[strlen(str) * 2];
+	core.core2(str, 0, 0, current_atlas, coords);
+	return coords;
+}
+
 void g2::text(int x, int y, char* str) {
 	CoreDraw core;
 	int * coords;
