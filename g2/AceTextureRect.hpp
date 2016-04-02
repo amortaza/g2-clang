@@ -1,6 +1,5 @@
 #pragma once
 
-#include "AceProgram.hpp"
 #include "AceTexture.hpp"
 
 class AceTextureRect {
@@ -15,15 +14,31 @@ public:
         glDeleteBuffers(1, &vid);
     }
 
-    void draw(AceProgram* prog, AceTexture* texture, int left, int bottom, int w, int h, glm::mat4* Projection, float alpha) {
+    void draw(AceProgram* prog, AceTexture* texture, int left, int bottom, int w, int h, glm::mat4* Projection, float* alphas) {
         prog->activate();
 
         texture->activate();
 
         setVertexData(left, bottom, w, h);
 
-		common(prog, Projection, alpha);
-    }
+		glUniformMatrix4fv(prog->uProjection, 1, GL_FALSE, glm::value_ptr((*Projection)));
+
+		//printf("%f %f %f %f\n", alphas[0], alphas[1], alphas[2], alphas[3]);
+		glUniform4f(prog->uAlphaLeftTopRightBottom, alphas[0], alphas[1], alphas[2], alphas[3]);
+
+		glBindBuffer(GL_ARRAY_BUFFER, vid);
+
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, 0);
+
+		glEnableVertexAttribArray(1);
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)64);
+
+		glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+
+		glDisableVertexAttribArray(0);
+		glDisableVertexAttribArray(1);
+	}
 
 	void drawAtlasChar(	AceProgram* prog, 
 					    AceTexture* texture, 
@@ -59,24 +74,6 @@ public:
 
 private:
 	GLuint vid;
-
-	void common(AceProgram* prog, glm::mat4* Projection, float alpha) {
-		glUniformMatrix4fv(prog->uProjection, 1, GL_FALSE, glm::value_ptr((*Projection)));
-		glUniform1f(prog->uAlpha, alpha);
-
-		glBindBuffer(GL_ARRAY_BUFFER, vid);
-
-		glEnableVertexAttribArray(0);
-		glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, 0);
-
-		glEnableVertexAttribArray(1);
-		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)64);
-
-		glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
-
-		glDisableVertexAttribArray(0);
-		glDisableVertexAttribArray(1);
-	}
 
 	void setVertexData2(int left, int bottom, int charX, int charW, int charH, int atlasWidth) {
 		int right = left + charW;

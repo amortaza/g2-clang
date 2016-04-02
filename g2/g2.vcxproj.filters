@@ -176,12 +176,6 @@
     <Text Include="..\shader\screen.vertex.txt">
       <Filter>Shaders</Filter>
     </Text>
-    <Text Include="..\shader\atlas_rect.fragment.txt">
-      <Filter>Shaders</Filter>
-    </Text>
-    <Text Include="..\shader\atlas_rect.vertex.txt">
-      <Filter>Shaders</Filter>
-    </Text>
     <Text Include="..\shader\texture_rect.fragment.txt">
       <Filter>Shaders</Filter>
     </Text>
@@ -192,6 +186,12 @@
       <Filter>Shaders</Filter>
     </Text>
     <Text Include="..\shader\rgb_rect.vertex.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="..\shader\atlas_rect.fragment.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="..\shader\atlas_rect.vertex.txt">
       <Filter>Shaders</Filter>
     </Text>
   </ItemGroup>

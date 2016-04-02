@@ -28,7 +28,19 @@ void g2::rectTexture(int left, int bottom, int width, int height) {
 void g2::rect(int flags, int left, int bottom, int width, int height) {
 	// default to rgb, so if texture is not set, then RGB
 	if ( flags & FLAG_TEXTURE) {
-		ace_texture_rect->draw(ace_texture_prog, current_ace_texture, left, bottom, width, height, &WinOrtho, current_alpha);
+		if (flags & FLAG_ALPHA_HORIZ_GRADIENT) {
+			float alphas[] = { current_alpha, -1, alpha2, -1};
+			ace_texture_rect->draw(ace_texture_prog, current_ace_texture, left, bottom, width, height, &WinOrtho, alphas);
+		}
+		else if (flags & FLAG_ALPHA_VERT_GRADIENT) {
+			float alphas[] = { -1, alpha2, -1, current_alpha };
+			ace_texture_rect->draw(ace_texture_prog, current_ace_texture, left, bottom, width, height, &WinOrtho, alphas);
+		}
+		else {
+			// left, top, right, bottom
+			float alphas[] = { current_alpha, current_alpha, current_alpha, current_alpha };
+			ace_texture_rect->draw(ace_texture_prog, current_ace_texture, left, bottom, width, height, &WinOrtho, alphas);
+		}
 
 		current_ace_texture->deactivate();
 
