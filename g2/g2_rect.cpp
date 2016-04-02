@@ -18,7 +18,7 @@ void g2::rgb2(unsigned char _red, unsigned char _green, unsigned char _blue) {
 }
 
 void g2::rectRgb(int left, int bottom, int width, int height) {
-	ace_rgb_rect->draw(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue);
+	ace_rgb_rect->draw(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, current_alpha);
 }
 
 void g2::rectRgbHorizontalGradient(int left, int bottom, int width, int height) {

@@ -15,10 +15,10 @@ public:
     }
 
 
-    void draw(AceProgram* prog, int left, int bottom, int w, int h, glm::mat4* Projection, float r, float g, float b) {
+    void draw(AceProgram* prog, int left, int bottom, int w, int h, glm::mat4* Projection, float r, float g, float b, float alpha) {
         prog->activate();
 
-        setVertexData(left, bottom, w, h, r, g, b);
+        setVertexData(left, bottom, w, h, r, g, b, alpha);
 
         commonDraw(prog, Projection);
     }
@@ -76,7 +76,7 @@ private:
 		glDisableVertexAttribArray(1);
 	}
 	
-	void setVertexData(int left, int bottom, int w, int h, float r, float g, float b) {
+	void setVertexData(int left, int bottom, int w, int h, float r, float g, float b, float alpha) {
         int right = left + w;
         int top = bottom + h;        
 
@@ -86,10 +86,10 @@ private:
             right, top,     
             right, bottom,   // 8 bytes per row * 4 rows = 32 bytes
 
-            r, g, b, 1.f,
-            r, g, b, 1.f,
-            r, g, b, 1.f,
-            r, g, b, 1.f
+            r, g, b, alpha,
+            r, g, b, alpha,
+            r, g, b, alpha,
+            r, g, b, alpha
         };
 
         glBindBuffer(GL_ARRAY_BUFFER, vid);

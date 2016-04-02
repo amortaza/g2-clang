@@ -44,5 +44,7 @@ namespace g2 {
 		extern int last_font_x;
 		extern int last_font_y;
 		extern char last_font_c;
+
+		extern float current_alpha;
 	}
 }
