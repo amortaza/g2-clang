@@ -18,22 +18,35 @@ void g2::rgb2(unsigned char _red, unsigned char _green, unsigned char _blue) {
 }
 
 void g2::rectRgb(int left, int bottom, int width, int height) {
-	ace_rgb_rect->draw(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, current_alpha);
-}
-
-void g2::rectRgbHorizontalGradient(int left, int bottom, int width, int height) {
-	ace_rgb_rect->drawHorizontalGradient(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, red2, green2, blue2 );
-}
-
-void g2::rectRgbVerticalGradient(int left, int bottom, int width, int height) {
-	ace_rgb_rect->drawVerticalGradient(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, red2, green2, blue2);
+	rect(FLAG_RGB_SOLID, left, bottom, width, height);
 }
 
 void g2::rectTexture(int left, int bottom, int width, int height) {
-	ace_texture_rect->draw(ace_texture_prog, current_ace_texture, left, bottom, width, height, &WinOrtho, current_alpha);
+	rect(FLAG_TEXTURE, left, bottom, width, height);
+}
 
-	current_ace_texture->deactivate();
+void g2::rect(int flags, int left, int bottom, int width, int height) {
+	// default to rgb, so if texture is not set, then RGB
+	if ( flags & FLAG_TEXTURE) {
+		ace_texture_rect->draw(ace_texture_prog, current_ace_texture, left, bottom, width, height, &WinOrtho, current_alpha);
 
-	current_ace_texture = 0;
+		current_ace_texture->deactivate();
+
+		current_ace_texture = 0;
+	}
+	else {
+		if (flags & FLAG_RGB_SOLID) {
+			ace_rgb_rect->draw(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, current_alpha);
+		}
+		else if (flags & FLAG_RGB_HORIZ_GRADIENT) {
+			ace_rgb_rect->drawHorizontalGradient(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, red2, green2, blue2);
+		}
+		else if (flags & FLAG_RGB_VERT_GRADIENT) {
+			ace_rgb_rect->drawVerticalGradient(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, red2, green2, blue2);
+		}
+		else {
+			throw "rect() flags are invalid none of rgb solid, horiz or vert gradient.";
+		}
+	}
 }
 

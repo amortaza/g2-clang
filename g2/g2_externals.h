@@ -10,6 +10,16 @@
 
 namespace g2 {
 
+	extern int FLAG_TEXTURE;
+
+	extern int FLAG_RGB_ANY;	
+	extern int FLAG_RGB_SOLID;
+	extern int FLAG_RGB_HORIZ_GRADIENT;
+	extern int FLAG_RGB_VERT_GRADIENT;
+
+	extern int FLAG_ALPHA_HORIZ_GRADIENT;
+	extern int FLAG_ALPHA_VERT_GRADIENT;
+
 	namespace Internal {
 
 		extern float red, green, blue;

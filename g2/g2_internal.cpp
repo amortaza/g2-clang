@@ -13,6 +13,17 @@
 
 namespace g2 {
 
+	int FLAG_TEXTURE = 1 << 0;
+
+	int FLAG_RGB_SOLID = 1 << 2;
+	int FLAG_RGB_HORIZ_GRADIENT = 1 << 3;
+	int FLAG_RGB_VERT_GRADIENT = 1 << 4;
+
+	int FLAG_RGB_ANY = FLAG_RGB_SOLID | FLAG_RGB_HORIZ_GRADIENT | FLAG_RGB_VERT_GRADIENT;
+
+	int FLAG_ALPHA_HORIZ_GRADIENT = 1 << 6;
+	int FLAG_ALPHA_VERT_GRADIENT = 1 << 7;
+
 	namespace Internal {
 
 		float red = 1.f, green = 1.f, blue = 1.f;

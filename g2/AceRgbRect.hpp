@@ -14,7 +14,6 @@ public:
         glDeleteBuffers(1, &vid);
     }
 
-
     void draw(AceProgram* prog, int left, int bottom, int w, int h, glm::mat4* Projection, float r, float g, float b, float alpha) {
         prog->activate();
 

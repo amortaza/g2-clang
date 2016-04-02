@@ -23,7 +23,7 @@
     <Filter Include="_\xel">
       <UniqueIdentifier>{0b7cd132-449a-4349-8307-1e570a08d175}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FreeFont">
+    <Filter Include="_\FreeFont">
       <UniqueIdentifier>{adc2ec27-3615-4c18-8a2f-8f03800fad65}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -92,7 +92,7 @@
       <Filter>g2</Filter>
     </ClInclude>
     <ClInclude Include="free_font.h">
-      <Filter>FreeFont</Filter>
+      <Filter>_\FreeFont</Filter>
     </ClInclude>
     <ClInclude Include="g2_text.h">
       <Filter>g2</Filter>
@@ -163,7 +163,7 @@
       <Filter>g2</Filter>
     </ClCompile>
     <ClCompile Include="free_font.cpp">
-      <Filter>FreeFont</Filter>
+      <Filter>_\FreeFont</Filter>
     </ClCompile>
     <ClCompile Include="g2_text.cpp">
       <Filter>g2</Filter>
