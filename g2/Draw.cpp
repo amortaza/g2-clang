@@ -21,17 +21,18 @@ void Draw() {
     //g2::rgb(200, 100, 0);
     //g2::rectRgb(20, 200, 400, 300);
 
-	g2::rgb(200, 100, 0);
-	g2::rgb2(200, 200, 0);
-	g2::rectRgbHorizontalGradient(200, 300, 320, 240);
-
-	g2::rectRgbVerticalGradient(300, 400, 320, 240);
-
 	//g2::texture(ref);
 	//g2::rectTexture(100, 100, 800, 600);
 
 	g2::font("arial", 24);
-	g2::text(120,200,"Welcome to the Circus, filled with funny small Clowns!");
+	g2::text(120,200,"Welcome to the Circus");
+	g2::text_flow(", now full of happiness!");
+	g2::text_flow("But wait");
+
+	g2::font("arial", 30);
+	g2::text(220, 300, "Welcome to the Circus");
+	g2::text_flow(", now full of happiness!");
+	g2::text_flow("But wait");
 
 	//g2::font("arial", 10);
 	//g2::text(220, 300, "Welcome to the Circus, filled with funny big Clowns!");

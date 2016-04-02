@@ -57,24 +57,32 @@ int* g2::font_metric(char* str) {
 	CoreDraw core;
 	int * coords;
 	coords = new int[strlen(str) * 2];
-	core.core2(str, 0, 0, current_atlas, coords);
+	core.core2(str, 0, 0, current_atlas, coords, '\0');
 	return coords;
 }
 
-void g2::text(int x, int y, char* str) {
+int last_font_x = 0, last_font_y = 0;
+char last_font_c;
+
+int _text(int x, int y, char* str) {	
 	CoreDraw core;
 	int * coords;
 
-	coords = new int[strlen(str) * 2];
-	core.core2(str, x, y, current_atlas, coords);
+	int slen = strlen(str);	
 
-	int len = strlen(str) * 2;
+	coords = new int[slen * 2];
+	core.core2(str, x, y, current_atlas, coords, last_font_c);
+
+	int len = slen * 2;
 	AceTexture* texture = current_atlas_ref->ace_texture;
+
+	int fx = 0;
 
 	for (int i = 0; i < len; ) {
 		char c = str[i / 2];
-		int x = coords[i++];
-		int y = coords[i++];
+
+		fx = coords[i++];
+		int fy = coords[i++];
 
 		g2::Internal::ace_texture_rect->drawAtlasChar(
 			g2::Internal::ace_atlas_prog,
@@ -82,11 +90,25 @@ void g2::text(int x, int y, char* str) {
 			current_atlas->charX[c], 
 			current_atlas->charWidth[c], texture->h, 
 			texture->w,
-			x, y,
+			fx, fy,
 			&WinOrtho);
 	}
 
 	texture->deactivate();
 
 	delete[] coords;
+
+	last_font_c = str[slen - 1];
+
+	return fx;
+}
+
+void g2::text(int x, int y, char* str) {
+	last_font_c = '\0';
+	last_font_y = y;
+	last_font_x = _text(x, y, str);
+}
+
+void g2::text_flow(char* str) {
+	last_font_x = _text(last_font_x, last_font_y, str);
 }
