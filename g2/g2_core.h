@@ -21,7 +21,8 @@ namespace g2 {
 	void rectRgb(int left, int bottom, int width, int height);
 
 	void rgb2(unsigned char red, unsigned char green, unsigned char blue);
-	void rectRgbHorizGradient(int left, int bottom, int width, int height);
+	void rectRgbHorizontalGradient(int left, int bottom, int width, int height);
+	void rectRgbVerticalGradient(int left, int bottom, int width, int height);
 
 	void rectTexture(int left, int bottom, int width, int height);
 

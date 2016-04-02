@@ -21,8 +21,12 @@ void g2::rectRgb(int left, int bottom, int width, int height) {
 	ace_rgb_rect->draw(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue);
 }
 
-void g2::rectRgbHorizGradient(int left, int bottom, int width, int height) {
-	ace_rgb_rect->drawHorizGradient(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, red2, green2, blue2 );
+void g2::rectRgbHorizontalGradient(int left, int bottom, int width, int height) {
+	ace_rgb_rect->drawHorizontalGradient(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, red2, green2, blue2 );
+}
+
+void g2::rectRgbVerticalGradient(int left, int bottom, int width, int height) {
+	ace_rgb_rect->drawVerticalGradient(ace_rgb_prog, left, bottom, width, height, &WinOrtho, red, green, blue, red2, green2, blue2);
 }
 
 void g2::rectTexture(int left, int bottom, int width, int height) {
