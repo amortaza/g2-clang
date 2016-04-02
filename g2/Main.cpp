@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
         OnKeyDown,
         OnKeyUp);
 
-    Xel::Window::SetTitle("Bellina v0.01");
+    Xel::Window::SetTitle("Bellina v0.1.0");
     Xel::Window::SetPosition(200, 100);
     Xel::Window::SetSize(1280, 800);
 

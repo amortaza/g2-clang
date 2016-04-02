@@ -61,10 +61,13 @@ int* g2::font_metric(char* str) {
 	return coords;
 }
 
-int last_font_x = 0, last_font_y = 0;
-char last_font_c;
+void g2::font_color(unsigned char r, unsigned char g, unsigned char b) {
+	font_red = r / 255.f;
+	font_green = g / 255.f;
+	font_blue = b / 255.f;
+}
 
-int _text(int x, int y, char* str) {	
+int g2::Internal::_text(int x, int y, char* str) {	
 	CoreDraw core;
 	int * coords;
 
@@ -91,7 +94,8 @@ int _text(int x, int y, char* str) {
 			current_atlas->charWidth[c], texture->h, 
 			texture->w,
 			fx, fy,
-			&WinOrtho);
+			&WinOrtho,
+			font_red, font_green, font_blue);
 	}
 
 	texture->deactivate();

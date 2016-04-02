@@ -29,15 +29,31 @@ public:
 					    AceTexture* texture, 
 		                int charX, int charW, int charH, int atlasWidth, 
 					    int left, int bottom, 
-						glm::mat4* Projection) {
+						glm::mat4* Projection,
+						float font_red, float font_green, float font_blue) {
 
 		prog->activate();
 
 		texture->activate();
 
-		setVertexData2(left, bottom, charX, charW, charH, atlasWidth);
+		setVertexData2(left, bottom, charX, charW, charH, atlasWidth, font_red, font_green, font_blue);
 
-		common(prog, Projection);
+		glUniform4f(prog->uGlyphColor, font_red, font_green, font_blue, 1.f);
+
+		glUniformMatrix4fv(prog->uProjection, 1, GL_FALSE, glm::value_ptr((*Projection)));
+
+		glBindBuffer(GL_ARRAY_BUFFER, vid);
+
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, 0);
+
+		glEnableVertexAttribArray(1);
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)64);
+
+		glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+
+		glDisableVertexAttribArray(0);
+		glDisableVertexAttribArray(1);
 	}
 
 private:
@@ -60,7 +76,7 @@ private:
 		glDisableVertexAttribArray(1);
 	}
 
-	void setVertexData2(int left, int bottom, int charX, int charW, int charH, int atlasWidth) {
+	void setVertexData2(int left, int bottom, int charX, int charW, int charH, int atlasWidth, float red, float green, float blue) {
 		int right = left + charW;
 		int top = bottom + charH;
 

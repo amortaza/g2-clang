@@ -20,6 +20,10 @@ namespace g2 {
 		extern float green2;
 		extern float blue2;
 
+		extern float font_red;
+		extern float font_green;
+		extern float font_blue;
+
 		extern glm::mat4 WinOrtho;
 
 		extern AceProgram* ace_rgb_prog;
@@ -36,5 +40,9 @@ namespace g2 {
 
 		extern std::map<std::string, Atlas*> atlasMap;
 		extern std::map<std::string, TextureRef*> atlasRefMap;
+
+		extern int last_font_x;
+		extern int last_font_y;
+		extern char last_font_c;
 	}
 }

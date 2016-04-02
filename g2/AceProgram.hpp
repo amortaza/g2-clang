@@ -11,7 +11,7 @@ public:
     GLuint programId;
 
     GLint uProjection;
-    //GLint uSampler;
+	GLint uGlyphColor;
 
 public:
     AceProgram(const char* vFilename, const char* fFilename) {
@@ -28,8 +28,8 @@ public:
         glUseProgram(programId);
 
         uProjection = glGetUniformLocation(programId, "uProjection");
-        //uSampler = glGetUniformLocation(programId, "uSampler");
-    }
+		uGlyphColor = glGetUniformLocation(programId, "uGlyphColor");
+	}
 
     ~AceProgram() {
         glDetachShader(programId, vShader->shaderId);
