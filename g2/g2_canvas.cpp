@@ -31,7 +31,7 @@ void g2::paintCanvas(CanvasRef* canvas) {
 
 	AceTexture* texture = canvas->ace_frame_buffer->texture;
 	viewport(texture->w, texture->h);
-	ortho(0, 0, texture->w, texture->h);
+	ortho(texture->w, texture->h);
 }
 
 void g2::endCanvas() {

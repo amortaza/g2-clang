@@ -16,8 +16,8 @@ void g2::opacity2(float alpha) {
 	alpha2 = alpha;
 }
 
-void g2::ortho(int left, int bottom, int width, int height) {
-    WinOrtho = glm::ortho((float)left, (float)width, (float)bottom, (float)height);
+void g2::ortho(int width, int height) {
+    WinOrtho = glm::ortho(0.f, (float)width, (float)height, 0.f);
 }
 
 void g2::pushOrtho() {

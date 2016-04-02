@@ -26,8 +26,8 @@ public:
         delete ace_texture;
     }
 
-    void draw(int left, int bottom, int w, int h, glm::mat4* Projection) {
-		ace_texture_rect->draw(ace_prog, ace_texture, left, bottom, w, h, Projection);
+    void draw(int left, int top, int w, int h, glm::mat4* Projection) {
+		ace_texture_rect->draw(ace_prog, ace_texture, left, top, w, h, Projection);
     }
 
 };

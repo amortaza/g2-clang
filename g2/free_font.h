@@ -262,7 +262,9 @@ public:
 			}
 			else {
 
-				penY = y + atlas->charBitmapTop[c] - atlas->atlasHeight;
+				// if ortho is ever flipped vertically where 0,0 is at bottom-left, then use this formula
+				//penY = y + atlas->charBitmapTop[c] - atlas->atlasHeight;
+				penY = y - atlas->charBitmapTop[c];
 
 				int nudgeX = atlas->charBitmapLeft[c];
 

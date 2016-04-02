@@ -14,16 +14,15 @@ public:
         glDeleteBuffers(1, &vid);
     }
 
-    void draw(AceProgram* prog, AceTexture* texture, int left, int bottom, int w, int h, glm::mat4* Projection, float* alphas) {
+    void draw(AceProgram* prog, AceTexture* texture, int left, int top, int w, int h, glm::mat4* Projection, float* alphas) {
         prog->activate();
 
         texture->activate();
 
-        setVertexData(left, bottom, w, h);
+        setVertexData(left, top, w, h);
 
 		glUniformMatrix4fv(prog->uProjection, 1, GL_FALSE, glm::value_ptr((*Projection)));
 
-		//printf("%f %f %f %f\n", alphas[0], alphas[1], alphas[2], alphas[3]);
 		glUniform4f(prog->uAlphaLeftTopRightBottom, alphas[0], alphas[1], alphas[2], alphas[3]);
 
 		glBindBuffer(GL_ARRAY_BUFFER, vid);
@@ -43,7 +42,7 @@ public:
 	void drawAtlasChar(	AceProgram* prog, 
 					    AceTexture* texture, 
 		                int charX, int charW, int charH, int atlasWidth, 
-					    int left, int bottom, 
+					    int left, int top, 
 						glm::mat4* Projection,
 						float font_red, float font_green, float font_blue,
 						float alpha) {
@@ -52,7 +51,7 @@ public:
 
 		texture->activate();
 
-		setVertexData2(left, bottom, charX, charW, charH, atlasWidth);
+		setVertexData2(left, top, charX, charW, charH, atlasWidth);
 
 		glUniform4f(prog->uGlyphColor, font_red, font_green, font_blue, alpha);
 
@@ -75,9 +74,9 @@ public:
 private:
 	GLuint vid;
 
-	void setVertexData2(int left, int bottom, int charX, int charW, int charH, int atlasWidth) {
+	void setVertexData2(int left, int top, int charX, int charW, int charH, int atlasWidth) {
 		int right = left + charW;
-		int top = bottom + charH;
+		int bottom = top + charH;
 
 		float sLeft = (float)charX / (float)atlasWidth;
 		float sRight = (float)(charX+charW) / (float)atlasWidth;
@@ -99,9 +98,9 @@ private:
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 	
-	void setVertexData(int left, int bottom, int w, int h) {
+	void setVertexData(int left, int top, int w, int h) {
         int right = left + w;
-        int top = bottom + h;
+        int bottom = top + h;
 
         const float vertexData[] = {
             left, bottom, 0.0f, 1.0f, // 4*4 = 16
