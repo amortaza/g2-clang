@@ -5,8 +5,9 @@ in vec2 vsTexCoord;
 out vec4 outFragColor;
 
 uniform sampler2D uSampler;
+uniform vec4 uGlyphColor;
 
 void main()
 {
-    outFragColor = texture2D(uSampler, vsTexCoord.st).aaaa;
+    outFragColor = texture2D(uSampler, vsTexCoord.st).aaaa * uGlyphColor;
 }
