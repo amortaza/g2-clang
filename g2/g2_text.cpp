@@ -95,7 +95,8 @@ int g2::Internal::_text(int x, int y, char* str) {
 			texture->w,
 			fx, fy,
 			&WinOrtho,
-			font_red, font_green, font_blue);
+			font_red, font_green, font_blue,
+			current_alpha);
 	}
 
 	texture->deactivate();

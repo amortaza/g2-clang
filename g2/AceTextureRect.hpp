@@ -30,15 +30,16 @@ public:
 		                int charX, int charW, int charH, int atlasWidth, 
 					    int left, int bottom, 
 						glm::mat4* Projection,
-						float font_red, float font_green, float font_blue) {
+						float font_red, float font_green, float font_blue,
+						float alpha) {
 
 		prog->activate();
 
 		texture->activate();
 
-		setVertexData2(left, bottom, charX, charW, charH, atlasWidth, font_red, font_green, font_blue);
+		setVertexData2(left, bottom, charX, charW, charH, atlasWidth);
 
-		glUniform4f(prog->uGlyphColor, font_red, font_green, font_blue, 1.f);
+		glUniform4f(prog->uGlyphColor, font_red, font_green, font_blue, alpha);
 
 		glUniformMatrix4fv(prog->uProjection, 1, GL_FALSE, glm::value_ptr((*Projection)));
 
@@ -76,7 +77,7 @@ private:
 		glDisableVertexAttribArray(1);
 	}
 
-	void setVertexData2(int left, int bottom, int charX, int charW, int charH, int atlasWidth, float red, float green, float blue) {
+	void setVertexData2(int left, int bottom, int charX, int charW, int charH, int atlasWidth) {
 		int right = left + charW;
 		int top = bottom + charH;
 
