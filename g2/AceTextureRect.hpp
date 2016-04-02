@@ -15,14 +15,14 @@ public:
         glDeleteBuffers(1, &vid);
     }
 
-    void draw(AceProgram* prog, AceTexture* texture, int left, int bottom, int w, int h, glm::mat4* Projection) {
+    void draw(AceProgram* prog, AceTexture* texture, int left, int bottom, int w, int h, glm::mat4* Projection, float alpha) {
         prog->activate();
 
         texture->activate();
 
         setVertexData(left, bottom, w, h);
 
-		common(prog, Projection);
+		common(prog, Projection, alpha);
     }
 
 	void drawAtlasChar(	AceProgram* prog, 
@@ -60,8 +60,9 @@ public:
 private:
 	GLuint vid;
 
-	void common(AceProgram* prog, glm::mat4* Projection) {
+	void common(AceProgram* prog, glm::mat4* Projection, float alpha) {
 		glUniformMatrix4fv(prog->uProjection, 1, GL_FALSE, glm::value_ptr((*Projection)));
+		glUniform1f(prog->uAlpha, alpha);
 
 		glBindBuffer(GL_ARRAY_BUFFER, vid);
 

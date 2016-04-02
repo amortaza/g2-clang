@@ -30,7 +30,7 @@ void g2::rectRgbVerticalGradient(int left, int bottom, int width, int height) {
 }
 
 void g2::rectTexture(int left, int bottom, int width, int height) {
-	ace_texture_rect->draw(ace_texture_prog, current_ace_texture, left, bottom, width, height, &WinOrtho);
+	ace_texture_rect->draw(ace_texture_prog, current_ace_texture, left, bottom, width, height, &WinOrtho, current_alpha);
 
 	current_ace_texture->deactivate();
 

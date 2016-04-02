@@ -12,6 +12,7 @@ public:
 
     GLint uProjection;
 	GLint uGlyphColor;
+	GLint uAlpha;
 
 public:
     AceProgram(const char* vFilename, const char* fFilename) {
@@ -29,6 +30,7 @@ public:
 
         uProjection = glGetUniformLocation(programId, "uProjection");
 		uGlyphColor = glGetUniformLocation(programId, "uGlyphColor");
+		uAlpha = glGetUniformLocation(programId, "uAlpha");
 	}
 
     ~AceProgram() {
