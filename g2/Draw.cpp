@@ -35,11 +35,11 @@ void Draw() {
 	*/
 	g2::opacity(.9925f);
 	g2::font("arial", 40);
-	g2::font_color(255, 0, 0);	
+	g2::rgb(255, 0, 0);	
 	g2::text(420, 300, "Welcome");
 
 	g2::opacity(.49925f);
-	g2::font_color(255, 0, 0);
+	g2::rgb(255, 0, 0);
 	g2::text(480, 350, "Welcome");
 
 	/*

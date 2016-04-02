@@ -17,7 +17,6 @@ namespace g2 {
 
 		float red = 1.f, green = 1.f, blue = 1.f;
 		float red2 = 1.f, green2 = 1.f, blue2 = 1.f;
-		float font_red = 1.f, font_green = 1.f, font_blue = 1.f;
 
 		glm::mat4 WinOrtho;
 

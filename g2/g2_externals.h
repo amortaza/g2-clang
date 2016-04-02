@@ -15,8 +15,6 @@ namespace g2 {
 		extern float red, green, blue;
 		extern float red2, green2, blue2;
 
-		extern float font_red, font_green, font_blue;
-
 		extern glm::mat4 WinOrtho;
 
 		extern AceProgram* ace_rgb_prog;
