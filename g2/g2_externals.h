@@ -12,17 +12,10 @@ namespace g2 {
 
 	namespace Internal {
 
-		extern float red;
-		extern float green;
-		extern float blue;
+		extern float red, green, blue;
+		extern float red2, green2, blue2;
 
-		extern float red2;
-		extern float green2;
-		extern float blue2;
-
-		extern float font_red;
-		extern float font_green;
-		extern float font_blue;
+		extern float font_red, font_green, font_blue;
 
 		extern glm::mat4 WinOrtho;
 
@@ -41,10 +34,14 @@ namespace g2 {
 		extern std::map<std::string, Atlas*> atlasMap;
 		extern std::map<std::string, TextureRef*> atlasRefMap;
 
-		extern int last_font_x;
-		extern int last_font_y;
+		extern int last_font_x, last_font_y;
 		extern char last_font_c;
 
 		extern float current_alpha;
+
+		extern std::stack<glm::mat4> orthoStack;
+		extern std::stack<int> viewportStack2;
+
+		extern int viewportWidth, viewportHeight;
 	}
 }

@@ -134,8 +134,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\shader\col_rect.fragment.txt" />
-    <Text Include="..\shader\col_rect.vertex.txt" />
+    <Text Include="..\shader\rgb_rect.fragment.txt" />
+    <Text Include="..\shader\rgb_rect.vertex.txt" />
     <Text Include="..\shader\screen.fragment.txt" />
     <Text Include="..\shader\screen.vertex.txt" />
     <Text Include="..\shader\atlas_rect.fragment.txt" />

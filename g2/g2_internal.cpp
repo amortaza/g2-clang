@@ -40,6 +40,11 @@ namespace g2 {
 		char last_font_c;
 
 		float current_alpha = 1.f;
+
+		std::stack<glm::mat4> orthoStack;
+		std::stack<int> viewportStack2;
+
+		int viewportWidth, viewportHeight;
 	}
 }
 

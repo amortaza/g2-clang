@@ -8,14 +8,6 @@
 using namespace g2;
 using namespace g2::Internal;
 
-extern std::map<std::string, Atlas*> atlasMap;
-extern std::map<std::string, TextureRef*> atlasRefMap;
-
-int viewportWidth, viewportHeight;
-
-std::stack<glm::mat4> orthoStack;
-std::stack<int> viewportStack2;
-
 void g2::opacity(float alpha) {
 	current_alpha = alpha;
 }
@@ -75,7 +67,7 @@ void g2::init() {
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-	ace_rgb_prog = new AceProgram("c:/_c/g2/shader/col_rect.vertex.txt", "c:/_c/g2/shader/col_rect.fragment.txt");
+	ace_rgb_prog = new AceProgram("c:/_c/g2/shader/rgb_rect.vertex.txt", "c:/_c/g2/shader/rgb_rect.fragment.txt");
 	ace_texture_prog = new AceProgram("c:/_c/g2/shader/texture_rect.vertex.txt", "c:/_c/g2/shader/texture_rect.fragment.txt");
 	ace_atlas_prog = new AceProgram("c:/_c/g2/shader/atlas_rect.vertex.txt", "c:/_c/g2/shader/atlas_rect.fragment.txt");
 

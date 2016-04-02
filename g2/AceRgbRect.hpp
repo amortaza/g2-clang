@@ -47,14 +47,6 @@ public:
 		commonDraw(prog, Projection);
 	}
 
-	void draw(AceProgram* prog, int left, int bottom, int w, int h, glm::mat4* Projection, float* r4, float *g4, float *b4) {
-        prog->activate();
-
-        setVertexData(left, bottom, w, h, r4, g4, b4);
-
-        commonDraw(prog, Projection);
-    }
-
 private:
 
 	GLuint vid;
@@ -138,25 +130,4 @@ private:
 		glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
-
-	void setVertexData(int left, int bottom, int w, int h, float* r4, float* g4, float* b4) {
-        int right = left + w;
-        int top = bottom + h;
-
-        const float vertexData[] = {
-            left, bottom,    // 4*2 = 8
-            left, top,      
-            right, top,     
-            right, bottom,   // 8*4 = 32
-
-            r4[0], g4[0], b4[0], 1.f,
-            r4[1], g4[1], b4[1], 1.f,
-            r4[2], g4[2], b4[2], 1.f,
-            r4[3], g4[3], b4[3], 1.f
-        };
-
-        glBindBuffer(GL_ARRAY_BUFFER, vid);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
-    }
 };
