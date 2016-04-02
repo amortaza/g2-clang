@@ -94,7 +94,7 @@
     <ClInclude Include="free_font.h">
       <Filter>_\FreeFont</Filter>
     </ClInclude>
-    <ClInclude Include="g2_text.h">
+    <ClInclude Include="g2_font.h">
       <Filter>g2</Filter>
     </ClInclude>
   </ItemGroup>
@@ -165,7 +165,7 @@
     <ClCompile Include="free_font.cpp">
       <Filter>_\FreeFont</Filter>
     </ClCompile>
-    <ClCompile Include="g2_text.cpp">
+    <ClCompile Include="g2_font.cpp">
       <Filter>g2</Filter>
     </ClCompile>
   </ItemGroup>
