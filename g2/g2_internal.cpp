@@ -15,9 +15,8 @@ namespace g2 {
 
 	namespace Internal {
 
-		float red;
-		float green;
-		float blue;
+		float red, green, blue;
+		float red2, green2, blue2;
 
 		glm::mat4 WinOrtho;
 
@@ -30,6 +29,8 @@ namespace g2 {
 
 		Atlas *current_atlas = 0;
 		TextureRef* current_atlas_ref = 0;
+
+		AceTexture* current_ace_texture = 0;
 
 		std::map<std::string, Atlas*> atlasMap;
 		std::map<std::string, TextureRef*> atlasRefMap;

@@ -23,7 +23,19 @@ public:
         commonDraw(prog, Projection);
     }
 
-    void draw(AceProgram* prog, int left, int bottom, int w, int h, glm::mat4* Projection, float* r4, float *g4, float *b4) {
+	void drawHorizGradient(	AceProgram* prog, 
+							int left, int bottom, int w, int h, glm::mat4* Projection, 
+							float r, float g, float b,
+							float r2, float g2, float b2 ) {
+
+		prog->activate();
+
+		setVertexDataHorizGradient(left, bottom, w, h, r, g, b, r2, g2, b2);
+
+		commonDraw(prog, Projection);
+	}
+	
+	void draw(AceProgram* prog, int left, int bottom, int w, int h, glm::mat4* Projection, float* r4, float *g4, float *b4) {
         prog->activate();
 
         setVertexData(left, bottom, w, h, r4, g4, b4);
@@ -73,7 +85,28 @@ private:
         glBindBuffer(GL_ARRAY_BUFFER, 0);
     }
 
-    void setVertexData(int left, int bottom, int w, int h, float* r4, float* g4, float* b4) {
+	void setVertexDataHorizGradient(int left, int bottom, int w, int h, float r, float g, float b, float r2, float g2, float b2) {
+		int right = left + w;
+		int top = bottom + h;
+
+		const float vertexData[] = {
+			left, bottom,    // 2 ints * 4 bytes per int = 8 bytes
+			left, top,
+			right, top,
+			right, bottom,   // 8 bytes per row * 4 rows = 32 bytes
+
+			r, g, b, 1.f,
+			r, g, b, 1.f,
+			r2, g2, b2, 1.f,
+			r2, g2, b2, 1.f
+		};
+
+		glBindBuffer(GL_ARRAY_BUFFER, vid);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+	}
+
+	void setVertexData(int left, int bottom, int w, int h, float* r4, float* g4, float* b4) {
         int right = left + w;
         int top = bottom + h;
 

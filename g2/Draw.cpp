@@ -18,8 +18,12 @@ void Draw() {
     //g2::rgb(0, 100, 0);
     //g2::rectRgb(2, 2, winW - 4, winH - 4);
 	
-    g2::rgb(200, 100, 0);
-    g2::rectRgb(20, 200, 400, 300);
+    //g2::rgb(200, 100, 0);
+    //g2::rectRgb(20, 200, 400, 300);
+
+	g2::rgb(200, 100, 0);
+	g2::rgb2(200, 200, 0);
+	g2::rectRgbHorizGradient(200, 300, 400, 300);
 
 	//g2::texture(ref);
 	//g2::rectTexture(100, 100, 800, 600);
