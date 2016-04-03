@@ -8,6 +8,10 @@ namespace g2 {
 	int  font_height();
 
 	namespace Internal {
+		extern int last_font_x, last_font_y;
+
+		extern char last_font_c;
+
 		int _text(int x, int y, char* str);
 	}
 }

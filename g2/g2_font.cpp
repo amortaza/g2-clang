@@ -89,8 +89,8 @@ int g2::Internal::_text(int x, int y, char* str) {
 			texture->w,
 			fx, fy,
 			&WinOrtho,
-			red, green, blue,
-			current_alpha);
+			red1, green1, blue1,
+			alpha1_effective);
 	}
 
 	texture->deactivate();
@@ -110,4 +110,11 @@ void g2::text(int x, int y, char* str) {
 
 void g2::text_flow(char* str) {
 	last_font_x = _text(last_font_x, last_font_y, str);
+}
+
+namespace g2 {
+	namespace Internal {
+		int last_font_x = 0, last_font_y = 0;
+		char last_font_c;
+	}
 }

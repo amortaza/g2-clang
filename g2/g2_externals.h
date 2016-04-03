@@ -8,6 +8,8 @@
 
 #include "free_font.h"
 
+#include "g2_opacity.h"
+
 namespace g2 {
 
 	extern int FLAG_TEXTURE;
@@ -17,12 +19,14 @@ namespace g2 {
 	extern int FLAG_RGB_HORIZ_GRADIENT;
 	extern int FLAG_RGB_VERT_GRADIENT;
 
+	extern int FLAG_ALPHA_NONE;
+	extern int FLAG_ALPHA_SOLID;
 	extern int FLAG_ALPHA_HORIZ_GRADIENT;
 	extern int FLAG_ALPHA_VERT_GRADIENT;
 
 	namespace Internal {
 
-		extern float red, green, blue;
+		extern float red1, green1, blue1;
 		extern float red2, green2, blue2;
 
 		extern glm::mat4 WinOrtho;
@@ -42,15 +46,11 @@ namespace g2 {
 		extern std::map<std::string, Atlas*> atlasMap;
 		extern std::map<std::string, TextureRef*> atlasRefMap;
 
-		extern int last_font_x, last_font_y;
-		extern char last_font_c;
-
-		extern float current_alpha;
-		extern float alpha2;
-
 		extern std::stack<glm::mat4> orthoStack;
 		extern std::stack<int> viewportStack2;
 
 		extern int viewportWidth, viewportHeight;
+
+		void freeMaps();
 	}
 }

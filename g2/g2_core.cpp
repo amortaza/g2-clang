@@ -8,14 +8,6 @@
 using namespace g2;
 using namespace g2::Internal;
 
-void g2::opacity(float alpha) {
-	current_alpha = alpha;
-}
-
-void g2::opacity2(float alpha) {
-	alpha2 = alpha;
-}
-
 void g2::ortho(int width, int height) {
     WinOrtho = glm::ortho(0.f, (float)width, (float)height, 0.f);
 }

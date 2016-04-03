@@ -8,12 +8,19 @@ namespace g2 {
 	void uninit();
 
 	void ortho(int width, int height);
+
 	void pushOrtho();
 	void popOrtho();
 
 	void viewport(int width, int height);
 	void pushViewport();
 	void popViewport();
+
+	void opacity(float alpha);
+	void opacity2(float alpha);
+
+	void pushOpacity();
+	void popOpacity();
 
 	void clear();
 
@@ -23,11 +30,4 @@ namespace g2 {
 	void rect(int flags, int left, int top, int width, int height);
 	void rectRgb(int left, int top, int width, int height);
 	void rectTexture(int left, int top, int width, int height);
-
-	void opacity(float alpha);
-	void opacity2(float alpha);
-
-	namespace Internal {
-		void freeMaps();
-	}
 }

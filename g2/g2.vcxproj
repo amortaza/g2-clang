@@ -100,6 +100,7 @@
     <ClInclude Include="g2_core.h" />
     <ClInclude Include="g2_externals.h" />
     <ClInclude Include="g2_font.h" />
+    <ClInclude Include="g2_opacity.h" />
     <ClInclude Include="g2_texture.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="stdafx.h" />
@@ -124,6 +125,7 @@
     <ClCompile Include="g2_core.cpp" />
     <ClCompile Include="g2_font.cpp" />
     <ClCompile Include="g2_internal.cpp" />
+    <ClCompile Include="g2_opacity.cpp" />
     <ClCompile Include="g2_rect.cpp" />
     <ClCompile Include="g2_texture.cpp" />
     <ClCompile Include="Init.cpp" />
