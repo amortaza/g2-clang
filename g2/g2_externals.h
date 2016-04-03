@@ -11,18 +11,19 @@
 #include "g2_opacity.h"
 
 namespace g2 {
+	namespace flags {
+		extern int G2_TEXTURE;
 
-	extern int FLAG_TEXTURE;
+		extern int G2_RGB_ANY;
+		extern int G2_RGB_SOLID;
+		extern int G2_RGB_HORIZ_GRADIENT;
+		extern int G2_RGB_VERT_GRADIENT;
 
-	extern int FLAG_RGB_ANY;	
-	extern int FLAG_RGB_SOLID;
-	extern int FLAG_RGB_HORIZ_GRADIENT;
-	extern int FLAG_RGB_VERT_GRADIENT;
-
-	extern int FLAG_ALPHA_NONE;
-	extern int FLAG_ALPHA_SOLID;
-	extern int FLAG_ALPHA_HORIZ_GRADIENT;
-	extern int FLAG_ALPHA_VERT_GRADIENT;
+		extern int G2_ALPHA_NONE;
+		extern int G2_ALPHA_SOLID;
+		extern int G2_ALPHA_HORIZ_GRADIENT;
+		extern int G2_ALPHA_VERT_GRADIENT;
+	}
 
 	namespace Internal {
 

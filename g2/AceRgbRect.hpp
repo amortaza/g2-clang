@@ -14,43 +14,11 @@ public:
         glDeleteBuffers(1, &vid);
     }
 
-    void draw(AceProgram* prog, int left, int top, int w, int h, glm::mat4* Projection, float r, float g, float b, float* alphas) {
+    void draw(AceProgram* prog, int left, int top, int w, int h, glm::mat4* Projection, float* alphas, float *reds, float *greens, float *blues) {
         prog->activate();
 
-        setVertexData(left, top, w, h, r, g, b, alphas);
+        setVertexData(left, top, w, h, alphas, reds, greens, blues);
 
-        commonDraw(prog, Projection);
-    }
-
-	void drawHorizontalGradient(	AceProgram* prog, 
-									int left, int top, int w, int h, glm::mat4* Projection,
-									float r, float g, float b,
-									float r2, float g2, float b2 ) {
-
-		prog->activate();
-
-		setVertexDataHorizontalGradient(left, top, w, h, r, g, b, r2, g2, b2);
-
-		commonDraw(prog, Projection);
-	}
-	
-	void drawVerticalGradient(AceProgram* prog,
-		int left, int top, int w, int h, glm::mat4* Projection,
-		float r, float g, float b,
-		float r2, float g2, float b2) {
-
-		prog->activate();
-
-		setVertexDataVerticalGradient(left, top, w, h, r, g, b, r2, g2, b2);
-
-		commonDraw(prog, Projection);
-	}
-
-private:
-
-	GLuint vid;
-
-	void commonDraw(AceProgram* prog, glm::mat4* Projection) {
 		glUniformMatrix4fv(prog->uProjection, 1, GL_FALSE, glm::value_ptr((*Projection)));
 
 		glBindBuffer(GL_ARRAY_BUFFER, vid);
@@ -66,8 +34,13 @@ private:
 		glDisableVertexAttribArray(0);
 		glDisableVertexAttribArray(1);
 	}
+
+private:
+
+	GLuint vid;
+
 	
-	void setVertexData(int left, int top, int w, int h, float r, float g, float b, float* alphasLeftTopRightBottom) {
+	void setVertexData(int left, int top, int w, int h, float* alphasLeftTopRightBottom, float *reds, float *greens, float *blues) {
         int right = left + w;
         int bottom = top + h;        
 
@@ -77,56 +50,14 @@ private:
             right, top,     
             right, bottom,   // 8 bytes per row * 4 rows = 32 bytes
 
-            r, g, b, alphasLeftTopRightBottom[0],
-            r, g, b, alphasLeftTopRightBottom[1],
-            r, g, b, alphasLeftTopRightBottom[2],
-            r, g, b, alphasLeftTopRightBottom[3]
+            reds[0], greens[0], blues[0], alphasLeftTopRightBottom[0],
+			reds[1], greens[1], blues[1], alphasLeftTopRightBottom[1],
+			reds[2], greens[2], blues[2], alphasLeftTopRightBottom[2],
+			reds[3], greens[3], blues[3], alphasLeftTopRightBottom[3]
         };
 
         glBindBuffer(GL_ARRAY_BUFFER, vid);
         glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
         glBindBuffer(GL_ARRAY_BUFFER, 0);
     }
-
-	void setVertexDataHorizontalGradient(int left, int top, int w, int h, float r, float g, float b, float r2, float g2, float b2) {
-		int right = left + w;
-		int bottom = top + h;
-
-		const float vertexData[] = {
-			left, bottom,    // 2 ints * 4 bytes per int = 8 bytes
-			left, top,
-			right, top,
-			right, bottom,   // 8 bytes per row * 4 rows = 32 bytes
-
-			r, g, b, 1.f,
-			r, g, b, 1.f,
-			r2, g2, b2, 1.f,
-			r2, g2, b2, 1.f
-		};
-
-		glBindBuffer(GL_ARRAY_BUFFER, vid);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
-		glBindBuffer(GL_ARRAY_BUFFER, 0);
-	}
-
-	void setVertexDataVerticalGradient(int left, int top, int w, int h, float r, float g, float b, float r2, float g2, float b2) {
-		int right = left + w;
-		int bottom = top + h;
-
-		const float vertexData[] = {
-			left, bottom,    // 2 ints * 4 bytes per int = 8 bytes
-			left, top,
-			right, top,
-			right, bottom,   // 8 bytes per row * 4 rows = 32 bytes
-
-			r, g, b, 1.f,
-			r2, g2, b2, 1.f,
-			r2, g2, b2, 1.f,
-			r, g, b, 1.f
-		};
-
-		glBindBuffer(GL_ARRAY_BUFFER, vid);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
-		glBindBuffer(GL_ARRAY_BUFFER, 0);
-	}
 };

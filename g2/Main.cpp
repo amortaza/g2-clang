@@ -2,7 +2,14 @@
 #include "Main.h"
 
 void OnTick() {
-    Draw();
+	try
+	{
+		Draw();
+	}
+	catch (char* msg) {
+		printf(msg);
+		printf("\n");
+	}
 
     Xel::Swap();
 }

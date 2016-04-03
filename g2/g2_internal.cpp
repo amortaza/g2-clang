@@ -14,18 +14,20 @@
 
 namespace g2 {
 
-	int FLAG_TEXTURE = 1 << 0;
+	namespace flags {
+		int G2_TEXTURE = 1 << 0;
 
-	int FLAG_RGB_SOLID = 1 << 2;
-	int FLAG_RGB_HORIZ_GRADIENT = 1 << 3;
-	int FLAG_RGB_VERT_GRADIENT = 1 << 4;
+		int G2_RGB_SOLID = 1 << 2;
+		int G2_RGB_HORIZ_GRADIENT = 1 << 3;
+		int G2_RGB_VERT_GRADIENT = 1 << 4;
 
-	int FLAG_RGB_ANY = FLAG_RGB_SOLID | FLAG_RGB_HORIZ_GRADIENT | FLAG_RGB_VERT_GRADIENT;
+		int G2_RGB_ANY = G2_RGB_SOLID | G2_RGB_HORIZ_GRADIENT | G2_RGB_VERT_GRADIENT;
 
-	int FLAG_ALPHA_SOLID = 1 << 5;
-	int FLAG_ALPHA_HORIZ_GRADIENT = 1 << 6;
-	int FLAG_ALPHA_VERT_GRADIENT = 1 << 7;
-	int FLAG_ALPHA_NONE = 1 << 8;
+		int G2_ALPHA_SOLID = 1 << 5;
+		int G2_ALPHA_HORIZ_GRADIENT = 1 << 6;
+		int G2_ALPHA_VERT_GRADIENT = 1 << 7;
+		int G2_ALPHA_NONE = 1 << 8;
+	}
 
 	namespace Internal {
 
