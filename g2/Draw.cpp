@@ -5,7 +5,6 @@
 using namespace g2::flags;
 
 extern g2::TextureRef* ref;
-extern g2::TextureRef* atlasRef;
 
 void Draw() {
     int winW = Xel::Window::width;
@@ -19,7 +18,7 @@ void Draw() {
     g2::rgb(200, 0, 200);
     g2::rectRgb(2, 2, winW - 4, winH - 4);
 
-	g2::opacity(.5f);
+	//g2::opacity(.5f);
 	g2::pushOpacity();
 		g2::rgb(255, 255, 255);
 		g2::rectRgb(20, 200, 320, 240);
