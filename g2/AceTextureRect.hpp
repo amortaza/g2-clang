@@ -14,12 +14,12 @@ public:
         glDeleteBuffers(1, &vid);
     }
 
-    void draw(AceProgram* prog, AceTexture* texture, int left, int top, int w, int h, glm::mat4* Projection, float* alphas) {
+    void draw(AceProgram* prog, AceTexture* texture, int left, int top, int w, int h, glm::mat4* Projection, float* alphas, float topTextureCoord) {
         prog->activate();
 
         texture->activate();
 
-        setVertexData(left, top, w, h);
+        setVertexData(left, top, w, h, topTextureCoord);
 
 		glUniformMatrix4fv(prog->uProjection, 1, GL_FALSE, glm::value_ptr((*Projection)));
 
@@ -98,7 +98,7 @@ private:
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 	
-	void setVertexData(int left, int top, int w, int h) {
+	void setVertexData(int left, int top, int w, int h, float topTextureCoord) {
         int right = left + w;
         int bottom = top + h;
 
@@ -108,10 +108,10 @@ private:
             right, top, 0.0f, 1.0f,
             right, bottom, 0.0f, 1.0f, // 16*4 = 64
 
-            0.0f, 1.0f,
-            0.0f, 0.0f,
-            1.0f, 0.0f,
-            1.0f, 1.0f
+            0.0f, topTextureCoord,
+            0.0f, 1.f - topTextureCoord,
+            1.0f, 1.f - topTextureCoord,
+            1.0f, topTextureCoord
         };
 
         glBindBuffer(GL_ARRAY_BUFFER, vid);

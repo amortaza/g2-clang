@@ -86,6 +86,14 @@ void g2_internal_getRgbs(int flags, float* reds, float *greens, float *blues) {
 }
 
 void g2::rect(int flags, int left, int top, int width, int height) {
+	g2::Internal::_rect(flags, left, top, width, height, 1.f);
+}
+
+void g2::rectFlipped(int flags, int left, int top, int width, int height) {
+	g2::Internal::_rect(flags, left, top, width, height, 0.f);
+}
+
+void g2::Internal::_rect(int flags, int left, int top, int width, int height, float topTextureCoord) {
 	float alphas[4];
 
 	g2_internal_getAlphas(flags, alphas);
@@ -93,7 +101,7 @@ void g2::rect(int flags, int left, int top, int width, int height) {
 	if ( flags & G2_TEXTURE) {
 		if (!current_ace_texture) throw "no texture active for rectangle - did you forget to call g2::texture(), or try to use g2::rect() multiple times without calling g2::texture()?";
 
-		ace_texture_rect->draw(ace_texture_prog, current_ace_texture, left, top, width, height, &WinOrtho, alphas);
+		ace_texture_rect->draw(ace_texture_prog, current_ace_texture, left, top, width, height, &WinOrtho, alphas, topTextureCoord);
 
 		current_ace_texture->deactivate();
 

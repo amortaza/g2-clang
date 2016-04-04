@@ -28,6 +28,8 @@ namespace g2 {
 	void rgb2(unsigned char red, unsigned char green, unsigned char blue);
 
 	void rect(int flags, int left, int top, int width, int height);
+	void rectFlipped(int flags, int left, int top, int width, int height);
+
 	void rectRgb(int left, int top, int width, int height);
 	void rectTexture(int left, int top, int width, int height);
 }

@@ -53,5 +53,6 @@ namespace g2 {
 		extern int viewportWidth, viewportHeight;
 
 		void freeMaps();
+		void _rect(int flags, int left, int top, int width, int height, float topTextureCoord);
 	}
 }
