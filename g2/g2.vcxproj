@@ -106,6 +106,7 @@
     <ClCompile Include="g2_canvas.cpp" />
     <ClCompile Include="g2_core.cpp" />
     <ClCompile Include="g2_font.cpp" />
+    <ClCompile Include="g2_border.cpp" />
     <ClCompile Include="g2_internal.cpp" />
     <ClCompile Include="g2_opacity.cpp" />
     <ClCompile Include="g2_rect.cpp" />

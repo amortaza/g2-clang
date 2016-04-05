@@ -36,16 +36,22 @@ void Draw() {
 	g2::texture(ref);
 	g2::rect(G2_TEXTURE | G2_ALPHA_NONE, 30, 300, 320, 240);*/
 	
+	g2::opacity(.4f);
+	g2::color(0, 100, 0);
+	g2::color2(100, 0, 0);
+    g2::rect(G2_RGB_HORIZ_GRADIENT, 21, 21, 178, 178);
+	//g2::rect(G2_RGB_SOLID, 400, 200, 320, 240);
 
-	/*g2::rgb(0, 100, 0);
-	g2::rgb2(100, 0, 0);
-    g2::rect(G2_RGB_HORIZ_GRADIENT, 20, 200, 320, 240);
-	g2::rect(G2_RGB_VERT_GRADIENT, 400, 200, 320, 240);*/
+	g2::color(100, 0, 0);
+	//g2::border(G2_BORDER_LEFT | G2_ALPHA_NONE, 10, 10, 100, 100, 10);
+	//g2::border(G2_BORDER_RIGHT | G2_ALPHA_NONE, 10, 10, 100, 100, 10);
+	g2::border(G2_BORDER_BOTTOM | G2_BORDER_RIGHT | G2_BORDER_LEFT | G2_BORDER_TOP | G2_ALPHA_SOLID, 10, 10, 200, 200, 10);
+	//g2::border(G2_BORDER_BOTTOM | G2_ALPHA_NONE, 10, 10, 100, 100, 10);
 
-	g2::texture(ref);
+	/*g2::texture(ref);
 	g2::padding(20, 20, 20, 20);
 	g2::rect(G2_TEXTURE | G2_ALPHA_NONE | G2_PAD_LEFT | G2_PAD_RIGHT | G2_PAD_TOP | G2_PAD_BOTTOM, 320, 240, 320, 240);
-	/*
+	
 	g2::opacity(.199f);
 	g2::texture(ref);
 	g2::rectTexture(0, 0, 320, 240);
@@ -73,7 +79,7 @@ void Draw() {
 	g2::rectTexture(400, 200, 400, 300);*/
 
 	
-	g2::font("arial", 40);
+	/*g2::font("arial", 40);
 	g2::color(255, 0, 0);	
 
 	g2::color(255, 0, 0);
@@ -86,7 +92,7 @@ void Draw() {
 	g2::text_flow(" The");
 
 	g2::color(255, 0, 255);
-	g2::text_flow(" Circus!");
+	g2::text_flow(" Circus!");*/
 	
 	//g2::font("arial", 30);
 	//g2::rgb(255, 255, 255);

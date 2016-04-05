@@ -73,7 +73,7 @@ void g2::init() {
 	font("arial", 24);
 }
 
-void g2::Internal::freeMaps() {
+void g2::Internal::_freeMaps() {
 	typedef std::map<std::string, Atlas*>::iterator it1;
 	typedef std::map<std::string, TextureRef*>::iterator it2;
 
@@ -95,7 +95,7 @@ void g2::Internal::freeMaps() {
 }
 
 void g2::uninit() {
-	freeMaps();
+	_freeMaps();
 
 	delete ace_atlas_prog;
 	delete ace_texture_prog;

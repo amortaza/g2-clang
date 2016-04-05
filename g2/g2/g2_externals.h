@@ -9,6 +9,7 @@
 
 #include "free_font/free_font.h"
 
+#include "g2_texture.h"
 #include "g2_opacity.h"
 
 namespace g2 {
@@ -28,6 +29,11 @@ namespace g2 {
 		extern int G2_PAD_TOP;
 		extern int G2_PAD_RIGHT;
 		extern int G2_PAD_BOTTOM;
+
+		extern int G2_BORDER_LEFT;
+		extern int G2_BORDER_TOP;
+		extern int G2_BORDER_RIGHT;
+		extern int G2_BORDER_BOTTOM;
 
 		extern int G2_RGB_ANY;
 		extern int G2_PAD_ANY;
@@ -63,7 +69,14 @@ namespace g2 {
 
 		extern int viewportWidth, viewportHeight;
 
-		void freeMaps();
+		void _freeMaps();
 		void _rect(int flags, int left, int top, int width, int height, float topTextureCoord);
+
+		void _getRgbs(int flags,
+			float* reds, float *greens, float *blues,
+			float red1, float green1, float blue1,
+			float red2, float green2, float blue2);
+
+		void _getAlphas(int flags, float* alphas, float alpha1_effective, float alpha2_effective);
 	}
 }

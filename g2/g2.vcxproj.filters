@@ -114,6 +114,9 @@
     <ClCompile Include="g2_opacity.cpp">
       <Filter>g2</Filter>
     </ClCompile>
+    <ClCompile Include="g2_border.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\shader\screen.fragment.txt">

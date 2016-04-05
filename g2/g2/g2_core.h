@@ -28,4 +28,6 @@ namespace g2 {
 
 	void rect(int flags, int left, int top, int width, int height);
 	void rectFlipped(int flags, int left, int top, int width, int height);
+
+	void border(int flags, int x, int y, int width, int height, int thickness);
 }
