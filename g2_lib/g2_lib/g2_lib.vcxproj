@@ -129,26 +129,24 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\g2\AceFramebuffer.hpp" />
-    <ClInclude Include="..\..\g2\AceImageRect.hpp" />
-    <ClInclude Include="..\..\g2\AceProgram.hpp" />
-    <ClInclude Include="..\..\g2\AceRgbRect.hpp" />
-    <ClInclude Include="..\..\g2\AceShader.hpp" />
-    <ClInclude Include="..\..\g2\AceTexture.hpp" />
-    <ClInclude Include="..\..\g2\AceTextureRect.hpp" />
-    <ClInclude Include="..\..\g2\free_font.h" />
-    <ClInclude Include="..\..\g2\g2.h" />
-    <ClInclude Include="..\..\g2\g2_canvas.h" />
-    <ClInclude Include="..\..\g2\g2_core.h" />
-    <ClInclude Include="..\..\g2\g2_externals.h" />
-    <ClInclude Include="..\..\g2\g2_font.h" />
-    <ClInclude Include="..\..\g2\g2_opacity.h" />
-    <ClInclude Include="..\..\g2\g2_texture.h" />
+    <ClInclude Include="..\..\g2\g2\AceFramebuffer.hpp" />
+    <ClInclude Include="..\..\g2\g2\AceImageRect.hpp" />
+    <ClInclude Include="..\..\g2\g2\AceProgram.hpp" />
+    <ClInclude Include="..\..\g2\g2\AceRgbRect.hpp" />
+    <ClInclude Include="..\..\g2\g2\AceShader.hpp" />
+    <ClInclude Include="..\..\g2\g2\AceTexture.hpp" />
+    <ClInclude Include="..\..\g2\g2\AceTextureRect.hpp" />
+    <ClInclude Include="..\..\g2\g2\g2.h" />
+    <ClInclude Include="..\..\g2\g2\g2_canvas.h" />
+    <ClInclude Include="..\..\g2\g2\g2_core.h" />
+    <ClInclude Include="..\..\g2\g2\g2_externals.h" />
+    <ClInclude Include="..\..\g2\g2\g2_font.h" />
+    <ClInclude Include="..\..\g2\g2\g2_opacity.h" />
+    <ClInclude Include="..\..\g2\g2\g2_texture.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\g2\free_font.cpp" />
     <ClCompile Include="..\..\g2\g2_canvas.cpp" />
     <ClCompile Include="..\..\g2\g2_core.cpp" />
     <ClCompile Include="..\..\g2\g2_font.cpp" />

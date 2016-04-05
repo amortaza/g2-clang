@@ -38,3 +38,5 @@
 
 #include "WinOs/WinOs.h"
 #include "Xel/Xel.h"
+
+#include "free_font/free_font.h"
