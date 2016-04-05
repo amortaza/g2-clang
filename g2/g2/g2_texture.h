@@ -14,6 +14,7 @@ namespace g2 {
 	};
 
 	TextureRef* loadTextureRgb(char* filename);
+	TextureRef* loadTextureRgba(char* filename);
 	TextureRef* loadTextureAlpha(unsigned char* buffer, int width, int height);
 
 	void texture(TextureRef*);

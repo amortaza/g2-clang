@@ -25,6 +25,18 @@ TextureRef* g2::loadTextureRgb(char* filename) {
 	return ref;
 }
 
+TextureRef* g2::loadTextureRgba(char* filename) {
+	TextureRef* ref = new TextureRef();
+
+	ref->ace_texture = new AceTexture();
+
+	ref->ace_texture->loadRgba(filename);
+
+	texture(ref);
+
+	return ref;
+}
+
 TextureRef* g2::loadTextureAlpha(unsigned char* buffer, int width, int height) {
 	TextureRef* ref = new TextureRef();
 

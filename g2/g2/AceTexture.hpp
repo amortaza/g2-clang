@@ -50,7 +50,15 @@ public:
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGB, GL_UNSIGNED_BYTE, imageData);
     }
 
-	void loadAlpha(unsigned char* buffer, int w, int h) {		
+	void loadRgba(const char* filename) {
+		imageData = SOIL_load_image(filename, &w, &h, 0, SOIL_LOAD_AUTO);
+
+		glBindTexture(GL_TEXTURE_2D, tid);
+
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, imageData);
+	}
+
+	void loadAlpha(unsigned char* buffer, int w, int h) {
 
 		glBindTexture(GL_TEXTURE_2D, tid);
 
