@@ -1,10 +1,17 @@
 #include "stdafx.h"
 
-#include "g2/g2_texture.h"
+#include "g2/g2_core.h"
 #include "g2/g2_externals.h"
 
 using namespace g2;
 using namespace g2::Internal;
+
+void g2::padding(int left, int top, int right, int bottom) {
+	padding_left = left;
+	padding_top = top;
+	padding_right = right;
+	padding_bottom = bottom;
+}
 
 TextureRef* g2::loadTextureRgb(char* filename) {
 	TextureRef* ref = new TextureRef();

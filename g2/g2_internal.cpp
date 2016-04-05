@@ -19,18 +19,26 @@ namespace g2 {
 		int G2_RGB_HORIZ_GRADIENT = 1 << 3;
 		int G2_RGB_VERT_GRADIENT = 1 << 4;
 
-		int G2_RGB_ANY = G2_RGB_SOLID | G2_RGB_HORIZ_GRADIENT | G2_RGB_VERT_GRADIENT;
-
 		int G2_ALPHA_SOLID = 1 << 5;
 		int G2_ALPHA_HORIZ_GRADIENT = 1 << 6;
 		int G2_ALPHA_VERT_GRADIENT = 1 << 7;
 		int G2_ALPHA_NONE = 1 << 8;
+
+		int G2_PAD_LEFT = 1 << 9;
+		int G2_PAD_TOP = 1 << 10;
+		int G2_PAD_RIGHT = 1 << 11;
+		int G2_PAD_BOTTOM = 1 << 12;
+
+		int G2_RGB_ANY = G2_RGB_SOLID | G2_RGB_HORIZ_GRADIENT | G2_RGB_VERT_GRADIENT;
+		int G2_PAD_ANY = G2_PAD_LEFT | G2_PAD_TOP | G2_PAD_RIGHT | G2_PAD_BOTTOM;
 	}
 
 	namespace Internal {
 
 		float red1 = 1.f, green1 = 1.f, blue1 = 1.f;
 		float red2 = 1.f, green2 = 1.f, blue2 = 1.f;
+
+		int padding_left = 0, padding_top = 0, padding_right = 0, padding_bottom = 0;
 
 		glm::mat4 WinOrtho;
 

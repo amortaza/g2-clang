@@ -15,7 +15,6 @@ namespace g2 {
 	namespace flags {
 		extern int G2_TEXTURE;
 
-		extern int G2_RGB_ANY;
 		extern int G2_RGB_SOLID;
 		extern int G2_RGB_HORIZ_GRADIENT;
 		extern int G2_RGB_VERT_GRADIENT;
@@ -24,12 +23,22 @@ namespace g2 {
 		extern int G2_ALPHA_SOLID;
 		extern int G2_ALPHA_HORIZ_GRADIENT;
 		extern int G2_ALPHA_VERT_GRADIENT;
+
+		extern int G2_PAD_LEFT;
+		extern int G2_PAD_TOP;
+		extern int G2_PAD_RIGHT;
+		extern int G2_PAD_BOTTOM;
+
+		extern int G2_RGB_ANY;
+		extern int G2_PAD_ANY;
 	}
 
 	namespace Internal {
 
 		extern float red1, green1, blue1;
 		extern float red2, green2, blue2;
+
+		extern int padding_left, padding_top, padding_right, padding_bottom;
 
 		extern glm::mat4 WinOrtho;
 

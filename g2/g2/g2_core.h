@@ -19,14 +19,13 @@ namespace g2 {
 	void opacity(float alpha);
 	void opacity2(float alpha);
 
+	void padding(int left, int top, int right, int bottom);
+
 	void clear();
 
-	void rgb(unsigned char red, unsigned char green, unsigned char blue);	
-	void rgb2(unsigned char red, unsigned char green, unsigned char blue);
+	void color(unsigned char red, unsigned char green, unsigned char blue);	
+	void color2(unsigned char red, unsigned char green, unsigned char blue);
 
 	void rect(int flags, int left, int top, int width, int height);
 	void rectFlipped(int flags, int left, int top, int width, int height);
-
-	void rectRgb(int left, int top, int width, int height);
-	void rectTexture(int left, int top, int width, int height);
 }

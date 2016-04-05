@@ -15,17 +15,17 @@ void Draw() {
 
     g2::clear();   
 
-    g2::rgb(200, 0, 200);
-    g2::rectRgb(2, 2, winW - 4, winH - 4);
+    g2::color(200, 0, 200);
+    g2::rect(G2_RGB_SOLID | G2_ALPHA_NONE, 2, 2, winW - 4, winH - 4);
 
 	//g2::opacity(.5f);
-		g2::rgb(255, 255, 255);
-		g2::rectRgb(20, 200, 320, 240);
+		/*g2::rgb(255, 255, 255);
+		g2::rect(G2_RGB_SOLID | G2_ALPHA_NONE, 20, 200, 320, 240);
 
 		g2::opacity(.0499f);
 		g2::opacity2(1.f);
 		g2::texture(ref);
-		g2::rect(G2_TEXTURE | G2_ALPHA_HORIZ_GRADIENT, 360, 100, 320, 240);
+		g2::rect(G2_TEXTURE | G2_ALPHA_HORIZ_GRADIENT, 360, 100, 320, 240);*/
 		
 
 	/*g2::opacity(0.f);
@@ -42,9 +42,10 @@ void Draw() {
     g2::rect(G2_RGB_HORIZ_GRADIENT, 20, 200, 320, 240);
 	g2::rect(G2_RGB_VERT_GRADIENT, 400, 200, 320, 240);*/
 
-	/*g2::texture(ref);
-	g2::rectTexture(320, 240, 320, 240);
-	
+	g2::texture(ref);
+	g2::padding(20, 20, 20, 20);
+	g2::rect(G2_TEXTURE | G2_ALPHA_NONE | G2_PAD_LEFT | G2_PAD_RIGHT | G2_PAD_TOP | G2_PAD_BOTTOM, 320, 240, 320, 240);
+	/*
 	g2::opacity(.199f);
 	g2::texture(ref);
 	g2::rectTexture(0, 0, 320, 240);
@@ -72,21 +73,21 @@ void Draw() {
 	g2::rectTexture(400, 200, 400, 300);*/
 
 	
-	/*g2::font("arial", 40);
-	g2::rgb(255, 0, 0);	
+	g2::font("arial", 40);
+	g2::color(255, 0, 0);	
 
-	g2::rgb(255, 0, 0);
+	g2::color(255, 0, 0);
 	g2::text(480, 350, "Welcome");
 	
-	g2::rgb(255, 255, 0);
+	g2::color(255, 255, 0);
 	g2::text_flow(" to");
 
-	g2::rgb(0, 255, 0);
+	g2::color(0, 255, 0);
 	g2::text_flow(" The");
 
-	g2::rgb(255, 0, 255);
+	g2::color(255, 0, 255);
 	g2::text_flow(" Circus!");
-	*/
+	
 	//g2::font("arial", 30);
 	//g2::rgb(255, 255, 255);
 	//g2::text(200, 200, "Welcome to the Circus, filled with funny big Clowns!");
