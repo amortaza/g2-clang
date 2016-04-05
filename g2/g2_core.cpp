@@ -68,6 +68,7 @@ void g2::init() {
 
 	ace_rgb_rect = new AceRgbRect();
 	ace_texture_rect = new AceTextureRect();
+	ace_texture_glyph = new AceTextureGlyph();
 
 	font("arial", 24);
 }
@@ -102,6 +103,7 @@ void g2::uninit() {
 
 	delete ace_rgb_rect;
 	delete ace_texture_rect;
+	delete ace_texture_glyph;
 
 	// no need to free current_atlas;
 	// no need to free current_atlas_ref;

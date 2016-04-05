@@ -80,7 +80,7 @@ int g2::Internal::_text(int x, int y, char* str) {
 		fx = coords[i++];
 		int fy = coords[i++];
 
-		g2::Internal::ace_texture_rect->drawAtlasChar(
+		g2::Internal::ace_texture_glyph->draw(
 			g2::Internal::ace_atlas_prog,
 			texture, 
 			current_atlas->charX[c], 

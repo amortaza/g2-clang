@@ -3,9 +3,9 @@
 #include <map>
 
 #include "g2/AceRgbRect.hpp"
-#include "g2/AceTextureRect.hpp"
 #include "g2/AceProgram.hpp"
-#include "g2/AceTexture.hpp"
+#include "g2/AceTextureRect.hpp"
+#include "g2/AceTextureGlyph.hpp"
 
 #include "g2/g2_texture.h"
 #include "g2/g2_opacity.h"
@@ -40,6 +40,7 @@ namespace g2 {
 
 		AceRgbRect* ace_rgb_rect;
 		AceTextureRect* ace_texture_rect;
+		AceTextureGlyph* ace_texture_glyph;
 
 		Atlas *current_atlas = 0;
 		TextureRef* current_atlas_ref = 0;

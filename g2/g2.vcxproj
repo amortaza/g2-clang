@@ -87,6 +87,7 @@
     <ClInclude Include="g2\AceRgbRect.hpp" />
     <ClInclude Include="g2\AceShader.hpp" />
     <ClInclude Include="g2\AceTexture.hpp" />
+    <ClInclude Include="g2\AceTextureGlyph.hpp" />
     <ClInclude Include="g2\AceTextureRect.hpp" />
     <ClInclude Include="g2\g2.h" />
     <ClInclude Include="g2\g2_canvas.h" />

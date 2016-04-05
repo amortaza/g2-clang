@@ -2,9 +2,10 @@
 
 #include <map>
 
+#include "AceProgram.hpp"
 #include "AceRgbRect.hpp"
 #include "AceTextureRect.hpp"
-#include "AceProgram.hpp"
+#include "AceTextureGlyph.hpp"
 
 #include "free_font/free_font.h"
 
@@ -38,6 +39,7 @@ namespace g2 {
 
 		extern AceRgbRect* ace_rgb_rect;
 		extern AceTextureRect* ace_texture_rect;
+		extern AceTextureGlyph* ace_texture_glyph;
 
 		extern AceTexture* current_ace_texture;
 
