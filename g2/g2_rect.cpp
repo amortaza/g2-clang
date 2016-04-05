@@ -28,7 +28,7 @@ void g2::rectTexture(int left, int top, int width, int height) {
 
 void g2_internal_getAlphas(int flags, float* alphas) {
 	if (flags & G2_ALPHA_NONE) {
-		alphas[0] = alphas[1] = alphas[2] = alphas[3] = alpha1_parent;
+		alphas[0] = alphas[1] = alphas[2] = alphas[3] = 1.f;
 	}
 	else if (flags & G2_ALPHA_SOLID) {
 		alphas[0] = alphas[1] = alphas[2] = alphas[3] = alpha1_effective;
@@ -46,7 +46,7 @@ void g2_internal_getAlphas(int flags, float* alphas) {
 		alphas[3] = alpha2_effective;
 	}
 	else {
-		alphas[0] = alphas[1] = alphas[2] = alphas[3] = alpha1_parent;
+		alphas[0] = alphas[1] = alphas[2] = alphas[3] = 1.f;
 	}
 }
 
@@ -118,6 +118,6 @@ void g2::Internal::_rect(int flags, int left, int top, int width, int height, fl
 		throw "rect() flags are none of texture or rgb.";
 	}
 
-	alpha1_effective = alpha2_effective = alpha1_parent;
+	alpha1_effective = alpha2_effective = 1.f;
 }
 

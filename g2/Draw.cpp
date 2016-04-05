@@ -19,7 +19,6 @@ void Draw() {
     g2::rectRgb(2, 2, winW - 4, winH - 4);
 
 	//g2::opacity(.5f);
-	g2::pushOpacity();
 		g2::rgb(255, 255, 255);
 		g2::rectRgb(20, 200, 320, 240);
 
@@ -28,7 +27,6 @@ void Draw() {
 		g2::texture(ref);
 		g2::rect(G2_TEXTURE | G2_ALPHA_HORIZ_GRADIENT, 360, 100, 320, 240);
 		
-	g2::popOpacity();
 
 	/*g2::opacity(0.f);
 	g2::opacity2(1.f);

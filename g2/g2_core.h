@@ -19,9 +19,6 @@ namespace g2 {
 	void opacity(float alpha);
 	void opacity2(float alpha);
 
-	void pushOpacity();
-	void popOpacity();
-
 	void clear();
 
 	void rgb(unsigned char red, unsigned char green, unsigned char blue);	
