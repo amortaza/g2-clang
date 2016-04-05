@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "g2.h"
+#include "g2/g2.h"
 
 g2::TextureRef* ref;
 
