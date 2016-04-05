@@ -60,7 +60,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>freetype263d.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>xel_lib.lib;free_font_lib.lib;freetype263d.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -81,12 +81,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\c_lib\lib\Soil\image_DXT.h" />
-    <ClInclude Include="..\..\c_lib\lib\Soil\image_helper.h" />
-    <ClInclude Include="..\..\c_lib\lib\Soil\SOIL.h" />
-    <ClInclude Include="..\..\c_lib\lib\Soil\stbi_DDS_aug.h" />
-    <ClInclude Include="..\..\c_lib\lib\Soil\stbi_DDS_aug_c.h" />
-    <ClInclude Include="..\..\c_lib\lib\Soil\stb_image_aug.h" />
     <ClInclude Include="AceRgbRect.hpp" />
     <ClInclude Include="AceFramebuffer.hpp" />
     <ClInclude Include="AceProgram.hpp" />
@@ -94,7 +88,6 @@
     <ClInclude Include="AceShader.hpp" />
     <ClInclude Include="AceTexture.hpp" />
     <ClInclude Include="AceTextureRect.hpp" />
-    <ClInclude Include="free_font.h" />
     <ClInclude Include="g2.h" />
     <ClInclude Include="g2_canvas.h" />
     <ClInclude Include="g2_core.h" />
@@ -107,20 +100,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\c_lib\lib\Soil\image_DXT.cpp" />
-    <ClCompile Include="..\..\c_lib\lib\Soil\image_helper.cpp" />
-    <ClCompile Include="..\..\c_lib\lib\Soil\SOIL.cpp" />
-    <ClCompile Include="..\..\c_lib\lib\Soil\stb_image_aug.cpp" />
-    <ClCompile Include="..\..\xel\Solution\Solution\WinOs\WinOs_GL.cpp" />
-    <ClCompile Include="..\..\xel\Solution\Solution\WinOs\WinOs_Window.cpp" />
-    <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel.cpp" />
-    <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel_Keyboard.cpp" />
-    <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel_Mouse.cpp" />
-    <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel_Window.cpp" />
-    <ClCompile Include="..\..\xel\Solution\Solution\Xel\Xel_WndProc.cpp" />
     <ClCompile Include="Callbacks.cpp" />
     <ClCompile Include="Draw.cpp" />
-    <ClCompile Include="free_font.cpp" />
     <ClCompile Include="g2_canvas.cpp" />
     <ClCompile Include="g2_core.cpp" />
     <ClCompile Include="g2_font.cpp" />

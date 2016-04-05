@@ -2,8 +2,6 @@
 
 #include "g2.h"
 
-#include "free_font.h"
-
 g2::TextureRef* ref;
 
 void Init_OnGL() {

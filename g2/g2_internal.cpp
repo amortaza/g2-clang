@@ -7,7 +7,7 @@
 #include "AceProgram.hpp"
 #include "AceTexture.hpp"
 
-#include "free_font.h"
+#include "free_font/free_font.h"
 
 #include "g2_texture.h"
 #include "g2_opacity.h"

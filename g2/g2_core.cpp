@@ -2,7 +2,7 @@
 
 #include <map>
 
-#include "free_font.h"
+#include "free_font/free_font.h"
 #include "g2.h"
 
 using namespace g2;
