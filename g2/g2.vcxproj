@@ -81,6 +81,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AceMaskRgbRect.hpp" />
     <ClInclude Include="g2\AceFramebuffer.hpp" />
     <ClInclude Include="g2\AceImageRect.hpp" />
     <ClInclude Include="g2\AceProgram.hpp" />
@@ -109,6 +110,7 @@
     <ClCompile Include="g2_font.cpp" />
     <ClCompile Include="g2_border.cpp" />
     <ClCompile Include="g2_internal.cpp" />
+    <ClCompile Include="g2_mask.cpp" />
     <ClCompile Include="g2_opacity.cpp" />
     <ClCompile Include="g2_rect.cpp" />
     <ClCompile Include="g2_texture.cpp" />
@@ -120,14 +122,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\shader\rgb_rect.fragment.txt" />
-    <Text Include="..\shader\rgb_rect.vertex.txt" />
+    <Text Include="..\shader\mask-rgb-rect.fragment.txt" />
+    <Text Include="..\shader\mask-rgb-rect.vertex.txt" />
+    <Text Include="..\shader\rgb-rect.fragment.txt" />
+    <Text Include="..\shader\rgb-rect.vertex.txt" />
     <Text Include="..\shader\screen.fragment.txt" />
     <Text Include="..\shader\screen.vertex.txt" />
-    <Text Include="..\shader\atlas_rect.fragment.txt" />
-    <Text Include="..\shader\atlas_rect.vertex.txt" />
-    <Text Include="..\shader\texture_rect.fragment.txt" />
-    <Text Include="..\shader\texture_rect.vertex.txt" />
+    <Text Include="..\shader\atlas-rect.fragment.txt" />
+    <Text Include="..\shader\atlas-rect.vertex.txt" />
+    <Text Include="..\shader\texture-rect.fragment.txt" />
+    <Text Include="..\shader\texture-rect.vertex.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

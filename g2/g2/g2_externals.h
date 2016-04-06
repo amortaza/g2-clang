@@ -3,6 +3,8 @@
 #include <map>
 
 #include "AceProgram.hpp"
+
+#include "AceMaskRgbRect.hpp"
 #include "AceRgbRect.hpp"
 #include "AceTextureRect.hpp"
 #include "AceTextureGlyph.hpp"
@@ -35,6 +37,8 @@ namespace g2 {
 		extern int G2_BORDER_RIGHT;
 		extern int G2_BORDER_BOTTOM;
 
+		extern int G2_MASK;
+
 		extern int G2_RGB_ANY;
 		extern int G2_PAD_ANY;
 	}
@@ -51,15 +55,18 @@ namespace g2 {
 		extern AceProgram* ace_rgb_prog;
 		extern AceProgram* ace_texture_prog;
 		extern AceProgram* ace_atlas_prog;
+		extern AceProgram* ace_mask_rgb_prog;
 
 		extern AceRgbRect* ace_rgb_rect;
 		extern AceTextureRect* ace_texture_rect;
 		extern AceTextureGlyph* ace_texture_glyph;
+		extern AceMaskRgbRect* ace_mask_rgb_rect;
 
 		extern AceTexture* current_ace_texture;
 
 		extern Atlas *current_atlas;
 		extern TextureRef* current_atlas_ref;
+		extern TextureRef* current_mask_ref;
 
 		extern std::map<std::string, Atlas*> atlasMap;
 		extern std::map<std::string, TextureRef*> atlasRefMap;

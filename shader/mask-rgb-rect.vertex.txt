@@ -1,0 +1,20 @@
+#version 330
+
+layout (location = 0) in vec4 vertexPosition;
+layout (location = 1) in vec4 vertexColor;
+layout (location = 2) in vec2 vertexTexCoord;
+
+smooth out vec4 vsColor;
+smooth out vec2 vsTexCoord;
+
+uniform mat4 uProjection;
+
+void main()
+{
+   gl_Position = uProjection * vec4(vertexPosition.x, vertexPosition.y, 0.f, 1.f);
+
+   vsColor = vertexColor;
+   vsTexCoord = vertexTexCoord;
+}
+
+

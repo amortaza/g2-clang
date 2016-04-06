@@ -20,6 +20,8 @@ namespace g2 {
 	namespace flags {
 		int G2_TEXTURE = 1 << 0;
 
+		int G2_MASK = 1 << 1;
+
 		int G2_RGB_SOLID = 1 << 2;
 		int G2_RGB_HORIZ_GRADIENT = 1 << 3;
 		int G2_RGB_VERT_GRADIENT = 1 << 4;
@@ -55,13 +57,16 @@ namespace g2 {
 		AceProgram* ace_rgb_prog;
 		AceProgram* ace_texture_prog;
 		AceProgram* ace_atlas_prog;
+		AceProgram* ace_mask_rgb_prog;
 
 		AceRgbRect* ace_rgb_rect;
 		AceTextureRect* ace_texture_rect;
 		AceTextureGlyph* ace_texture_glyph;
+		AceMaskRgbRect* ace_mask_rgb_rect;
 
 		Atlas *current_atlas = 0;
 		TextureRef* current_atlas_ref = 0;
+		TextureRef* current_mask_ref = 0;
 
 		AceTexture* current_ace_texture = 0;
 

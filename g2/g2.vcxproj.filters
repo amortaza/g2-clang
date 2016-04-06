@@ -76,6 +76,9 @@
     <ClInclude Include="g2\AceTextureGlyph.hpp">
       <Filter>Ace</Filter>
     </ClInclude>
+    <ClInclude Include="AceMaskRgbRect.hpp">
+      <Filter>Ace</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -120,6 +123,9 @@
     <ClCompile Include="AceTexture.cpp">
       <Filter>Ace</Filter>
     </ClCompile>
+    <ClCompile Include="g2_mask.cpp">
+      <Filter>g2\include</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\shader\screen.fragment.txt">
@@ -128,22 +134,28 @@
     <Text Include="..\shader\screen.vertex.txt">
       <Filter>Shaders</Filter>
     </Text>
-    <Text Include="..\shader\texture_rect.fragment.txt">
+    <Text Include="..\shader\atlas-rect.fragment.txt">
       <Filter>Shaders</Filter>
     </Text>
-    <Text Include="..\shader\texture_rect.vertex.txt">
+    <Text Include="..\shader\atlas-rect.vertex.txt">
       <Filter>Shaders</Filter>
     </Text>
-    <Text Include="..\shader\rgb_rect.fragment.txt">
+    <Text Include="..\shader\rgb-rect.fragment.txt">
       <Filter>Shaders</Filter>
     </Text>
-    <Text Include="..\shader\rgb_rect.vertex.txt">
+    <Text Include="..\shader\rgb-rect.vertex.txt">
       <Filter>Shaders</Filter>
     </Text>
-    <Text Include="..\shader\atlas_rect.fragment.txt">
+    <Text Include="..\shader\texture-rect.fragment.txt">
       <Filter>Shaders</Filter>
     </Text>
-    <Text Include="..\shader\atlas_rect.vertex.txt">
+    <Text Include="..\shader\texture-rect.vertex.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="..\shader\mask-rgb-rect.fragment.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="..\shader\mask-rgb-rect.vertex.txt">
       <Filter>Shaders</Filter>
     </Text>
   </ItemGroup>

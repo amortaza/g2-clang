@@ -62,13 +62,15 @@ void g2::init() {
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-	ace_rgb_prog = new AceProgram("c:/_c/g2/shader/rgb_rect.vertex.txt", "c:/_c/g2/shader/rgb_rect.fragment.txt");
-	ace_texture_prog = new AceProgram("c:/_c/g2/shader/texture_rect.vertex.txt", "c:/_c/g2/shader/texture_rect.fragment.txt");
-	ace_atlas_prog = new AceProgram("c:/_c/g2/shader/atlas_rect.vertex.txt", "c:/_c/g2/shader/atlas_rect.fragment.txt");
+	ace_rgb_prog = new AceProgram("c:/_c/g2/shader/rgb-rect.vertex.txt", "c:/_c/g2/shader/rgb-rect.fragment.txt");
+	ace_texture_prog = new AceProgram("c:/_c/g2/shader/texture-rect.vertex.txt", "c:/_c/g2/shader/texture-rect.fragment.txt");
+	ace_atlas_prog = new AceProgram("c:/_c/g2/shader/atlas-rect.vertex.txt", "c:/_c/g2/shader/atlas-rect.fragment.txt");
+	ace_mask_rgb_prog = new AceProgram("c:/_c/g2/shader/mask-rgb-rect.vertex.txt", "c:/_c/g2/shader/mask-rgb-rect.fragment.txt");
 
 	ace_rgb_rect = new AceRgbRect();
 	ace_texture_rect = new AceTextureRect();
 	ace_texture_glyph = new AceTextureGlyph();
+	ace_mask_rgb_rect = new AceMaskRgbRect();
 
 	font("arial", 24);
 }
@@ -100,14 +102,16 @@ void g2::uninit() {
 	delete ace_atlas_prog;
 	delete ace_texture_prog;
 	delete ace_rgb_prog;
+	delete ace_mask_rgb_prog;
 
 	delete ace_rgb_rect;
 	delete ace_texture_rect;
 	delete ace_texture_glyph;
+	delete ace_mask_rgb_rect;
 
-	// no need to free current_atlas;
-	// no need to free current_atlas_ref;
-
+	// no need to free current_atlas
+	// no need to free current_atlas_ref
+	// no need to free current_mask_ref
 	// no need to free current_ace_texture
 }
 

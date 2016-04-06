@@ -26,6 +26,8 @@ namespace g2 {
 	void color(unsigned char red, unsigned char green, unsigned char blue);	
 	void color2(unsigned char red, unsigned char green, unsigned char blue);
 
+	void mask(TextureRef*);
+
 	void rect(int flags, int left, int top, int width, int height);
 	void rectFlipped(int flags, int left, int top, int width, int height);
 
