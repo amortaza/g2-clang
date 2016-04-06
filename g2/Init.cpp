@@ -8,7 +8,8 @@ void Init_OnGL() {
 	g2::init();
 
 	//ref = g2::loadTextureRgb("c:\\_c\\g2\\a.jpg");	
-	ref = g2::loadTextureRgb("c:\\_c\\g2\\jet.png");
+	ref = g2::loadTextureRgba("c:\\_c\\g2\\prof.png");
+	//ref = g2::loadTextureRgb("c:\\_c\\g2\\jet.png");
 }
 
 void UnInit() {
