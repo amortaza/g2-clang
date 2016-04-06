@@ -101,6 +101,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AceTexture.cpp" />
     <ClCompile Include="Callbacks.cpp" />
     <ClCompile Include="Draw.cpp" />
     <ClCompile Include="g2_canvas.cpp" />
