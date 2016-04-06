@@ -47,7 +47,7 @@ void g2::clear() {
 }
 
 void g2::init() {
-	glClearColor(0.0f, 0.0f, 1.0f, 0.5f);
+	glClearColor(0.40f, 0.09920f, 0.410f, 0.5f);
 
 	glActiveTexture(GL_TEXTURE0);
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
@@ -66,6 +66,7 @@ void g2::init() {
 	ace_texture_prog = new AceProgram("c:/_c/g2/shader/texture-rect.vertex.txt", "c:/_c/g2/shader/texture-rect.fragment.txt");
 	ace_atlas_prog = new AceProgram("c:/_c/g2/shader/atlas-rect.vertex.txt", "c:/_c/g2/shader/atlas-rect.fragment.txt");
 	ace_mask_rgb_prog = new AceProgram("c:/_c/g2/shader/mask-rgb-rect.vertex.txt", "c:/_c/g2/shader/mask-rgb-rect.fragment.txt");
+	ace_mask_texture_prog = new AceProgram("c:/_c/g2/shader/mask-texture-rect.vertex.txt", "c:/_c/g2/shader/mask-texture-rect.fragment.txt");
 
 	ace_rgb_rect = new AceRgbRect();
 	ace_texture_rect = new AceTextureRect();
@@ -103,6 +104,7 @@ void g2::uninit() {
 	delete ace_texture_prog;
 	delete ace_rgb_prog;
 	delete ace_mask_rgb_prog;
+	delete ace_mask_texture_prog;
 
 	delete ace_rgb_rect;
 	delete ace_texture_rect;

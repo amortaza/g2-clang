@@ -19,8 +19,10 @@ public:
 	void loadAlpha(unsigned char* buffer, int w, int h);
 	
 	void activate();
+	void activate2();
 
 	void deactivate();
+	void deactivate2();
 
 private:
 	unsigned char* imageData = 0;

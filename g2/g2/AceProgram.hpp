@@ -33,6 +33,11 @@ public:
 		uGlyphColor = glGetUniformLocation(programId, "uGlyphColor");
 		uAlpha = glGetUniformLocation(programId, "uAlpha");
 		uAlphaLeftTopRightBottom = glGetUniformLocation(programId, "uAlphaLeftTopRightBottom");
+
+		GLint texture1 = glGetUniformLocation(programId, "uSampler1");
+		if (texture1 > -1) {
+			glUniform1i(texture1, 1);
+		}
 	}
 
     ~AceProgram() {

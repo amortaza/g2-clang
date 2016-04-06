@@ -40,6 +40,8 @@ public:
 		glDisableVertexAttribArray(0);
 		glDisableVertexAttribArray(1);
 		glDisableVertexAttribArray(2);
+
+		mask->deactivate();
 	}
 
 private:

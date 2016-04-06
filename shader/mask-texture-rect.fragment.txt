@@ -1,0 +1,38 @@
+#version 330
+
+in vec2 vsTexCoord;
+
+out vec4 outFragColor;
+
+uniform sampler2D uSampler;
+uniform sampler2D uSampler1;
+
+uniform vec4 uAlphaLeftTopRightBottom;
+
+void main()
+{
+	float left = uAlphaLeftTopRightBottom[0];
+	float top = uAlphaLeftTopRightBottom[1];
+	float right = uAlphaLeftTopRightBottom[2];
+	float bottom = uAlphaLeftTopRightBottom[3];
+
+	float s = vsTexCoord.s;
+	float t = vsTexCoord.t;
+
+	float alpha;
+
+	if ( left == right ) {
+		if ( top == bottom ) {
+			alpha = left;
+		}
+		else {
+			alpha = bottom + (top - bottom) * t;
+		}
+	}
+	else {
+		alpha = left + (right - left) * s;
+	}
+
+    outFragColor = texture2D(uSampler, vsTexCoord.st) * vec4(1,1,1,alpha);
+	outFragColor.a = outFragColor.a * texture2D(uSampler1, vsTexCoord.st).a;	
+}

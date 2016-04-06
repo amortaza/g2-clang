@@ -67,6 +67,18 @@ void AceTexture::activate() {
 	glBindTexture(GL_TEXTURE_2D, tid);
 }
 
+void AceTexture::activate2() {
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, tid);
+	glActiveTexture(GL_TEXTURE0);
+}
+
+void AceTexture::deactivate2() {
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glActiveTexture(GL_TEXTURE0);
+}
+
 void AceTexture::deactivate() {
 	glBindTexture(GL_TEXTURE_2D, 0);
 }

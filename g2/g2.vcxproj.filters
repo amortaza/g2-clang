@@ -158,5 +158,11 @@
     <Text Include="..\shader\mask-rgb-rect.vertex.txt">
       <Filter>Shaders</Filter>
     </Text>
+    <Text Include="..\shader\mask-texture-rect.fragment.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="..\shader\mask-texture-rect.vertex.txt">
+      <Filter>Shaders</Filter>
+    </Text>
   </ItemGroup>
 </Project>

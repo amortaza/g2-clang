@@ -46,25 +46,43 @@ void g2::Internal::_rect(int flags, int left, int top, int width, int height, fl
 			_getRgbs(G2_RGB_SOLID, reds, greens, blues, 0, 0, 0, 0, 0, 0);			
 			ace_rgb_rect->draw(ace_rgb_prog, left, top, width, height, &WinOrtho, alphas, reds, greens, blues);
 
-			ace_texture_rect->draw(ace_texture_prog, current_ace_texture, tLeft, tTop, tWidth, tHeight, &WinOrtho, alphas, topTextureCoord);
+			if (flags & G2_MASK) {
+				current_mask_ref->ace_texture->activate2();
+				ace_texture_rect->draw(ace_mask_texture_prog, current_ace_texture, tLeft, tTop, tWidth, tHeight, &WinOrtho, alphas, topTextureCoord);
+			}
+			else {
+				ace_texture_rect->draw(ace_texture_prog, current_ace_texture, tLeft, tTop, tWidth, tHeight, &WinOrtho, alphas, topTextureCoord);
+			}
 
 			padding_left = padding_top = padding_right = padding_bottom = 0;
 		}
 		else {
-			ace_texture_rect->draw(ace_texture_prog, current_ace_texture, left, top, width, height, &WinOrtho, alphas, topTextureCoord);
+			if (flags & G2_MASK) {
+				current_mask_ref->ace_texture->activate2();
+				ace_texture_rect->draw(ace_mask_texture_prog, current_ace_texture, left, top, width, height, &WinOrtho, alphas, topTextureCoord);
+			}
+			else {
+				ace_texture_rect->draw(ace_texture_prog, current_ace_texture, left, top, width, height, &WinOrtho, alphas, topTextureCoord);
+			}			
 		}
 
 		current_ace_texture->deactivate();
-
 		current_ace_texture = 0;
+
+		if (flags & G2_MASK) {
+			current_mask_ref->ace_texture->deactivate2();
+			current_mask_ref = 0;
+		}
 	}
 	else if (flags & G2_RGB_ANY) {
 		float reds[4], greens[4], blues[4];
 
 		_getRgbs(flags, reds, greens, blues, red1, green1, blue1, red2, green2, blue2);
 
-		if ( flags & G2_MASK)
+		if (flags & G2_MASK) {
 			ace_mask_rgb_rect->draw(ace_mask_rgb_prog, current_mask_ref->ace_texture, left, top, width, height, &WinOrtho, alphas, reds, greens, blues);
+			current_mask_ref = 0;
+		}
 		else
 			ace_rgb_rect->draw(ace_rgb_prog, left, top, width, height, &WinOrtho, alphas, reds, greens, blues);
 	}

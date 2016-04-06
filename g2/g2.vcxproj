@@ -124,6 +124,8 @@
   <ItemGroup>
     <Text Include="..\shader\mask-rgb-rect.fragment.txt" />
     <Text Include="..\shader\mask-rgb-rect.vertex.txt" />
+    <Text Include="..\shader\mask-texture-rect.fragment.txt" />
+    <Text Include="..\shader\mask-texture-rect.vertex.txt" />
     <Text Include="..\shader\rgb-rect.fragment.txt" />
     <Text Include="..\shader\rgb-rect.vertex.txt" />
     <Text Include="..\shader\screen.fragment.txt" />

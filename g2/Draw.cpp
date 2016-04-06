@@ -8,6 +8,7 @@ using namespace g2::Internal;
 
 extern g2::TextureRef* jet;
 extern g2::TextureRef* guitar;
+extern g2::TextureRef* prof;
 
 void Draw() {
     int winW = Xel::Window::width;
@@ -28,14 +29,14 @@ void Draw() {
 
 	ace_mask_rgb_rect->draw(ace_mask_rgb_prog, ref->ace_texture, 100,100,600,480, &WinOrtho, alphas, reds, greens, blues);*/
 
-	g2::mask(jet);
-	//g2::texture(guitar);
-	g2::color(45, 32, 90);
-	g2::rect(G2_RGB_SOLID|G2_ALPHA_NONE|G2_MASK, 100,100,640,480);
+	g2::mask(prof);
+	g2::texture(guitar);
+	//g2::color(45, 32, 90);
+	//g2::rect(G2_RGB_SOLID|G2_ALPHA_NONE|G2_MASK, 100,100,640,480);
+	g2::rect(G2_TEXTURE | G2_ALPHA_NONE | G2_MASK, 100, 100, 640, 480);
 
-
-	g2::color(45, 90, 32);
-	g2::rect(G2_RGB_SOLID | G2_ALPHA_NONE, 400, 400, 640, 480);
+	//g2::color(45, 90, 32);
+	//g2::rect(G2_RGB_SOLID | G2_ALPHA_NONE, 400, 400, 640, 480);
 	//ace_texture_rect->draw(ace_texture_prog, ref->ace_texture, 10, 600, 300, 200, &WinOrtho, alphas, 0.f);
 	
 	//g2::opacity(.5f);
