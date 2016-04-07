@@ -9,7 +9,7 @@ using namespace g2::Internal;
 
 void g2::border(int flags, int x, int y, int width, int height, int thickness) {
 	float reds[4], greens[4], blues[4];
-	_getRgbs(G2_RGB_SOLID, reds, greens, blues, red1, green1, blue1, red1, green1, blue1);
+	_getRgbs(G2_COLOR_SOLID, reds, greens, blues, red1, green1, blue1, red1, green1, blue1);
 
 	float alphas[4];
 

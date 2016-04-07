@@ -43,7 +43,7 @@ void g2::Internal::_rect(int flags, int left, int top, int width, int height, fl
 			if (flags & G2_PAD_BOTTOM) { tHeight -= padding_bottom; }
 
 			float reds[4], greens[4], blues[4];
-			_getRgbs(G2_RGB_SOLID, reds, greens, blues, 0, 0, 0, 0, 0, 0);			
+			_getRgbs(G2_COLOR_SOLID, reds, greens, blues, 0, 0, 0, 0, 0, 0);
 			ace_rgb_rect->draw(ace_rgb_prog, left, top, width, height, &WinOrtho, alphas, reds, greens, blues);
 
 			if (flags & G2_MASK) {
@@ -74,7 +74,7 @@ void g2::Internal::_rect(int flags, int left, int top, int width, int height, fl
 			current_mask_ref = 0;
 		}
 	}
-	else if (flags & G2_RGB_ANY) {
+	else if (flags & G2_COLOR_ANY) {
 		float reds[4], greens[4], blues[4];
 
 		_getRgbs(flags, reds, greens, blues, red1, green1, blue1, red2, green2, blue2);

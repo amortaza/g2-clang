@@ -22,9 +22,9 @@ namespace g2 {
 
 		int G2_MASK = 1 << 1;
 
-		int G2_RGB_SOLID = 1 << 2;
-		int G2_RGB_HORIZ_GRADIENT = 1 << 3;
-		int G2_RGB_VERT_GRADIENT = 1 << 4;
+		int G2_COLOR_SOLID = 1 << 2;
+		int G2_COLOR_HORIZ_GRADIENT = 1 << 3;
+		int G2_COLOR_VERT_GRADIENT = 1 << 4;
 
 		int G2_ALPHA_SOLID = 1 << 5;
 		int G2_ALPHA_HORIZ_GRADIENT = 1 << 6;
@@ -35,13 +35,15 @@ namespace g2 {
 		int G2_PAD_TOP = 1 << 10;
 		int G2_PAD_RIGHT = 1 << 11;
 		int G2_PAD_BOTTOM = 1 << 12;
+		int G2_PAD_ALL = G2_PAD_LEFT | G2_PAD_TOP | G2_PAD_RIGHT | G2_PAD_BOTTOM;
 
 		int G2_BORDER_LEFT = 1 << 13;
 		int G2_BORDER_TOP = 1 << 14;
 		int G2_BORDER_RIGHT = 1 << 15;
 		int G2_BORDER_BOTTOM = 1 << 16;
+		int G2_BORDER_ALL = G2_BORDER_LEFT | G2_BORDER_TOP | G2_BORDER_RIGHT | G2_BORDER_BOTTOM;
 
-		int G2_RGB_ANY = G2_RGB_SOLID | G2_RGB_HORIZ_GRADIENT | G2_RGB_VERT_GRADIENT;
+		int G2_COLOR_ANY = G2_COLOR_SOLID | G2_COLOR_HORIZ_GRADIENT | G2_COLOR_VERT_GRADIENT;
 		int G2_PAD_ANY = G2_PAD_LEFT | G2_PAD_TOP | G2_PAD_RIGHT | G2_PAD_BOTTOM;
 	}
 
@@ -114,12 +116,12 @@ void g2::Internal::_getRgbs(int flags,
 	float red1, float green1, float blue1,
 	float red2, float green2, float blue2) {
 
-	if (flags & G2_RGB_SOLID) {
+	if (flags & G2_COLOR_SOLID) {
 		reds[0] = reds[1] = reds[2] = reds[3] = red1;
 		greens[0] = greens[1] = greens[2] = greens[3] = green1;
 		blues[0] = blues[1] = blues[2] = blues[3] = blue1;
 	}
-	else if (flags & G2_RGB_HORIZ_GRADIENT) {
+	else if (flags & G2_COLOR_HORIZ_GRADIENT) {
 		reds[0] = reds[1] = red1;
 		greens[0] = greens[1] = green1;
 		blues[0] = blues[1] = blue1;
@@ -128,7 +130,7 @@ void g2::Internal::_getRgbs(int flags,
 		greens[2] = greens[3] = green2;
 		blues[2] = blues[3] = blue2;
 	}
-	else if (flags & G2_RGB_VERT_GRADIENT) {
+	else if (flags & G2_COLOR_VERT_GRADIENT) {
 		reds[2] = reds[1] = red1;
 		greens[2] = greens[1] = green1;
 		blues[2] = blues[1] = blue1;
