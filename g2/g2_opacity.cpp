@@ -4,8 +4,8 @@
 
 namespace g2 {
 	namespace Internal {
-		float alpha1_effective = 1.f;
-		float alpha2_effective = 1.f;
+		float alpha1 = 1.f;
+		float alpha2 = 1.f;
 	}
 }
 
@@ -13,9 +13,9 @@ using namespace g2;
 using namespace g2::Internal;
 
 void g2::opacity(float alpha) {
-	alpha1_effective = alpha;
+	alpha1 = alpha;
 }
 
 void g2::opacity2(float alpha) {
-	alpha2_effective = alpha;
+	alpha2 = alpha;
 }

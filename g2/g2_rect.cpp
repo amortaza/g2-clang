@@ -29,7 +29,7 @@ void g2::rectFlipped(int flags, int left, int top, int width, int height) {
 void g2::Internal::_rect(int flags, int left, int top, int width, int height, float topTextureCoord) {
 	float alphas[4];
 
-	_getAlphas(flags, alphas, alpha1_effective, alpha2_effective);
+	_getAlphas(flags, alphas, alpha1, alpha2);
 
 	if ( flags & G2_TEXTURE) {
 		if (!current_ace_texture) throw "no texture active for rectangle - did you forget to call g2::texture(), or try to use g2::rect() multiple times without calling g2::texture()?";

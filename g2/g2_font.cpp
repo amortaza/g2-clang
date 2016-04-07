@@ -60,7 +60,7 @@ int* g2::font_metric(char* str) {
 	return coords;
 }
 
-int g2::Internal::_text(int x, int y, char* str) {	
+int g2::Internal::_text(int x, int y, char* str, float alpha) {	
 	CoreDraw core;
 	int * coords;
 
@@ -89,7 +89,7 @@ int g2::Internal::_text(int x, int y, char* str) {
 			fx, fy,
 			&WinOrtho,
 			red1, green1, blue1,
-			alpha1_effective);
+			alpha);
 	}
 
 	texture->deactivate();
@@ -101,14 +101,14 @@ int g2::Internal::_text(int x, int y, char* str) {
 	return fx;
 }
 
-void g2::text(int x, int y, char* str) {
+void g2::text(int x, int y, char* str, float alpha) {
 	last_font_c = '\0';
 	last_font_y = y;
-	last_font_x = _text(x, y, str);
+	last_font_x = _text(x, y, str, alpha);
 }
 
-void g2::text_flow(char* str) {
-	last_font_x = _text(last_font_x, last_font_y, str);
+void g2::text_flow(char* str, float alpha) {
+	last_font_x = _text(last_font_x, last_font_y, str, alpha);
 }
 
 namespace g2 {

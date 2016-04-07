@@ -81,6 +81,6 @@ namespace g2 {
 			float red1, float green1, float blue1,
 			float red2, float green2, float blue2);
 
-		void _getAlphas(int flags, float* alphas, float alpha1_effective, float alpha2_effective);
+		void _getAlphas(int flags, float* alphas, float alpha1, float alpha2);
 	}
 }

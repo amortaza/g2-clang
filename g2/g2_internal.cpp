@@ -79,24 +79,24 @@ namespace g2 {
 	}
 }
 
-void g2::Internal::_getAlphas(int flags, float* alphas, float alpha1_effective, float alpha2_effective) {
+void g2::Internal::_getAlphas(int flags, float* alphas, float alpha1, float alpha2) {
 	if (flags & G2_ALPHA_NONE) {
 		alphas[0] = alphas[1] = alphas[2] = alphas[3] = 1.f;
 	}
 	else if (flags & G2_ALPHA_SOLID) {
-		alphas[0] = alphas[1] = alphas[2] = alphas[3] = alpha1_effective;
+		alphas[0] = alphas[1] = alphas[2] = alphas[3] = alpha1;
 	}
 	else if (flags & G2_ALPHA_HORIZ_GRADIENT) {
-		alphas[0] = alpha1_effective;
+		alphas[0] = alpha1;
 		alphas[1] = -1;
-		alphas[2] = alpha2_effective;
+		alphas[2] = alpha2;
 		alphas[3] = -1;
 	}
 	else if (flags & G2_ALPHA_VERT_GRADIENT) {
 		alphas[0] = -1;
-		alphas[1] = alpha1_effective;
+		alphas[1] = alpha1;
 		alphas[2] = -1;
-		alphas[3] = alpha2_effective;
+		alphas[3] = alpha2;
 	}
 	else {
 		alphas[0] = alphas[1] = alphas[2] = alphas[3] = 1.f;

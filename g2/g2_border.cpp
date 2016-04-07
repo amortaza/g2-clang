@@ -14,7 +14,7 @@ void g2::border(int flags, int x, int y, int width, int height, int thickness) {
 	float alphas[4];
 
 	if ( flags & G2_ALPHA_SOLID)
-		_getAlphas(G2_ALPHA_SOLID, alphas, alpha1_effective, alpha1_effective);
+		_getAlphas(G2_ALPHA_SOLID, alphas, alpha1, alpha1);
 	else
 		_getAlphas(G2_ALPHA_NONE, alphas, 1.f, 1.f);
 
