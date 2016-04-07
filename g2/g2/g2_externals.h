@@ -17,6 +17,8 @@
 namespace g2 {
 	namespace flags {
 		extern int G2_TEXTURE;
+		extern int G2_PAD;
+		extern int G2_MASK;
 
 		extern int G2_COLOR_SOLID;
 		extern int G2_COLOR_HORIZ_GRADIENT;
@@ -29,21 +31,12 @@ namespace g2 {
 		extern int G2_ALPHA_VERT_GRADIENT;
 		extern int G2_ALPHA_ANY;
 
-		extern int G2_PAD_ALL;
-		extern int G2_PAD_LEFT;
-		extern int G2_PAD_TOP;
-		extern int G2_PAD_RIGHT;
-		extern int G2_PAD_BOTTOM;
-		extern int G2_PAD_ANY;
-
 		extern int G2_BORDER_ALL;
 		extern int G2_BORDER_LEFT;
 		extern int G2_BORDER_TOP;
 		extern int G2_BORDER_RIGHT;
 		extern int G2_BORDER_BOTTOM;
 		extern int G2_BORDER_ANY;
-
-		extern int G2_MASK;
 	}
 
 	namespace Internal {

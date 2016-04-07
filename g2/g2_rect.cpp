@@ -34,13 +34,13 @@ void g2::Internal::_rect(int flags, int left, int top, int width, int height, fl
 	if ( flags & G2_TEXTURE) {
 		if (!current_ace_texture) throw "no texture active for rectangle - did you forget to call g2::texture(), or try to use g2::rect() multiple times without calling g2::texture()?";
 
-		if (flags & G2_PAD_ANY) {
+		if (flags & G2_PAD) {
 			float tLeft = left, tWidth = width, tTop = top, tHeight = height;
 
-			if (flags & G2_PAD_LEFT) {tLeft += padding_left; tWidth -= padding_left;}
-			if (flags & G2_PAD_TOP) { tTop += padding_top; tHeight -= padding_top; }
-			if (flags & G2_PAD_RIGHT) { tWidth -= padding_right; }
-			if (flags & G2_PAD_BOTTOM) { tHeight -= padding_bottom; }
+			tLeft += padding_left; tWidth -= padding_left;
+			tTop += padding_top; tHeight -= padding_top;
+			tWidth -= padding_right;
+			tHeight -= padding_bottom;
 
 			float reds[4], greens[4], blues[4];
 			_getRgbs(G2_COLOR_SOLID, reds, greens, blues, 0, 0, 0, 0, 0, 0);

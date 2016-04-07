@@ -20,6 +20,8 @@ namespace g2 {
 	namespace flags {
 		int G2_TEXTURE = 1 << 0;
 
+		int G2_PAD = 1 << 9;
+
 		int G2_MASK = 1 << 1;
 
 		int G2_COLOR_SOLID = 1 << 2;
@@ -33,19 +35,12 @@ namespace g2 {
 		int G2_ALPHA_NONE = 1 << 8;
 		int G2_ALPHA_ANY = G2_ALPHA_SOLID | G2_ALPHA_HORIZ_GRADIENT | G2_ALPHA_VERT_GRADIENT;
 
-		int G2_PAD_LEFT = 1 << 9;
-		int G2_PAD_TOP = 1 << 10;
-		int G2_PAD_RIGHT = 1 << 11;
-		int G2_PAD_BOTTOM = 1 << 12;
-		int G2_PAD_ANY = G2_PAD_LEFT | G2_PAD_TOP | G2_PAD_RIGHT | G2_PAD_BOTTOM;
-		int G2_PAD_ALL = G2_PAD_ANY;
-
 		int G2_BORDER_LEFT = 1 << 13;
 		int G2_BORDER_TOP = 1 << 14;
 		int G2_BORDER_RIGHT = 1 << 15;
 		int G2_BORDER_BOTTOM = 1 << 16;
 		int G2_BORDER_ALL = G2_BORDER_LEFT | G2_BORDER_TOP | G2_BORDER_RIGHT | G2_BORDER_BOTTOM;
-		int G2_BORDER_ANY = G2_BORDER_LEFT | G2_BORDER_TOP | G2_BORDER_RIGHT | G2_BORDER_BOTTOM;
+		int G2_BORDER_ANY = G2_BORDER_ALL;
 	}
 
 	namespace Internal {
