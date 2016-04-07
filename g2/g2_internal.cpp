@@ -52,16 +52,16 @@ namespace g2 {
 
 		glm::mat4 WinOrtho;
 
-		AceProgram* ace_rgb_prog;
+		AceProgram* ace_color_prog;
 		AceProgram* ace_texture_prog;
 		AceProgram* ace_atlas_prog;
-		AceProgram* ace_mask_rgb_prog;
+		AceProgram* ace_mask_color_prog;
 		AceProgram* ace_mask_texture_prog;
 
-		AceRgbRect* ace_rgb_rect;
+		AceRgbRect* ace_color_rect;
 		AceTextureRect* ace_texture_rect;
 		AceTextureGlyph* ace_texture_glyph;
-		AceMaskRgbRect* ace_mask_rgb_rect;
+		AceMaskRgbRect* ace_mask_color_rect;
 
 		Atlas *current_atlas = 0;
 		TextureRef* current_atlas_ref = 0;

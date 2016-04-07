@@ -44,7 +44,7 @@ void g2::Internal::_rect(int flags, int left, int top, int width, int height, fl
 
 			float reds[4], greens[4], blues[4];
 			_getRgbs(G2_COLOR_SOLID, reds, greens, blues, 0, 0, 0, 0, 0, 0);
-			ace_rgb_rect->draw(ace_rgb_prog, left, top, width, height, &WinOrtho, alphas, reds, greens, blues);
+			ace_color_rect->draw(ace_color_prog, left, top, width, height, &WinOrtho, alphas, reds, greens, blues);
 
 			if (flags & G2_MASK) {
 				current_mask_ref->ace_texture->activate2();
@@ -80,11 +80,11 @@ void g2::Internal::_rect(int flags, int left, int top, int width, int height, fl
 		_getRgbs(flags, reds, greens, blues, red1, green1, blue1, red2, green2, blue2);
 
 		if (flags & G2_MASK) {
-			ace_mask_rgb_rect->draw(ace_mask_rgb_prog, current_mask_ref->ace_texture, left, top, width, height, &WinOrtho, alphas, reds, greens, blues);
+			ace_mask_color_rect->draw(ace_mask_color_prog, current_mask_ref->ace_texture, left, top, width, height, &WinOrtho, alphas, reds, greens, blues);
 			current_mask_ref = 0;
 		}
 		else
-			ace_rgb_rect->draw(ace_rgb_prog, left, top, width, height, &WinOrtho, alphas, reds, greens, blues);
+			ace_color_rect->draw(ace_color_prog, left, top, width, height, &WinOrtho, alphas, reds, greens, blues);
 	}
 	else {
 		throw "rect() flags are none of texture or rgb.";

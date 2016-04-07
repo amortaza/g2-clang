@@ -20,6 +20,9 @@ namespace g2 {
 		extern int G2_PAD;
 		extern int G2_MASK;
 
+		extern int G2_FONT_ALPHA;
+		extern int G2_FONT_ALPHA_NONE;
+
 		extern int G2_COLOR_SOLID;
 		extern int G2_COLOR_HORIZ_GRADIENT;
 		extern int G2_COLOR_VERT_GRADIENT;
@@ -48,16 +51,16 @@ namespace g2 {
 
 		extern glm::mat4 WinOrtho;
 
-		extern AceProgram* ace_rgb_prog;
+		extern AceProgram* ace_color_prog;
 		extern AceProgram* ace_texture_prog;
 		extern AceProgram* ace_atlas_prog;
-		extern AceProgram* ace_mask_rgb_prog;
+		extern AceProgram* ace_mask_color_prog;
 		extern AceProgram* ace_mask_texture_prog;
 
-		extern AceRgbRect* ace_rgb_rect;
+		extern AceRgbRect* ace_color_rect;
 		extern AceTextureRect* ace_texture_rect;
 		extern AceTextureGlyph* ace_texture_glyph;
-		extern AceMaskRgbRect* ace_mask_rgb_rect;
+		extern AceMaskRgbRect* ace_mask_color_rect;
 
 		extern AceTexture* current_ace_texture;
 
