@@ -20,9 +20,6 @@ namespace g2 {
 		extern int G2_PAD;
 		extern int G2_MASK;
 
-		extern int G2_FONT_ALPHA;
-		extern int G2_FONT_ALPHA_NONE;
-
 		extern int G2_COLOR_SOLID;
 		extern int G2_COLOR_HORIZ_GRADIENT;
 		extern int G2_COLOR_VERT_GRADIENT;
