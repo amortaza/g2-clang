@@ -42,9 +42,10 @@ void g2::Internal::_rect(int flags, int left, int top, int width, int height, fl
 			tWidth -= padding_right;
 			tHeight -= padding_bottom;
 
-			float reds[4], greens[4], blues[4];
+			// when not drawing to a canvas, this would have left a black box
+			/*float reds[4], greens[4], blues[4];
 			_getRgbs(G2_COLOR_SOLID, reds, greens, blues, 0, 0, 0, 0, 0, 0);
-			ace_color_rect->draw(ace_color_prog, left, top, width, height, &WinOrtho, alphas, reds, greens, blues);
+			ace_color_rect->draw(ace_color_prog, left, top, width, height, &WinOrtho, alphas, reds, greens, blues);*/
 
 			if (flags & G2_MASK) {
 				current_mask_ref->ace_texture->activate2();
@@ -63,7 +64,7 @@ void g2::Internal::_rect(int flags, int left, int top, int width, int height, fl
 			}
 			else {
 				ace_texture_rect->draw(ace_texture_prog, current_ace_texture, left, top, width, height, &WinOrtho, alphas, topTextureCoord);
-			}			
+			}
 		}
 
 		current_ace_texture->deactivate();
@@ -88,6 +89,6 @@ void g2::Internal::_rect(int flags, int left, int top, int width, int height, fl
 	}
 	else {
 		throw "rect() flags are none of texture or rgb.";
-	}	
+	}
 }
 

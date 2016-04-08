@@ -18,29 +18,29 @@ using namespace g2::flags;
 namespace g2 {
 
 	namespace flags {
-		int G2_TEXTURE = 1 << 0;
+		unsigned int G2_TEXTURE = 1 << 0;
 
-		int G2_PAD = 1 << 9;
+		unsigned int G2_PAD = 1 << 9;
 
-		int G2_MASK = 1 << 1;
+		unsigned int G2_MASK = 1 << 1;
 
-		int G2_COLOR_SOLID = 1 << 2;
-		int G2_COLOR_HORIZ_GRADIENT = 1 << 3;
-		int G2_COLOR_VERT_GRADIENT = 1 << 4;
-		int G2_COLOR_ANY = G2_COLOR_SOLID | G2_COLOR_HORIZ_GRADIENT | G2_COLOR_VERT_GRADIENT;
+		unsigned int G2_COLOR_SOLID = 1 << 2;
+		unsigned int G2_COLOR_HORIZ_GRADIENT = 1 << 3;
+		unsigned int G2_COLOR_VERT_GRADIENT = 1 << 4;
+		unsigned int G2_COLOR_ANY = G2_COLOR_SOLID | G2_COLOR_HORIZ_GRADIENT | G2_COLOR_VERT_GRADIENT;
 
-		int G2_ALPHA_SOLID = 1 << 5;
-		int G2_ALPHA_HORIZ_GRADIENT = 1 << 6;
-		int G2_ALPHA_VERT_GRADIENT = 1 << 7;
-		int G2_ALPHA_NONE = 1 << 8;
-		int G2_ALPHA_ANY = G2_ALPHA_SOLID | G2_ALPHA_HORIZ_GRADIENT | G2_ALPHA_VERT_GRADIENT;
+		unsigned int G2_ALPHA_SOLID = 1 << 5;
+		unsigned int G2_ALPHA_HORIZ_GRADIENT = 1 << 6;
+		unsigned int G2_ALPHA_VERT_GRADIENT = 1 << 7;
+		unsigned int G2_ALPHA_NONE = 1 << 8;
+		unsigned int G2_ALPHA_ANY = G2_ALPHA_SOLID | G2_ALPHA_HORIZ_GRADIENT | G2_ALPHA_VERT_GRADIENT;
 
-		int G2_BORDER_LEFT = 1 << 13;
-		int G2_BORDER_TOP = 1 << 14;
-		int G2_BORDER_RIGHT = 1 << 15;
-		int G2_BORDER_BOTTOM = 1 << 16;
-		int G2_BORDER_ALL = G2_BORDER_LEFT | G2_BORDER_TOP | G2_BORDER_RIGHT | G2_BORDER_BOTTOM;
-		int G2_BORDER_ANY = G2_BORDER_ALL;
+		unsigned int G2_BORDER_LEFT = 1 << 13;
+		unsigned int G2_BORDER_TOP = 1 << 14;
+		unsigned int G2_BORDER_RIGHT = 1 << 15;
+		unsigned int G2_BORDER_BOTTOM = 1 << 16;
+		unsigned int G2_BORDER_ALL = G2_BORDER_LEFT | G2_BORDER_TOP | G2_BORDER_RIGHT | G2_BORDER_BOTTOM;
+		unsigned int G2_BORDER_ANY = G2_BORDER_ALL;
 	}
 
 	namespace Internal {
@@ -53,14 +53,16 @@ namespace g2 {
 		glm::mat4 WinOrtho;
 
 		AceProgram* ace_color_prog;
+		AceRgbRect* ace_color_rect;
+
 		AceProgram* ace_texture_prog;
+		AceTextureRect* ace_texture_rect;
+
 		AceProgram* ace_atlas_prog;
+		AceTextureGlyph* ace_texture_glyph;
+
 		AceProgram* ace_mask_color_prog;
 		AceProgram* ace_mask_texture_prog;
-
-		AceRgbRect* ace_color_rect;
-		AceTextureRect* ace_texture_rect;
-		AceTextureGlyph* ace_texture_glyph;
 		AceMaskRgbRect* ace_mask_color_rect;
 
 		Atlas *current_atlas = 0;

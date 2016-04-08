@@ -16,27 +16,27 @@
 
 namespace g2 {
 	namespace flags {
-		extern int G2_TEXTURE;
-		extern int G2_PAD;
-		extern int G2_MASK;
+		extern unsigned int G2_TEXTURE;
+		extern unsigned int G2_PAD;
+		extern unsigned int G2_MASK;
 
-		extern int G2_COLOR_SOLID;
-		extern int G2_COLOR_HORIZ_GRADIENT;
-		extern int G2_COLOR_VERT_GRADIENT;
-		extern int G2_COLOR_ANY;
+		extern unsigned int G2_COLOR_SOLID;
+		extern unsigned int G2_COLOR_HORIZ_GRADIENT;
+		extern unsigned int G2_COLOR_VERT_GRADIENT;
+		extern unsigned int G2_COLOR_ANY;
 
-		extern int G2_ALPHA_NONE;
-		extern int G2_ALPHA_SOLID;
-		extern int G2_ALPHA_HORIZ_GRADIENT;
-		extern int G2_ALPHA_VERT_GRADIENT;
-		extern int G2_ALPHA_ANY;
+		extern unsigned int G2_ALPHA_NONE;
+		extern unsigned int G2_ALPHA_SOLID;
+		extern unsigned int G2_ALPHA_HORIZ_GRADIENT;
+		extern unsigned int G2_ALPHA_VERT_GRADIENT;
+		extern unsigned int G2_ALPHA_ANY;
 
-		extern int G2_BORDER_ALL;
-		extern int G2_BORDER_LEFT;
-		extern int G2_BORDER_TOP;
-		extern int G2_BORDER_RIGHT;
-		extern int G2_BORDER_BOTTOM;
-		extern int G2_BORDER_ANY;
+		extern unsigned int G2_BORDER_ALL;
+		extern unsigned int G2_BORDER_LEFT;
+		extern unsigned int G2_BORDER_TOP;
+		extern unsigned int G2_BORDER_RIGHT;
+		extern unsigned int G2_BORDER_BOTTOM;
+		extern unsigned int G2_BORDER_ANY;
 	}
 
 	namespace Internal {

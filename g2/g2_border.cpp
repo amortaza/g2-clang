@@ -7,16 +7,13 @@ using namespace g2;
 using namespace g2::flags;
 using namespace g2::Internal;
 
-void g2::border(int flags, int x, int y, int width, int height, int thickness) {
+void g2::border(int flags, int x, int y, int width, int height, int thickness, float alpha) {
 	float reds[4], greens[4], blues[4];
 	_getRgbs(G2_COLOR_SOLID, reds, greens, blues, red1, green1, blue1, red1, green1, blue1);
 
 	float alphas[4];
 
-	if ( flags & G2_ALPHA_SOLID)
-		_getAlphas(G2_ALPHA_SOLID, alphas, alpha1, alpha1);
-	else
-		_getAlphas(G2_ALPHA_NONE, alphas, 1.f, 1.f);
+	_getAlphas(G2_ALPHA_SOLID, alphas, alpha, alpha);
 
 	if (flags & G2_BORDER_LEFT) {
 		ace_color_rect->draw(ace_color_prog, x, y, thickness, height, &WinOrtho, alphas, reds, greens, blues);
