@@ -70,7 +70,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\_c\c_lib\lib;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>c:\_c\g2\g2;C:\_c\c_lib\lib;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <LibraryPath>C:\_c\c_lib\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -131,10 +131,12 @@
   <ItemGroup>
     <ClInclude Include="..\..\g2\g2\AceFramebuffer.hpp" />
     <ClInclude Include="..\..\g2\g2\AceImageRect.hpp" />
+    <ClInclude Include="..\..\g2\g2\AceMaskRgbRect.hpp" />
     <ClInclude Include="..\..\g2\g2\AceProgram.hpp" />
     <ClInclude Include="..\..\g2\g2\AceRgbRect.hpp" />
     <ClInclude Include="..\..\g2\g2\AceShader.hpp" />
     <ClInclude Include="..\..\g2\g2\AceTexture.hpp" />
+    <ClInclude Include="..\..\g2\g2\AceTextureGlyph.hpp" />
     <ClInclude Include="..\..\g2\g2\AceTextureRect.hpp" />
     <ClInclude Include="..\..\g2\g2\g2.h" />
     <ClInclude Include="..\..\g2\g2\g2_canvas.h" />
@@ -147,13 +149,15 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\g2\g2_canvas.cpp" />
-    <ClCompile Include="..\..\g2\g2_core.cpp" />
-    <ClCompile Include="..\..\g2\g2_font.cpp" />
-    <ClCompile Include="..\..\g2\g2_internal.cpp" />
-    <ClCompile Include="..\..\g2\g2_opacity.cpp" />
-    <ClCompile Include="..\..\g2\g2_rect.cpp" />
-    <ClCompile Include="..\..\g2\g2_texture.cpp" />
+    <ClCompile Include="..\..\g2\g2_cpp\AceTexture.cpp" />
+    <ClCompile Include="..\..\g2\g2_cpp\g2_canvas.cpp" />
+    <ClCompile Include="..\..\g2\g2_cpp\g2_core.cpp" />
+    <ClCompile Include="..\..\g2\g2_cpp\g2_font.cpp" />
+    <ClCompile Include="..\..\g2\g2_cpp\g2_internal.cpp" />
+    <ClCompile Include="..\..\g2\g2_cpp\g2_mask.cpp" />
+    <ClCompile Include="..\..\g2\g2_cpp\g2_opacity.cpp" />
+    <ClCompile Include="..\..\g2\g2_cpp\g2_rect.cpp" />
+    <ClCompile Include="..\..\g2\g2_cpp\g2_texture.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

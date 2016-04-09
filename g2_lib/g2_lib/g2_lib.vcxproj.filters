@@ -26,6 +26,9 @@
     <ClInclude Include="..\..\g2\g2\AceImageRect.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\g2\g2\AceMaskRgbRect.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\g2\g2\AceProgram.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\g2\g2\AceTexture.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\g2\g2\AceTextureGlyph.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\g2\g2\AceTextureRect.hpp">
@@ -67,25 +73,31 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\g2\g2_canvas.cpp">
+    <ClCompile Include="..\..\g2\g2_cpp\AceTexture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\g2\g2_core.cpp">
+    <ClCompile Include="..\..\g2\g2_cpp\g2_canvas.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\g2\g2_font.cpp">
+    <ClCompile Include="..\..\g2\g2_cpp\g2_core.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\g2\g2_internal.cpp">
+    <ClCompile Include="..\..\g2\g2_cpp\g2_font.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\g2\g2_opacity.cpp">
+    <ClCompile Include="..\..\g2\g2_cpp\g2_internal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\g2\g2_rect.cpp">
+    <ClCompile Include="..\..\g2\g2_cpp\g2_mask.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\g2\g2_texture.cpp">
+    <ClCompile Include="..\..\g2\g2_cpp\g2_opacity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\g2\g2_cpp\g2_rect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\g2\g2_cpp\g2_texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
