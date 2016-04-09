@@ -22,15 +22,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="targetver.h">
-      <Filter>_</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>_</Filter>
-    </ClInclude>
-    <ClInclude Include="Main.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="g2\g2.h">
       <Filter>g2\include</Filter>
     </ClInclude>
@@ -79,49 +70,64 @@
     <ClInclude Include="AceMaskRgbRect.hpp">
       <Filter>Ace</Filter>
     </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>_</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>_</Filter>
+    </ClInclude>
+    <ClInclude Include="sample\Main.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>_</Filter>
-    </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Callbacks.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Init.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Draw.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_texture.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_core.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_rect.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_internal.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_canvas.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_font.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_opacity.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
     <ClCompile Include="AceTexture.cpp">
       <Filter>Ace</Filter>
     </ClCompile>
     <ClCompile Include="g2_mask.cpp">
       <Filter>g2\include</Filter>
+    </ClCompile>
+    <ClCompile Include="g2_cpp\AceTexture.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2_cpp\g2_canvas.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2_cpp\g2_core.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2_cpp\g2_font.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2_cpp\g2_internal.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2_cpp\g2_mask.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2_cpp\g2_opacity.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2_cpp\g2_rect.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2_cpp\g2_texture.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="sample\Callbacks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sample\Draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sample\Init.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>_</Filter>
+    </ClCompile>
+    <ClCompile Include="sample\Main.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
