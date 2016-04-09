@@ -18,7 +18,7 @@ void g2::font(char* name, int height) {
 		return;
 	}
 
-	std::string key(name + height);
+	std::string key(std::string(name) + std::to_string(height));
 
 	auto element = atlasMap.find(key);
 
@@ -45,6 +45,8 @@ void g2::font(char* name, int height) {
 
 	atlasMap[key] = current_atlas;
 	atlasRefMap[key] = current_atlas_ref;
+
+	printf("Loaded font '%s'\n", name);
 }
 
 // letter height = font_height() + coords[ oddIndex ]
