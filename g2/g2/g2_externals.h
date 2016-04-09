@@ -30,13 +30,6 @@ namespace g2 {
 		extern unsigned int G2_ALPHA_HORIZ_GRADIENT;
 		extern unsigned int G2_ALPHA_VERT_GRADIENT;
 		extern unsigned int G2_ALPHA_ANY;
-
-		extern unsigned int G2_BORDER_ALL;
-		extern unsigned int G2_BORDER_LEFT;
-		extern unsigned int G2_BORDER_TOP;
-		extern unsigned int G2_BORDER_RIGHT;
-		extern unsigned int G2_BORDER_BOTTOM;
-		extern unsigned int G2_BORDER_ANY;
 	}
 
 	namespace Internal {

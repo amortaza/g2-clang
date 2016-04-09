@@ -34,13 +34,6 @@ namespace g2 {
 		unsigned int G2_ALPHA_VERT_GRADIENT = 1 << 7;
 		unsigned int G2_ALPHA_NONE = 1 << 8;
 		unsigned int G2_ALPHA_ANY = G2_ALPHA_SOLID | G2_ALPHA_HORIZ_GRADIENT | G2_ALPHA_VERT_GRADIENT;
-
-		unsigned int G2_BORDER_LEFT = 1 << 13;
-		unsigned int G2_BORDER_TOP = 1 << 14;
-		unsigned int G2_BORDER_RIGHT = 1 << 15;
-		unsigned int G2_BORDER_BOTTOM = 1 << 16;
-		unsigned int G2_BORDER_ALL = G2_BORDER_LEFT | G2_BORDER_TOP | G2_BORDER_RIGHT | G2_BORDER_BOTTOM;
-		unsigned int G2_BORDER_ANY = G2_BORDER_ALL;
 	}
 
 	namespace Internal {

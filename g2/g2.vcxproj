@@ -108,7 +108,6 @@
     <ClCompile Include="g2_canvas.cpp" />
     <ClCompile Include="g2_core.cpp" />
     <ClCompile Include="g2_font.cpp" />
-    <ClCompile Include="g2_border.cpp" />
     <ClCompile Include="g2_internal.cpp" />
     <ClCompile Include="g2_mask.cpp" />
     <ClCompile Include="g2_opacity.cpp" />
@@ -122,12 +121,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\shader\mask-rgb-rect.fragment.txt" />
-    <Text Include="..\shader\mask-rgb-rect.vertex.txt" />
+    <Text Include="..\shader\color-rect.fragment.txt" />
+    <Text Include="..\shader\color-rect.vertex.txt" />
+    <Text Include="..\shader\mask-color-rect.fragment.txt" />
+    <Text Include="..\shader\mask-color-rect.vertex.txt" />
     <Text Include="..\shader\mask-texture-rect.fragment.txt" />
     <Text Include="..\shader\mask-texture-rect.vertex.txt" />
-    <Text Include="..\shader\rgb-rect.fragment.txt" />
-    <Text Include="..\shader\rgb-rect.vertex.txt" />
     <Text Include="..\shader\screen.fragment.txt" />
     <Text Include="..\shader\screen.vertex.txt" />
     <Text Include="..\shader\atlas-rect.fragment.txt" />

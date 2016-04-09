@@ -117,9 +117,6 @@
     <ClCompile Include="g2_opacity.cpp">
       <Filter>g2</Filter>
     </ClCompile>
-    <ClCompile Include="g2_border.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
     <ClCompile Include="AceTexture.cpp">
       <Filter>Ace</Filter>
     </ClCompile>
@@ -140,28 +137,28 @@
     <Text Include="..\shader\atlas-rect.vertex.txt">
       <Filter>Shaders</Filter>
     </Text>
-    <Text Include="..\shader\rgb-rect.fragment.txt">
-      <Filter>Shaders</Filter>
-    </Text>
-    <Text Include="..\shader\rgb-rect.vertex.txt">
-      <Filter>Shaders</Filter>
-    </Text>
     <Text Include="..\shader\texture-rect.fragment.txt">
       <Filter>Shaders</Filter>
     </Text>
     <Text Include="..\shader\texture-rect.vertex.txt">
       <Filter>Shaders</Filter>
     </Text>
-    <Text Include="..\shader\mask-rgb-rect.fragment.txt">
-      <Filter>Shaders</Filter>
-    </Text>
-    <Text Include="..\shader\mask-rgb-rect.vertex.txt">
-      <Filter>Shaders</Filter>
-    </Text>
     <Text Include="..\shader\mask-texture-rect.fragment.txt">
       <Filter>Shaders</Filter>
     </Text>
     <Text Include="..\shader\mask-texture-rect.vertex.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="..\shader\mask-color-rect.fragment.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="..\shader\mask-color-rect.vertex.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="..\shader\color-rect.fragment.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="..\shader\color-rect.vertex.txt">
       <Filter>Shaders</Filter>
     </Text>
   </ItemGroup>

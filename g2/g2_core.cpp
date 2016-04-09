@@ -62,10 +62,10 @@ void g2::init() {
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-	ace_color_prog = new AceProgram("c:/_c/g2/shader/rgb-rect.vertex.txt", "c:/_c/g2/shader/rgb-rect.fragment.txt");
+	ace_color_prog = new AceProgram("c:/_c/g2/shader/color-rect.vertex.txt", "c:/_c/g2/shader/color-rect.fragment.txt");
 	ace_texture_prog = new AceProgram("c:/_c/g2/shader/texture-rect.vertex.txt", "c:/_c/g2/shader/texture-rect.fragment.txt");
 	ace_atlas_prog = new AceProgram("c:/_c/g2/shader/atlas-rect.vertex.txt", "c:/_c/g2/shader/atlas-rect.fragment.txt");
-	ace_mask_color_prog = new AceProgram("c:/_c/g2/shader/mask-rgb-rect.vertex.txt", "c:/_c/g2/shader/mask-rgb-rect.fragment.txt");
+	ace_mask_color_prog = new AceProgram("c:/_c/g2/shader/mask-color-rect.vertex.txt", "c:/_c/g2/shader/mask-color-rect.fragment.txt");
 	ace_mask_texture_prog = new AceProgram("c:/_c/g2/shader/mask-texture-rect.vertex.txt", "c:/_c/g2/shader/mask-texture-rect.fragment.txt");
 
 	ace_color_rect = new AceRgbRect();
