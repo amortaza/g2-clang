@@ -4,14 +4,8 @@
 #include "g2_canvas.h"
 
 namespace g2 {
-	class TextureRef {
-	public:
-		AceTexture* ace_texture;
 
-		~TextureRef() {
-			delete ace_texture;
-		}
-	};
+	extern class TextureRef;
 
 	TextureRef* loadTextureRgb(char* filename);
 	TextureRef* loadTextureRgba(char* filename);

@@ -4,6 +4,8 @@
 
 namespace g2 {	
 
+	extern class TextureRef;
+
 	void init();
 	void uninit();
 

@@ -4,6 +4,7 @@
 #include <stack>
 
 using namespace std;
+using namespace glm;
 
 #include "AceProgram.hpp"
 
