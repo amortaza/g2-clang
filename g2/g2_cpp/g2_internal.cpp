@@ -64,11 +64,11 @@ namespace g2 {
 
 		AceTexture* current_ace_texture = 0;
 
-		std::map<std::string, Atlas*> atlasMap;
-		std::map<std::string, TextureRef*> atlasRefMap;
+		map<string, Atlas*> atlasMap;
+		map<string, TextureRef*> atlasRefMap;
 
-		std::stack<glm::mat4> orthoStack;
-		std::stack<int> viewportStack2;
+		stack<glm::mat4> orthoStack;
+		stack<int> viewportStack2;
 
 		int viewportWidth, viewportHeight;
 	}

@@ -1,5 +1,7 @@
 #include "stdafx.h" 
 
+using namespace std;
+
 void OnMouseMove(int x, int y) {
 }
 
@@ -18,6 +20,6 @@ void OnKeyUp(unsigned long long xcode) {
 void OnResize(int w, int h) {
     glViewport(0, 0, w, h);
 
-    std::cout << "Set glViewport" << std::endl;
+    cout << "Set glViewport" << endl;
 
 }

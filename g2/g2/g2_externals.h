@@ -3,6 +3,8 @@
 #include <map>
 #include <stack>
 
+using namespace std;
+
 #include "AceProgram.hpp"
 
 #include "AceMaskRgbRect.hpp"
@@ -59,11 +61,11 @@ namespace g2 {
 		extern TextureRef* current_atlas_ref;
 		extern TextureRef* current_mask_ref;
 
-		extern std::map<std::string, Atlas*> atlasMap;
-		extern std::map<std::string, TextureRef*> atlasRefMap;
+		extern map<string, Atlas*> atlasMap;
+		extern map<string, TextureRef*> atlasRefMap;
 
-		extern std::stack<glm::mat4> orthoStack;
-		extern std::stack<int> viewportStack2;
+		extern stack<glm::mat4> orthoStack;
+		extern stack<int> viewportStack2;
 
 		extern int viewportWidth, viewportHeight;
 

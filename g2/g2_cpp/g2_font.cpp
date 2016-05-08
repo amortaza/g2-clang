@@ -18,7 +18,7 @@ void g2::font(char* name, int height) {
 		return;
 	}
 
-	std::string key(std::string(name) + std::to_string(height));
+	string key(string(name) + to_string(height));
 
 	auto element = atlasMap.find(key);
 
@@ -32,9 +32,9 @@ void g2::font(char* name, int height) {
 		return;
 	}
 
-	std::string path("C:\\_c\\c_lib\\lib\\");
-	std::string fontname(name);
-	std::string full(path + fontname + ".ttf");
+	string path("C:\\_c\\c_lib\\lib\\");
+	string fontname(name);
+	string full(path + fontname + ".ttf");
 
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 	

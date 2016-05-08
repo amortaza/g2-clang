@@ -77,8 +77,8 @@ void g2::init() {
 }
 
 void g2::Internal::_freeMaps() {
-	typedef std::map<std::string, Atlas*>::iterator it1;
-	typedef std::map<std::string, TextureRef*>::iterator it2;
+	typedef map<string, Atlas*>::iterator it1;
+	typedef map<string, TextureRef*>::iterator it2;
 
 	for (it1 it = atlasMap.begin(); it != atlasMap.end(); it++) {
 		Atlas* atlas = it->second;

@@ -1,5 +1,7 @@
 #include "stdafx.h"
 
+using namespace std;
+
 #include "g2/AceFramebuffer.hpp"
 #include "g2/g2_canvas.h"
 #include "g2/g2_core.h"
@@ -8,7 +10,7 @@ using namespace g2;
 
 CanvasRef* current_canvas = 0;
 
-std::stack<CanvasRef*> canvasStack;
+stack<CanvasRef*> canvasStack;
 
 extern AceTexture* current_ace_texture;
 

@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Main.h"
 
+using namespace std;
+
 void OnTick() {
 	try
 	{
@@ -36,6 +38,7 @@ int main(int argc, char** argv) {
 
     Xel::Loop(OnTick);
 
-    std::cout << "good bye." << std::endl;	return 0;
+	printf("Good bye\n");
+	return 0;
 }
 

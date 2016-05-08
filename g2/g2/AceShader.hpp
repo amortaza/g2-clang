@@ -1,5 +1,7 @@
 #pragma once
 
+using namespace std;
+
 class AceShader {
 
 public:
@@ -9,7 +11,7 @@ public:
     AceShader(const char* filename, GLuint type) {
         shaderId = glCreateShader(type);
 
-        std::string shaderSrc = readFile(filename);
+        string shaderSrc = readFile(filename);
         const char* shaderSrcPtr = shaderSrc.c_str();
 
         glShaderSource(shaderId, 1, &shaderSrcPtr, NULL);
@@ -34,19 +36,19 @@ private:
             GLchar *strInfoLog = new GLchar[infoLogLength + 1];
             glGetShaderInfoLog(shaderId, infoLogLength, NULL, strInfoLog);
 
-            std::cout << "Failed to compile shader:" << strInfoLog << std::endl;
+            cout << "Failed to compile shader:" << strInfoLog << endl;
             delete[] strInfoLog;
 
             throw "Failed to compile shader.";
         }
     }
 
-    std::string readFile(const char* filename) {
-        std::string str;
-        std::ifstream stream(filename, std::ios::in);
+    string readFile(const char* filename) {
+        string str;
+        ifstream stream(filename, ios::in);
 
         if (stream.is_open()){
-            std::string line = "";
+            string line = "";
 
             while (getline(stream, line))
                 str += "\n" + line;
@@ -54,7 +56,7 @@ private:
             stream.close();
         }
         else {
-            std::cout << "Could not read file " << filename << std::endl;
+            cout << "Could not read file " << filename << endl;
             throw "error";
         }
 
