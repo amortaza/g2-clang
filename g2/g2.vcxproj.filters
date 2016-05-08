@@ -20,6 +20,15 @@
     <Filter Include="g2\include">
       <UniqueIdentifier>{08905133-40ab-4ed3-8c6d-5767559af885}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Clown Dependencies">
+      <UniqueIdentifier>{ae100505-5079-4078-be54-7d1079c2de48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Clown Dependencies\free_font">
+      <UniqueIdentifier>{5d8f8d34-d6dc-459d-888b-2ef86c0e02de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Clown Dependencies\soil">
+      <UniqueIdentifier>{91e842e8-471c-4d3d-bb61-2e0e226f481c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="g2\g2.h">
@@ -79,14 +88,29 @@
     <ClInclude Include="sample\Main.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\FreeFont\free_font\free_font\free_font.h">
+      <Filter>Clown Dependencies\free_font</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_lib\lib\Soil\image_DXT.h">
+      <Filter>Clown Dependencies\soil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_lib\lib\Soil\image_helper.h">
+      <Filter>Clown Dependencies\soil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_lib\lib\Soil\SOIL.h">
+      <Filter>Clown Dependencies\soil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_lib\lib\Soil\stb_image_aug.h">
+      <Filter>Clown Dependencies\soil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_lib\lib\Soil\stbi_DDS_aug.h">
+      <Filter>Clown Dependencies\soil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\c_lib\lib\Soil\stbi_DDS_aug_c.h">
+      <Filter>Clown Dependencies\soil</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AceTexture.cpp">
-      <Filter>Ace</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_mask.cpp">
-      <Filter>g2\include</Filter>
-    </ClCompile>
     <ClCompile Include="g2_cpp\AceTexture.cpp">
       <Filter>g2</Filter>
     </ClCompile>
@@ -128,6 +152,21 @@
     </ClCompile>
     <ClCompile Include="sample\Main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FreeFont\free_font\free_font\free_font.cpp">
+      <Filter>Clown Dependencies\free_font</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\c_lib\lib\Soil\image_DXT.cpp">
+      <Filter>Clown Dependencies\soil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\c_lib\lib\Soil\image_helper.cpp">
+      <Filter>Clown Dependencies\soil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\c_lib\lib\Soil\SOIL.cpp">
+      <Filter>Clown Dependencies\soil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\c_lib\lib\Soil\stb_image_aug.cpp">
+      <Filter>Clown Dependencies\soil</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
