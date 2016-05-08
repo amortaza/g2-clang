@@ -10,29 +10,9 @@ public:
 
 public:
 
-    AceFramebuffer(int w, int h) {
-        texture = new AceTexture(w, h);
+	AceFramebuffer(int w, int h);
+	~AceFramebuffer();
 
-        glGenFramebuffers(1, &framebufferId);
-        glBindFramebuffer(GL_FRAMEBUFFER, framebufferId);
-        glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, texture->tid, 0);
-        glBindFramebuffer(GL_FRAMEBUFFER, 0);
-    }
-
-    ~AceFramebuffer() {
-        delete texture;
-
-        glDeleteFramebuffers(1, &framebufferId);
-    }
-
-    void begin() {
-        glBindFramebuffer(GL_FRAMEBUFFER, framebufferId);
-
-        glViewport(0, 0, texture->w, texture->h);
-    }
-
-    void end() {
-        glBindFramebuffer(GL_FRAMEBUFFER, 0);
-    }
-
+	void begin();
+	void end();
 };
