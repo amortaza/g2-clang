@@ -6,14 +6,18 @@
 using namespace std;
 using namespace glm;
 
+namespace ace_font {
+	extern class Atlas;
+}
+
+using namespace ace_font;
+
 #include "AceProgram.hpp"
 
 #include "AceMaskRgbRect.hpp"
 #include "AceRgbRect.hpp"
 #include "AceTextureRect.hpp"
 #include "AceTextureGlyph.hpp"
-
-#include "free_font/free_font.h"
 
 #include "g2_texture.h"
 #include "g2_opacity.h"

@@ -20,11 +20,11 @@
     <Filter Include="Clown Dependencies">
       <UniqueIdentifier>{ae100505-5079-4078-be54-7d1079c2de48}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Clown Dependencies\free_font">
-      <UniqueIdentifier>{5d8f8d34-d6dc-459d-888b-2ef86c0e02de}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Clown Dependencies\soil">
       <UniqueIdentifier>{91e842e8-471c-4d3d-bb61-2e0e226f481c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{131e098c-fefd-46ea-a2eb-02fa09342b7f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -63,9 +63,6 @@
     </ClInclude>
     <ClInclude Include="sample\Main.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\FreeFont\free_font\free_font\free_font.h">
-      <Filter>Clown Dependencies\free_font</Filter>
     </ClInclude>
     <ClInclude Include="..\..\c_lib\lib\Soil\image_DXT.h">
       <Filter>Clown Dependencies\soil</Filter>
@@ -106,6 +103,12 @@
     <ClInclude Include="g2\g2_texture.h">
       <Filter>g2</Filter>
     </ClInclude>
+    <ClInclude Include="g2\TextureRef.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="g2\CanvasRef.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sample\Callbacks.cpp">
@@ -122,9 +125,6 @@
     </ClCompile>
     <ClCompile Include="sample\Main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\FreeFont\free_font\free_font\free_font.cpp">
-      <Filter>Clown Dependencies\free_font</Filter>
     </ClCompile>
     <ClCompile Include="..\..\c_lib\lib\Soil\image_DXT.cpp">
       <Filter>Clown Dependencies\soil</Filter>
@@ -164,6 +164,12 @@
     </ClCompile>
     <ClCompile Include="g2\AceTexture.cpp">
       <Filter>Ace</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\TextureRef.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\CanvasRef.cpp">
+      <Filter>Misc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

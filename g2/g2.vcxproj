@@ -42,8 +42,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>c:\_c\g2\g2\sample;c:\_c\c_lib\lib\freetype-2.6.3;c:\_c\c_lib\lib;c:\_c\g2\g2;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <LibraryPath>c:\_c\c_lib\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+    <IncludePath>C:\_c\ace-font\ace-font;c:\_c\g2\g2\sample;c:\_c\c_lib\lib\freetype-2.6.3;c:\_c\c_lib\lib;c:\_c\g2\g2;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>c:\_c\c_lib\lib;C:\_c\ace-font\ace-font\Debug;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -55,12 +55,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>c:\_c\xel\solution\solution;C:\_c\FreeFont\free_font;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>c:\_c\xel\solution\solution;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>xel_lib.lib;freetype263d.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ace-font.lib;xel_lib.lib;freetype263d.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -86,8 +86,7 @@
     <ClInclude Include="..\..\c_lib\lib\Soil\SOIL.h" />
     <ClInclude Include="..\..\c_lib\lib\Soil\stbi_DDS_aug.h" />
     <ClInclude Include="..\..\c_lib\lib\Soil\stbi_DDS_aug_c.h" />
-    <ClInclude Include="..\..\c_lib\lib\Soil\stb_image_aug.h" />
-    <ClInclude Include="..\..\FreeFont\free_font\free_font\free_font.h" />
+    <ClInclude Include="..\..\c_lib\lib\Soil\stb_image_aug.h" />    
     <ClInclude Include="AceMaskRgbRect.hpp" />
     <ClInclude Include="g2\AceFramebuffer.hpp" />
     <ClInclude Include="g2\AceImageRect.hpp" />
@@ -97,6 +96,7 @@
     <ClInclude Include="g2\AceTexture.hpp" />
     <ClInclude Include="g2\AceTextureGlyph.hpp" />
     <ClInclude Include="g2\AceTextureRect.hpp" />
+    <ClInclude Include="g2\CanvasRef.h" />
     <ClInclude Include="g2\g2.h" />
     <ClInclude Include="g2\g2_canvas.h" />
     <ClInclude Include="g2\g2_core.h" />
@@ -104,6 +104,7 @@
     <ClInclude Include="g2\g2_font.h" />
     <ClInclude Include="g2\g2_opacity.h" />
     <ClInclude Include="g2\g2_texture.h" />
+    <ClInclude Include="g2\TextureRef.h" />
     <ClInclude Include="sample\Main.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -112,9 +113,9 @@
     <ClCompile Include="..\..\c_lib\lib\Soil\image_DXT.cpp" />
     <ClCompile Include="..\..\c_lib\lib\Soil\image_helper.cpp" />
     <ClCompile Include="..\..\c_lib\lib\Soil\SOIL.cpp" />
-    <ClCompile Include="..\..\c_lib\lib\Soil\stb_image_aug.cpp" />
-    <ClCompile Include="..\..\FreeFont\free_font\free_font\free_font.cpp" />
+    <ClCompile Include="..\..\c_lib\lib\Soil\stb_image_aug.cpp" />    
     <ClCompile Include="g2\AceTexture.cpp" />
+    <ClCompile Include="g2\CanvasRef.cpp" />
     <ClCompile Include="g2\g2_canvas.cpp" />
     <ClCompile Include="g2\g2_core.cpp" />
     <ClCompile Include="g2\g2_font.cpp" />
@@ -123,6 +124,7 @@
     <ClCompile Include="g2\g2_opacity.cpp" />
     <ClCompile Include="g2\g2_rect.cpp" />
     <ClCompile Include="g2\g2_texture.cpp" />
+    <ClCompile Include="g2\TextureRef.cpp" />
     <ClCompile Include="sample\Callbacks.cpp" />
     <ClCompile Include="sample\Draw.cpp" />
     <ClCompile Include="sample\Init.cpp" />
