@@ -2,14 +2,14 @@
 
 #include <map>
 
-#include "g2/AceRgbRect.hpp"
-#include "g2/AceProgram.hpp"
-#include "g2/AceTextureRect.hpp"
-#include "g2/AceTextureGlyph.hpp"
+#include "AceRgbRect.hpp"
+#include "AceProgram.hpp"
+#include "AceTextureRect.hpp"
+#include "AceTextureGlyph.hpp"
 
-#include "g2/g2_externals.h"
-#include "g2/g2_texture.h"
-#include "g2/g2_opacity.h"
+#include "g2_externals.h"
+#include "g2_texture.h"
+#include "g2_opacity.h"
 
 using namespace g2;
 using namespace g2::Internal;

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "TextureRef.h"
-#include "g2/g2.h"
+#include "g2.h"
 
 using namespace g2;
 using namespace g2::Internal;

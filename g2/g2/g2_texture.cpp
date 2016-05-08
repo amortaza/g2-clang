@@ -3,8 +3,8 @@
 #include "TextureRef.h"
 #include "CanvasRef.h"
 
-#include "g2/g2_core.h"
-#include "g2/g2_externals.h"
+#include "g2_core.h"
+#include "g2_externals.h"
 
 using namespace g2;
 using namespace g2::Internal;

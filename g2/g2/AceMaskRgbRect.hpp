@@ -1,7 +1,7 @@
 #pragma once
 
 #include "g2/AceProgram.hpp"
-#include "g2/AceTexture.hpp"
+#include "g2/AceTexture.h"
 
 class AceMaskRgbRect {
 

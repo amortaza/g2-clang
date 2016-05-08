@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "g2/AceTexture.hpp"
+#include "AceTexture.h"
 
 AceTexture::AceTexture() {
 	glGenTextures(1, &tid);
