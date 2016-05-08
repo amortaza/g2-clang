@@ -17,9 +17,6 @@
     <Filter Include="g2">
       <UniqueIdentifier>{d7be9dc2-1a38-4f91-b40f-e01e51f260a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="g2\include">
-      <UniqueIdentifier>{08905133-40ab-4ed3-8c6d-5767559af885}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Clown Dependencies">
       <UniqueIdentifier>{ae100505-5079-4078-be54-7d1079c2de48}</UniqueIdentifier>
     </Filter>
@@ -31,27 +28,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="g2\g2.h">
-      <Filter>g2\include</Filter>
-    </ClInclude>
-    <ClInclude Include="g2\g2_canvas.h">
-      <Filter>g2\include</Filter>
-    </ClInclude>
-    <ClInclude Include="g2\g2_core.h">
-      <Filter>g2\include</Filter>
-    </ClInclude>
-    <ClInclude Include="g2\g2_externals.h">
-      <Filter>g2\include</Filter>
-    </ClInclude>
-    <ClInclude Include="g2\g2_font.h">
-      <Filter>g2\include</Filter>
-    </ClInclude>
-    <ClInclude Include="g2\g2_opacity.h">
-      <Filter>g2\include</Filter>
-    </ClInclude>
-    <ClInclude Include="g2\g2_texture.h">
-      <Filter>g2\include</Filter>
-    </ClInclude>
     <ClInclude Include="g2\AceFramebuffer.hpp">
       <Filter>Ace</Filter>
     </ClInclude>
@@ -109,35 +85,29 @@
     <ClInclude Include="..\..\c_lib\lib\Soil\stbi_DDS_aug_c.h">
       <Filter>Clown Dependencies\soil</Filter>
     </ClInclude>
+    <ClInclude Include="g2\g2.h">
+      <Filter>g2</Filter>
+    </ClInclude>
+    <ClInclude Include="g2\g2_canvas.h">
+      <Filter>g2</Filter>
+    </ClInclude>
+    <ClInclude Include="g2\g2_core.h">
+      <Filter>g2</Filter>
+    </ClInclude>
+    <ClInclude Include="g2\g2_externals.h">
+      <Filter>g2</Filter>
+    </ClInclude>
+    <ClInclude Include="g2\g2_font.h">
+      <Filter>g2</Filter>
+    </ClInclude>
+    <ClInclude Include="g2\g2_opacity.h">
+      <Filter>g2</Filter>
+    </ClInclude>
+    <ClInclude Include="g2\g2_texture.h">
+      <Filter>g2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="g2_cpp\AceTexture.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_cpp\g2_canvas.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_cpp\g2_core.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_cpp\g2_font.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_cpp\g2_internal.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_cpp\g2_mask.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_cpp\g2_opacity.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_cpp\g2_rect.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
-    <ClCompile Include="g2_cpp\g2_texture.cpp">
-      <Filter>g2</Filter>
-    </ClCompile>
     <ClCompile Include="sample\Callbacks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -167,6 +137,33 @@
     </ClCompile>
     <ClCompile Include="..\..\c_lib\lib\Soil\stb_image_aug.cpp">
       <Filter>Clown Dependencies\soil</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\g2_canvas.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\g2_core.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\g2_font.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\g2_internal.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\g2_mask.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\g2_opacity.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\g2_rect.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\g2_texture.cpp">
+      <Filter>g2</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\AceTexture.cpp">
+      <Filter>Ace</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
