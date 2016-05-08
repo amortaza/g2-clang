@@ -1,6 +1,7 @@
 #include "stdafx.h"
 
 #include "TextureRef.h"
+#include "CanvasRef.h"
 
 #include "g2/g2_core.h"
 #include "g2/g2_externals.h"

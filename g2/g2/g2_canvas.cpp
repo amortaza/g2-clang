@@ -2,6 +2,8 @@
 
 using namespace std;
 
+#include "CanvasRef.h"
+
 #include "g2/AceFramebuffer.hpp"
 #include "g2/g2_canvas.h"
 #include "g2/g2_core.h"
