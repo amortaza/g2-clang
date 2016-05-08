@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "AceTexture.h"
+#include "AceTexture.hpp"
 #include "TextureRef.h"
 
 using namespace g2;
