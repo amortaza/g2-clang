@@ -11,4 +11,5 @@ CanvasRef::CanvasRef(int w, int h) {
 
 CanvasRef::~CanvasRef() {
 	delete ace_frame_buffer;
+	//test new AceFramebuffer();
 }

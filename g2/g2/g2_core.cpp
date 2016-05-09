@@ -2,6 +2,8 @@
 
 #include <map>
 
+#include "ace-font/ace-font.h" // memory leak
+
 #include "g2.h"
 
 using namespace g2;
@@ -84,6 +86,7 @@ void g2::Internal::_freeMaps() {
 		Atlas* atlas = it->second;
 
 		delete atlas;
+		// test new Atlas();
 	}
 
 	atlasMap.clear();
@@ -92,6 +95,7 @@ void g2::Internal::_freeMaps() {
 		TextureRef* ref = it->second;
 
 		delete ref;
+		//test new TextureRef();
 	}
 
 	atlasRefMap.clear();
@@ -106,10 +110,12 @@ void g2::uninit() {
 	delete ace_mask_color_prog;
 	delete ace_mask_texture_prog;
 
-	delete ace_color_rect;
-	delete ace_texture_rect;
-	delete ace_texture_glyph;
-	delete ace_mask_color_rect;
+	//test new AceProgram();
+
+	delete ace_color_rect; //test new AceRgbRect();
+	delete ace_texture_rect; //test new AceTextureRect();
+	delete ace_texture_glyph; //test new AceTextureGlyph();
+	delete ace_mask_color_rect; //test new AceMaskRgbRect();
 
 	// no need to free current_atlas
 	// no need to free current_atlas_ref

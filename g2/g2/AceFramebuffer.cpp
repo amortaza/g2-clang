@@ -14,6 +14,7 @@ AceFramebuffer::AceFramebuffer(int w, int h) {
 
 AceFramebuffer::~AceFramebuffer() {
     delete texture;
+	//test new AceTexture();
 
     glDeleteFramebuffers(1, &framebufferId);
 }

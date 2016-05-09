@@ -33,6 +33,8 @@ AceProgram::~AceProgram() {
 
     delete vShader;
     delete fShader;
+
+	//test new AceShader();
 }
 
 void AceProgram::activate() {

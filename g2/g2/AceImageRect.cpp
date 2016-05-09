@@ -17,6 +17,9 @@ AceImageRect::AceImageRect(const char* filename, int textureWidth, int textureHe
 AceImageRect::~AceImageRect() {
 	delete ace_texture_rect;
     delete ace_texture;
+
+	//test new AceTextureRect();
+	//test new AceTexture();
 }
 
 void AceImageRect::draw(int left, int top, int w, int h, glm::mat4* Projection) {

@@ -30,9 +30,7 @@ AceTexture::AceTexture(int w, int h) {
 }
 
 AceTexture::~AceTexture() {
-	if (imageData) {
-		delete imageData;
-	}
+	if (imageData) delete imageData;
 
 	glDeleteTextures(1, &tid);
 }
