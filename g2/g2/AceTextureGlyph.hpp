@@ -1,6 +1,6 @@
 #pragma once
 
-#include "AceTexture.hpp"
+extern class AceTexture;
 
 extern class AceProgram;
 

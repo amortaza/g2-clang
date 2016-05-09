@@ -1,7 +1,7 @@
 #pragma once
 
-#include "AceTextureRect.hpp"
-
+extern class AceTextureRect;
+extern class AceTexture;
 extern class AceProgram;
 
 class AceImageRect {

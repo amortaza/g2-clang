@@ -1,6 +1,6 @@
 #pragma once
 
-#include "AceShader.hpp"
+extern class AceShader;
 
 class AceProgram {
 

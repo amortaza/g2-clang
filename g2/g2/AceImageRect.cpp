@@ -3,6 +3,7 @@
 #include "AceImageRect.hpp"
 #include "AceProgram.hpp"
 #include "AceTextureRect.hpp"
+#include "AceTexture.hpp"
 
 AceImageRect::AceImageRect(const char* filename, int textureWidth, int textureHeight, AceProgram* ace_prog) {
     this->ace_prog = ace_prog;

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "AceProgram.hpp"
+extern class AceProgram;
 
 class AceRgbRect {
 
