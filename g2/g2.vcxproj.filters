@@ -43,16 +43,10 @@
     <ClInclude Include="g2\AceShader.hpp">
       <Filter>Ace</Filter>
     </ClInclude>
-    <ClInclude Include="g2\AceTexture.hpp">
-      <Filter>Ace</Filter>
-    </ClInclude>
     <ClInclude Include="g2\AceTextureRect.hpp">
       <Filter>Ace</Filter>
     </ClInclude>
     <ClInclude Include="g2\AceTextureGlyph.hpp">
-      <Filter>Ace</Filter>
-    </ClInclude>
-    <ClInclude Include="AceMaskRgbRect.hpp">
       <Filter>Ace</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
@@ -108,6 +102,12 @@
     </ClInclude>
     <ClInclude Include="g2\CanvasRef.h">
       <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="g2\AceTexture.hpp">
+      <Filter>Ace</Filter>
+    </ClInclude>
+    <ClInclude Include="g2\AceMaskRgbRect.hpp">
+      <Filter>Ace</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +170,30 @@
     </ClCompile>
     <ClCompile Include="g2\CanvasRef.cpp">
       <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\AceMaskRgbRect.cpp">
+      <Filter>Ace</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\AceFramebuffer.cpp">
+      <Filter>Ace</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\AceImageRect.cpp">
+      <Filter>Ace</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\AceTextureRect.cpp">
+      <Filter>Ace</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\AceProgram.cpp">
+      <Filter>Ace</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\AceRgbRect.cpp">
+      <Filter>Ace</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\AceShader.cpp">
+      <Filter>Ace</Filter>
+    </ClCompile>
+    <ClCompile Include="g2\AceTextureGlyph.cpp">
+      <Filter>Ace</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,6 @@
 #include "stdafx.h"
 
 #include "g2/g2.h"
-#include "g2/g2_externals.h"
 
 using namespace g2::flags;
 using namespace g2::Internal;

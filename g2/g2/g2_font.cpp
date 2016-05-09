@@ -1,7 +1,11 @@
 #include "stdafx.h"
 
+#include "ace-font/ace-font.h"
+
 #include "TextureRef.h"
 #include "g2.h"
+
+using namespace ace_font;
 
 using namespace g2;
 using namespace g2::Internal;
@@ -124,7 +128,7 @@ int g2::text_width(char* str) {
 
 	int* coords = g2::font_metric(str);
 
-	int w = coords[len * 2 - 2];
+	int w = coords[(len+1) * 2 - 2];
 
 	delete[] coords;
 
