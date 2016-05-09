@@ -8,6 +8,7 @@ namespace g2 {
 
 	void text(int x, int y, char* str, float alpha);
 	void text_flow(char* str, float alpha);
+	int text_width(char *str);
 
 	namespace Internal {
 		extern int last_font_x, last_font_y;

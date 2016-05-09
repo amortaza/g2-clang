@@ -58,7 +58,8 @@ int g2::font_height() {
 int* g2::font_metric(char* str) {
 	CoreDraw core;
 	int * coords;
-	coords = new int[strlen(str) * 2];
+	int len = strlen(str) + 1; // +1 because "." at the end
+	coords = new int[len * 2];
 	core.core2(str, 0, 0, current_atlas, coords, '\0');
 	return coords;
 }
@@ -67,9 +68,9 @@ int g2::Internal::_text(int x, int y, char* str, float alpha) {
 	CoreDraw core;
 	int * coords;
 
-	int slen = strlen(str);	
+	int slen = strlen(str);	 
 
-	coords = new int[slen * 2];
+	coords = new int[(slen+1) * 2]; // +1 because "." at the end
 	core.core2(str, x, y, current_atlas, coords, last_font_c);
 
 	int len = slen * 2;
@@ -112,6 +113,22 @@ void g2::text(int x, int y, char* str, float alpha) {
 
 void g2::text_flow(char* str, float alpha) {
 	last_font_x = _text(last_font_x, last_font_y, str, alpha);
+}
+
+int g2::text_width(char* str) {
+	if (!str) return 0;
+
+	int len = strlen(str);
+
+	if (len == 0) return 0;
+
+	int* coords = g2::font_metric(str);
+
+	int w = coords[len * 2 - 2];
+
+	delete[] coords;
+
+	return w;
 }
 
 namespace g2 {
